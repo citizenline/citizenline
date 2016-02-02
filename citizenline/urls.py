@@ -19,6 +19,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^verbetertekst/', include('improvetext.urls')),
     url(r'^improvetext/', include('improvetext.urls')),
-    url(r'^letters/', include('letters.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
+    url(r'^comments/', include('django_comments.urls')),
 ]
