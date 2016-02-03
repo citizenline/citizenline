@@ -9,7 +9,6 @@ import improvetext
 register = template.Library()
 
 
-
 class RenderQuestionListNode(template.Node):
     """
     Insert a list of questions took mechanism
@@ -39,3 +38,8 @@ def render_question_list(parser, token):
         {% render_comment_list for event %}
     """
     return RenderQuestionListNode.handle_token(parser, token)
+
+
+@register.filter(name='add_class')
+def add_class(field, classes):
+    return field.as_widget(attrs={"class": classes})

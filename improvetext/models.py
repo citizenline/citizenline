@@ -13,13 +13,18 @@ from star_ratings.app_settings import STAR_RATINGS_RANGE
 
 
 class Type(models.Model):
-    name = models.CharField(max_length=200)
-    header = models.CharField(max_length=200)
-    rating_header = models.CharField(max_length=200)
-    comment_header = models.CharField(max_length=200)
-    rating_enabled = models.BooleanField(default=True)
-    comment_enabled = models.BooleanField(default=True)
-    notification_enabled = models.BooleanField(default=True)
+    name = models.CharField(_("name"), max_length=200)
+    header = models.CharField(_("main header"), max_length=200)
+    rating_header = models.CharField(_("rating header"), max_length=200, blank=True)
+    comment_header = models.CharField(_("comment header"), max_length=200, blank=True)
+    response_header = models.CharField(_("response header"), max_length=200, blank=True)
+    rating_enabled = models.BooleanField(_("rating enabled"), default=True)
+    comment_enabled = models.BooleanField(_("comment enabled"), default=True)
+    notification_enabled = models.BooleanField(_("notification enabled"), default=True)
+
+    class Meta:
+        verbose_name = _('communication type')
+        verbose_name_plural = _('communication types')
 
     def __str__(self):
         return self.name
@@ -27,11 +32,15 @@ class Type(models.Model):
 
 class Text(models.Model):
     type = models.ForeignKey(Type, on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    slug = RandomCharField(length=8, unique=True)
-    body = RichTextField(max_length=2000)
+    title = models.CharField(_("title"), max_length=200)
+    slug = RandomCharField(_("slug"), length=8, unique=True)
+    body = RichTextField(_("text"), max_length=20000)
     version = models.PositiveIntegerField(default=0)
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField('date published', auto_now_add=True)
+
+    class Meta:
+        verbose_name = _('text')
+        verbose_name_plural = _('texts')
 
     def __str__(self):
         return '{}: {} ({})'.format(self.type, self.title, self.slug)
@@ -45,14 +54,19 @@ class Comment(models.Model):
     version = models.PositiveIntegerField(default=0)
     author = models.CharField(max_length=200)
     email = models.CharField(max_length=200)
-    body = models.CharField(max_length=2000)
+    body = models.CharField(max_length=20000)
     notify = models.BooleanField(default=True)
 
 
+# , editable=False
 class Question(models.Model):
     type = models.ForeignKey(Type, on_delete=models.CASCADE)
-    question = models.CharField(max_length=200)
-    position = models.IntegerField()
+    question = models.CharField(_("question"), max_length=200)
+    position = models.IntegerField(_("position"))
+
+    class Meta:
+        verbose_name = _('question')
+        verbose_name_plural = _('questions')
 
     def __str__(self):
         return self.question

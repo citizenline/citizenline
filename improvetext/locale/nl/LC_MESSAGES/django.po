@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-03 19:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: improvetext/models.py:16
+msgid "name"
+msgstr "Naam"
+
+#: improvetext/models.py:17
+msgid "main header"
+msgstr "hoofd header"
+
+#: improvetext/models.py:18
+msgid "rating header"
+msgstr "waardering header"
+
+#: improvetext/models.py:19
+msgid "comment header"
+msgstr "reactie plaatsen header"
+
+#: improvetext/models.py:20
+msgid "response header"
+msgstr "reacties header"
+
+#: improvetext/models.py:21
+msgid "rating enabled"
+msgstr "waardering tonen"
+
+#: improvetext/models.py:22
+msgid "comment enabled"
+msgstr "reactie plaatsen tonen"
+
+#: improvetext/models.py:23
+msgid "notification enabled"
+msgstr "notificatie vraag tonen"
+
+#: improvetext/models.py:26
+msgid "communication type"
+msgstr "communicatie soort"
+
+#: improvetext/models.py:27
+msgid "communication types"
+msgstr "communicatie soorten"
+
+#: improvetext/models.py:59 improvetext/models.py:63
+msgid "question"
+msgstr "vraag"
+
+#: improvetext/models.py:60
+msgid "position"
+msgstr "positie"
+
+#: improvetext/models.py:64
+msgid "questions"
+msgstr "vragen"
+
+#: improvetext/models.py:80 star_ratings/models.py:35
+msgid "Already rated."
+msgstr ""
+
+#: improvetext/templates/improvetext/detail.html:56
+msgid "Post"
+msgstr ""
+
+#: star_ratings/admin.py:17
+msgid "Score"
+msgstr ""
+
+#: star_ratings/admin.py:35
+msgid "Rating average"
+msgstr ""
+
+#: star_ratings/templates/star_ratings/widget.html:5
+msgid "Gemiddeld: "
+msgstr ""
+
+#: star_ratings/templates/star_ratings/widget.html:6
+msgid "Uw keuze: "
+msgstr ""
+
+#: star_ratings/templates/star_ratings/widget.html:6
+msgid "geen"
+msgstr ""
+
+#: star_ratings/templates/star_ratings/widget_base.html:42
+msgid "Average: "
+msgstr "Gemiddeld: "
+
+#: star_ratings/templates/star_ratings/widget_base.html:45
+msgid "Rating Count: "
+msgstr ""
+
+#: star_ratings/templates/star_ratings/widget_base.html:48
+msgid "You Rated: "
+msgstr ""
+
+#: star_ratings/templates/star_ratings/widget_base.html:48
+msgid "Not rated"
+msgstr ""
+
+#: star_ratings/templates/star_ratings/widget_base.html:50
+msgid "Please log in to rate."
+msgstr ""

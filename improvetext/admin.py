@@ -37,10 +37,15 @@ export_csv.short_description = "Export CSV"
 class TextAdmin(admin.ModelAdmin):
     actions = [export_csv]
     pass
+
+
+class QuestionAdmin(admin.ModelAdmin):
+    list_filter = ('type__name',)
+
 admin.site.register(Text, TextAdmin)
 
 admin.site.register(Type)
 admin.site.register(Comment)
-admin.site.register(Question)
+admin.site.register(Question, QuestionAdmin)
 admin.site.register(Rating)
 admin.site.register(UserRating)

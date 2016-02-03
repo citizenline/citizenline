@@ -1,7 +1,8 @@
 {% extends 'bootstrap3/bootstrap3.html' %}
 {% load static %}
 {% load ratings %}
-{% load comments %}
+{% load comments i18n %}
+{% load improvetext %}
 
 {% block bootstrap3_title %} {{ text.title }} {% endblock %}
 
@@ -12,12 +13,13 @@
 
 {% block bootstrap3_content %}
 
-    <div id="container" class="container" >
+    <div id="container" class="container">
         <h2>{{ text.type.header }}</h2>
         <div class="row">
             <div class="col-md-8">
                 <h3>{{ text.title }}</h3>
-                <div id="improvetext" style="border-bottom: 1px solid #DFDFDF; padding: 35px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);">
+                <div id="improvetext"
+                     style="border-bottom: 1px solid #DFDFDF; padding: 35px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);">
                     {{ text.body|safe }}
                 </div>
             </div>
@@ -36,14 +38,31 @@
 
             <div class="col-md-8" id="improvetext">
                 <h3>{{ text.type.comment_header }}</h3>
-                {% render_comment_form for text %}
+                {% get_comment_form for text as form %}
+                <form action="{% comment_form_target %}" method="post">{% csrf_token %}
+                    <div><input type="hidden" name="next" value="{% url 'detail' text.slug %}"/></div>
+                    {% for field in form %}
+                        {% if field.is_hidden %}
+                            <div>{{ field }}</div>
+                        {% elif field.name != "url" %}
+                            {% if field.errors %}{{ field.errors }}{% endif %}
+                            <div class="form-group{% if field.errors %} error{% endif %}"
+                                    {% ifequal field.name "honeypot" %} style="display:none;"{% endifequal %}>
+                                {{ field.label_tag }} {{ field|add_class:"form-control" }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <p class="submit">
+                        <input type="submit" name="post" class="submit-post" value="{% trans "Post" %}"/>
+                    </p>
+                </form>
             </div>
 
         </div>
         <div class="row">
 
             <div class="col-md-8" id="improvetext">
-                <h3>Reacties</h3>
+                <h3>{{ text.type.comment_header }}</h3>
                 {% render_comment_list for text %}
             </div>
 

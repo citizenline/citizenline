@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%of1xgdp+8s&b7g+dmr^9=0b!rlg5)imp_$wx8lig-*u%pzq33'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+ADMINS = [('Gerhard Messelink', 'admin@gmic.nl')]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '.citizenline.nl', '.citizenline.local']
 
 SITE_ID = 1
 
@@ -100,7 +101,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'nl-nl'
 
 TIME_ZONE = 'Europe/Amsterdam'
 
@@ -110,8 +111,19 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOCALE_PATHS = (
+    BASE_DIR + '/improvetext/locale', )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 500,
+        'width': 'auto',
+    },
+}

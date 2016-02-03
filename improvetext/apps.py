@@ -4,6 +4,7 @@ from django.db.models.signals import post_save, post_delete
 
 class StarRatingsAppConfig(AppConfig):
     name = 'improvetext'
+    verbose_name = "improve text"
 
     def ready(self):
         from .models import UserRating
