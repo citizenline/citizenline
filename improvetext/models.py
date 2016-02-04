@@ -35,8 +35,8 @@ class Text(models.Model):
     title = models.CharField(_("title"), max_length=200)
     slug = RandomCharField(_("slug"), length=8, unique=True)
     body = RichTextField(_("text"), max_length=20000)
-    version = models.PositiveIntegerField(default=0)
-    pub_date = models.DateTimeField('date published', auto_now_add=True)
+    version = models.PositiveIntegerField(_("version"), default=0)
+    pub_date = models.DateTimeField(_('date published'), auto_now_add=True)
 
     class Meta:
         verbose_name = _('text')

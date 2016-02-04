@@ -53,7 +53,7 @@
                         {% endif %}
                     {% endfor %}
                     <p class="submit">
-                        <input type="submit" name="post" class="submit-post" value="{% trans "Post" %}"/>
+                        <input type="submit" name="post" class="submit-post btn btn-primary" value="{% trans "Post" %}"/>
                     </p>
                 </form>
             </div>
@@ -62,7 +62,7 @@
         <div class="row">
 
             <div class="col-md-8" id="improvetext">
-                <h3>{{ text.type.comment_header }}</h3>
+                <h3>{{ text.type.response_header }}</h3>
                 {% render_comment_list for text %}
             </div>
 

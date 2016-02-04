@@ -35,8 +35,24 @@ export_csv.short_description = "Export CSV"
 
 
 class TextAdmin(admin.ModelAdmin):
+    list_display = ("title", "type", "slug", "version")
+    list_filter = (
+        'type__name',
+    )
     actions = [export_csv]
     pass
+
+
+class QuestionInLine(admin.TabularInline):
+    model = Question
+    extra = 0
+
+
+class TypeAdmin(admin.ModelAdmin):
+    list_display = ("name", "rating_enabled", "comment_enabled", "notification_enabled",)
+    inlines = [
+        QuestionInLine
+    ]
 
 
 class QuestionAdmin(admin.ModelAdmin):
@@ -44,8 +60,8 @@ class QuestionAdmin(admin.ModelAdmin):
 
 admin.site.register(Text, TextAdmin)
 
-admin.site.register(Type)
-admin.site.register(Comment)
-admin.site.register(Question, QuestionAdmin)
-admin.site.register(Rating)
+admin.site.register(Type, TypeAdmin)
+#admin.site.register(Comment)
+#admin.site.register(Question, QuestionAdmin)
+#admin.site.register(Rating)
 admin.site.register(UserRating)

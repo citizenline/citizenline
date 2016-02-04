@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-03 19:29+0100\n"
+"POT-Creation-Date: 2016-02-03 23:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "hoofd header"
 
 #: improvetext/models.py:18
 msgid "rating header"
-msgstr "waardering header"
+msgstr "beoordeling header"
 
 #: improvetext/models.py:19
 msgid "comment header"
@@ -58,25 +58,49 @@ msgstr "communicatie soort"
 msgid "communication types"
 msgstr "communicatie soorten"
 
-#: improvetext/models.py:59 improvetext/models.py:63
+#: improvetext/models.py:35
+msgid "title"
+msgstr "titel"
+
+#: improvetext/models.py:36
+msgid "slug"
+msgstr "slak"
+
+#: improvetext/models.py:37 improvetext/models.py:42
+msgid "text"
+msgstr "tekst"
+
+#: improvetext/models.py:38
+msgid "version"
+msgstr "versie"
+
+#: improvetext/models.py:39
+msgid "date published"
+msgstr "Publicatie datum"
+
+#: improvetext/models.py:43
+msgid "texts"
+msgstr "teksten"
+
+#: improvetext/models.py:64 improvetext/models.py:68
 msgid "question"
 msgstr "vraag"
 
-#: improvetext/models.py:60
+#: improvetext/models.py:65
 msgid "position"
 msgstr "positie"
 
-#: improvetext/models.py:64
+#: improvetext/models.py:69
 msgid "questions"
 msgstr "vragen"
 
-#: improvetext/models.py:80 star_ratings/models.py:35
+#: improvetext/models.py:85 star_ratings/models.py:35
 msgid "Already rated."
-msgstr ""
+msgstr "Al gewaardeerd"
 
 #: improvetext/templates/improvetext/detail.html:56
 msgid "Post"
-msgstr ""
+msgstr "Verstuur"
 
 #: star_ratings/admin.py:17
 msgid "Score"
@@ -84,36 +108,27 @@ msgstr ""
 
 #: star_ratings/admin.py:35
 msgid "Rating average"
-msgstr ""
+msgstr "Waardering gemiddelde"
 
 #: star_ratings/templates/star_ratings/widget.html:5
-msgid "Gemiddeld: "
-msgstr ""
-
-#: star_ratings/templates/star_ratings/widget.html:6
-msgid "Uw keuze: "
-msgstr ""
-
-#: star_ratings/templates/star_ratings/widget.html:6
-msgid "geen"
-msgstr ""
-
 #: star_ratings/templates/star_ratings/widget_base.html:42
 msgid "Average: "
 msgstr "Gemiddeld: "
 
-#: star_ratings/templates/star_ratings/widget_base.html:45
-msgid "Rating Count: "
-msgstr ""
-
+#: star_ratings/templates/star_ratings/widget.html:6
 #: star_ratings/templates/star_ratings/widget_base.html:48
 msgid "You Rated: "
-msgstr ""
+msgstr "Uw waardering: "
 
+#: star_ratings/templates/star_ratings/widget.html:6
 #: star_ratings/templates/star_ratings/widget_base.html:48
 msgid "Not rated"
-msgstr ""
+msgstr "Geen waardering"
+
+#: star_ratings/templates/star_ratings/widget_base.html:45
+msgid "Rating Count: "
+msgstr "Aantal waarderingen: "
 
 #: star_ratings/templates/star_ratings/widget_base.html:50
 msgid "Please log in to rate."
-msgstr ""
+msgstr "Log in om een waardering te geven."
