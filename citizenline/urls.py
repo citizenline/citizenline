@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from citizenline.apps.www.views import HomeView
+
+admin.site.site_header = 'Citizenline admin'
 
 urlpatterns = [
+    url(r'^$', HomeView.as_view(), name='home'),
     url(r'^verbetertekst/', include('improvetext.urls')),
     url(r'^improvetext/', include('improvetext.urls')),
     url(r'^admin/', include(admin.site.urls)),

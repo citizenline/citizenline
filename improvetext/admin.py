@@ -58,6 +58,7 @@ class TypeAdmin(admin.ModelAdmin):
 class QuestionAdmin(admin.ModelAdmin):
     list_filter = ('type__name',)
 
+#my_admin_site = MyAdminSite()
 admin.site.register(Text, TextAdmin)
 
 admin.site.register(Type, TypeAdmin)

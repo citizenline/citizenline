@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+  <!-- Top Ad -->
+  {% if ad_top %}
+    <div class="row text-center">
+      {{ ad_top.code|safe }}
+    </div>
+  {% endif %}
+
+  <div class="row">
+    <div class="col-md-12">
+        <div class="text-center">
+          <h3>Home for citizenline</h3>
+        </div>
+    </div>
+  </div>
+
+  <!-- Bottom Ad -->
+  {% if ad_bottom %}
+    <div class="row text-center">
+      {{ ad_bottom.code|safe }}
+    </div>
+  {% endif %}
+
+{% endblock %}
+
+{% block extrajs %}
+  <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}

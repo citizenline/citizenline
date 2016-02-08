@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<svg width="600" height="240" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <defs>
+  <linearGradient y2="0" x2="1" y1="0" x1="0" spreadMethod="pad" id="svg_42">
+   <stop offset="0.09692" stop-opacity="0.99609" stop-color="#ffffff"/>
+   <stop stop-opacity="0.99609" offset="0.29224" stop-color="#aaffff"/>
+   <stop offset="0.4602" stop-opacity="0.99609" stop-color="#ffffff"/>
+   <stop stop-opacity="0.99609" offset="0.6438" stop-color="#aaffff"/>
+   <stop offset="0.88208" stop-opacity="0.99609" stop-color="#ffffff"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <rect stroke="#000000" id="svg_2" transform="rotate(25.5 283.2280578613283,120.12499999999996) " height="290.394091" width="44.715698" y="-25.07205" x="260.870197" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#ffffff"/>
+  <rect stroke="#000000" transform="rotate(25.5 297.7445983886719,118.6295928955079) " id="svg_24" height="38.6939" width="632.37618" y="99.28264" x="-18.44347" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="url(#svg_42)"/>
+  <line stroke="#000000" id="svg_1" y2="240" x2="500" y1="0" x1="0" stroke-width="5" fill="none"/>
+  <text id="svg_21" stroke="#000000" transform="rotate(25.5 305.9259643554688,67.72519683837888) matrix(2.20429235903782,0,0,1.2577102898426404,109.83790866057772,-94.94129407574974) " xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="137.3837" x="88.9898" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">L</text>
+  <text id="svg_34" stroke="#000000" transform="rotate(25.5 139.55354309082037,43.80905532836913) matrix(2.20429235903782,0,0,1.2577102898426404,109.83790866057772,-94.94129407574974) " xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="118.36364" x="13.52073" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">C</text>
+  <line stroke="#000000" id="svg_3" y2="240" x2="600" y1="0" x1="100" stroke-width="5" fill="none"/>
+  <line stroke="#000000" id="svg_5" y2="0" x2="314" y1="240" x1="200" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="none"/>
+  <text id="svg_22" stroke="#000000" transform="rotate(25.5 263.3337707519533,159.7384643554687) matrix(2.20429235903782,0,0,1.2577102898426404,109.83790866057772,-94.94129407574974) " xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="210.51872" x="69.65058" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">N</text>
+  <line stroke="#000000" id="svg_6" y2="0" x2="364" y1="240" x1="250" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="none"/>
+  <text id="svg_23" stroke="#000000" transform="rotate(25.5 245.33776855468747,195.74041748046872) matrix(2.20429235903782,0,0,1.2577102898426404,109.83790866057772,-94.94129407574974) " xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="239.15025" x="61.48862" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">E</text>
+  <text id="svg_35" stroke="#000000" transform="rotate(25.5 190.95639038085952,68.41776275634764) matrix(2.20429235903782,0,0,1.2577102898426404,109.83790866057772,-94.94129407574974) " xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="137.97157" x="36.81611" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">I</text>
+  <text id="svg_36" stroke="#000000" transform="rotate(25.5 238.24945068359372,91.13143920898438) matrix(2.20429235903782,0,0,1.2577102898426404,109.83790866057772,-94.94129407574974) " xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="155.99374" x="58.28937" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">T</text>
+  <text id="svg_37" stroke="#000000" transform="rotate(25.5 334.25381469726574,136.49940490722645) matrix(2.20429235903782,0,0,1.2577102898426404,109.83790866057772,-94.94129407574974) " xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="192.03807" x="101.84076" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">Z</text>
+  <text id="svg_38" stroke="#000000" transform="rotate(25.5 389.5892639160157,163.13696289062497) matrix(2.20429235903782,0,0,1.2577102898426404,109.83790866057772,-94.94129407574974) " xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="213.24062" x="126.9433" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">E</text>
+  <text id="svg_39" stroke="#000000" transform="rotate(25.5 449.58047485351574,192.5080108642578) matrix(2.20429235903782,0,0,1.2577102898426404,109.83790866057772,-94.94129407574974) " xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="236.56343" x="154.16292" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">N</text>
+  <text id="svg_40" stroke="#000000" transform="rotate(25.5 286.2846374511719,113.1016693115235) matrix(2.20429235903782,0,0,1.2577102898426404,109.83790866057772,-94.94129407574974) " xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="173.48584" x="80.06507" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">I</text>
+ </g>
+</svg>

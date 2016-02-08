@@ -11,8 +11,14 @@ from model_utils.models import TimeStampedModel
 
 from star_ratings.app_settings import STAR_RATINGS_RANGE
 
+from django.contrib.sites.models import Site
+from django.contrib.sites.managers import CurrentSiteManager
+
 
 class Type(models.Model):
+    site = models.ForeignKey(Site)
+    objects = models.Manager()
+    on_site = CurrentSiteManager()
     name = models.CharField(_("name"), max_length=200)
     header = models.CharField(_("main header"), max_length=200)
     rating_header = models.CharField(_("rating header"), max_length=200, blank=True)

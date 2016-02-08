@@ -20,10 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%of1xgdp+8s&b7g+dmr^9=0b!rlg5)imp_$wx8lig-*u%pzq33'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY',
+                       '%of1xgdp+8s&b7g+dmr^9=0b!rlg5)imp_$wx8lig-*u%pzq33')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ADMINS = [('Gerhard Messelink', 'admin@gmic.nl')]
 
 ALLOWED_HOSTS = ['localhost', '.citizenline.nl', '.citizenline.local']
@@ -47,6 +48,7 @@ INSTALLED_APPS = (
     'star_ratings',
     'django.contrib.sites',
     'django_comments',
+    'compressor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -66,7 +68,9 @@ ROOT_URLCONF = 'citizenline.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -94,8 +98,12 @@ WSGI_APPLICATION = 'citizenline.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv('DATABASE_NAME', 'citizenline'),
+        'USER': os.getenv('DATABASE_USER', 'citizenline'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD', 'password'),
+        'HOST': os.getenv('DATABASE_HOST', '127.0.0.1'),
+        'PORT': os.getenv('DATABASE_PORT', '5432'),
     }
 }
 
@@ -119,7 +127,47 @@ LOCALE_PATHS = (
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+STATIC_ROOT = os.getenv('STATIC_ROOT',
+                        os.path.join(BASE_DIR, 'collected_static'))
+
 STATIC_URL = '/static/'
+
+# Additional locations of static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+# List of finder classes that know how to find static files in
+# various locations.
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+
+# Media files.
+
+MEDIA_ROOT = os.getenv('MEDIA_ROOT', os.path.join(BASE_DIR, 'media'))
+
+MEDIA_URL = '/media/'
+
+# Email settings.
+
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_PORT = os.getenv('EMAIL_PORT', 587)
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = 'Info <info@citizenline.com>'
+SERVER_EMAIL = 'Alerts <alerts@citizenline.com>'
+
+ADMINS = (
+    ('Admin', 'admin@citizenline.com'),
+)
+
+
 
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
 CKEDITOR_CONFIGS = {
@@ -131,3 +179,7 @@ CKEDITOR_CONFIGS = {
 }
 
 BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
+
+
+# 3rd-party apps tracking IDs.
+GOOGLE_ANALYTICS_TRACKING_ID = os.getenv('GOOGLE_ANALYTICS_TRACKING_ID')

@@ -2,7 +2,7 @@ from django.apps import AppConfig
 from django.db.models.signals import post_save, post_delete
 
 
-class StarRatingsAppConfig(AppConfig):
+class ImprovetextAppConfig(AppConfig):
     name = 'improvetext'
     verbose_name = "improve text"
 

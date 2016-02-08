@@ -1,0 +1,30 @@
+[{
+        "pk": 1,
+        "model": "sites.site",
+        "fields": {
+            "name": "localhost:8000",
+            "domain":"localhost:8000"
+        }
+    },{
+        "pk": 2,
+        "model": "sites.site",
+        "fields": {
+            "name": "meta.citizenline.nl",
+            "domain":"meta.citizenline.nl"
+        }
+    },{
+        "pk": 3,
+        "model": "sites.site",
+        "fields": {
+            "name": "www.citizenline.local:8000",
+            "domain":"www.citizenline.local:8000"
+        }
+    },{
+        "pk": 4,
+        "model": "sites.site",
+        "fields": {
+            "name": "denhaag.citizenline.local:8000",
+            "domain":"denhaag.citizenline.local:8000"
+        }
+    }
+]
