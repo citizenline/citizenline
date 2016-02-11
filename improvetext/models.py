@@ -4,7 +4,7 @@ from ckeditor.fields import RichTextField
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
-from django.db.models import Avg, Count, Sum
+from django.db.models import Q, Avg, Count, Sum
 from django.utils.translation import ugettext as _
 from django_extensions.db.fields import RandomCharField
 from model_utils.models import TimeStampedModel
@@ -15,9 +15,14 @@ from django.contrib.sites.models import Site
 from django.contrib.sites.managers import CurrentSiteManager
 
 
+class TypeManager(CurrentSiteManager):
+    def get_query_set(self):
+        return super(TypeManager, self).get_query_set()
+
+
 class Type(models.Model):
     site = models.ForeignKey(Site)
-    objects = models.Manager()
+    objects = TypeManager()
     on_site = CurrentSiteManager()
     name = models.CharField(_("name"), max_length=200)
     header = models.CharField(_("main header"), max_length=200)
@@ -37,6 +42,8 @@ class Type(models.Model):
 
 
 class Text(models.Model):
+    site = models.ForeignKey(Site, default=1, editable=False)
+    objects = TypeManager()
     type = models.ForeignKey(Type, on_delete=models.CASCADE)
     title = models.CharField(_("title"), max_length=200)
     slug = RandomCharField(_("slug"), length=8, unique=True)

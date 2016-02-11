@@ -29,7 +29,7 @@ ADMINS = [('Gerhard Messelink', 'admin@gmic.nl')]
 
 ALLOWED_HOSTS = ['localhost', '.citizenline.nl', '.citizenline.local']
 
-SITE_ID = 1
+#SITE_ID = 1
 
 # Application definition
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-03 23:52+0100\n"
+"POT-Creation-Date: 2016-02-10 14:16+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,83 +18,91 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: improvetext/models.py:16
+#: improvetext/admin.py:70
+msgid "Headers"
+msgstr "Kopteksten"
+
+#: improvetext/admin.py:71
+msgid "Enabled"
+msgstr "Ingeschakeld"
+
+#: improvetext/models.py:27
 msgid "name"
 msgstr "Naam"
 
-#: improvetext/models.py:17
+#: improvetext/models.py:28
 msgid "main header"
 msgstr "hoofd header"
 
-#: improvetext/models.py:18
+#: improvetext/models.py:29
 msgid "rating header"
 msgstr "beoordeling header"
 
-#: improvetext/models.py:19
+#: improvetext/models.py:30
 msgid "comment header"
 msgstr "reactie plaatsen header"
 
-#: improvetext/models.py:20
+#: improvetext/models.py:31
 msgid "response header"
 msgstr "reacties header"
 
-#: improvetext/models.py:21
+#: improvetext/models.py:32
 msgid "rating enabled"
 msgstr "waardering tonen"
 
-#: improvetext/models.py:22
+#: improvetext/models.py:33
 msgid "comment enabled"
 msgstr "reactie plaatsen tonen"
 
-#: improvetext/models.py:23
+#: improvetext/models.py:34
 msgid "notification enabled"
 msgstr "notificatie vraag tonen"
 
-#: improvetext/models.py:26
+#: improvetext/models.py:37
 msgid "communication type"
 msgstr "communicatie soort"
 
-#: improvetext/models.py:27
+#: improvetext/models.py:38
 msgid "communication types"
 msgstr "communicatie soorten"
 
-#: improvetext/models.py:35
+#: improvetext/models.py:48
 msgid "title"
 msgstr "titel"
 
-#: improvetext/models.py:36
+#: improvetext/models.py:49
 msgid "slug"
 msgstr "slak"
 
-#: improvetext/models.py:37 improvetext/models.py:42
+#: improvetext/models.py:50 improvetext/models.py:55
 msgid "text"
 msgstr "tekst"
 
-#: improvetext/models.py:38
+#: improvetext/models.py:51
 msgid "version"
 msgstr "versie"
 
-#: improvetext/models.py:39
+#: improvetext/models.py:52
 msgid "date published"
 msgstr "Publicatie datum"
 
-#: improvetext/models.py:43
+#: improvetext/models.py:56
 msgid "texts"
 msgstr "teksten"
 
-#: improvetext/models.py:64 improvetext/models.py:68
+#: improvetext/models.py:77 improvetext/models.py:81
 msgid "question"
 msgstr "vraag"
 
-#: improvetext/models.py:65
+#: improvetext/models.py:78
 msgid "position"
 msgstr "positie"
 
-#: improvetext/models.py:69
+#: improvetext/models.py:82
 msgid "questions"
 msgstr "vragen"
 
-#: improvetext/models.py:85 star_ratings/models.py:35
+#: improvetext/models.py:98
 msgid "Already rated."
 msgstr "Al gewaardeerd"
 
@@ -102,33 +110,20 @@ msgstr "Al gewaardeerd"
 msgid "Post"
 msgstr "Verstuur"
 
-#: star_ratings/admin.py:17
-msgid "Score"
-msgstr ""
+#~ msgid "Rating average"
+#~ msgstr "Waardering gemiddelde"
 
-#: star_ratings/admin.py:35
-msgid "Rating average"
-msgstr "Waardering gemiddelde"
+#~ msgid "Average: "
+#~ msgstr "Gemiddeld: "
 
-#: star_ratings/templates/star_ratings/widget.html:5
-#: star_ratings/templates/star_ratings/widget_base.html:42
-msgid "Average: "
-msgstr "Gemiddeld: "
+#~ msgid "You Rated: "
+#~ msgstr "Uw waardering: "
 
-#: star_ratings/templates/star_ratings/widget.html:6
-#: star_ratings/templates/star_ratings/widget_base.html:48
-msgid "You Rated: "
-msgstr "Uw waardering: "
+#~ msgid "Not rated"
+#~ msgstr "Geen waardering"
 
-#: star_ratings/templates/star_ratings/widget.html:6
-#: star_ratings/templates/star_ratings/widget_base.html:48
-msgid "Not rated"
-msgstr "Geen waardering"
+#~ msgid "Rating Count: "
+#~ msgstr "Aantal waarderingen: "
 
-#: star_ratings/templates/star_ratings/widget_base.html:45
-msgid "Rating Count: "
-msgstr "Aantal waarderingen: "
-
-#: star_ratings/templates/star_ratings/widget_base.html:50
-msgid "Please log in to rate."
-msgstr "Log in om een waardering te geven."
+#~ msgid "Please log in to rate."
+#~ msgstr "Log in om een waardering te geven."

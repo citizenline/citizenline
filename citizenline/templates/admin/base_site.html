@@ -1,0 +1,20 @@
+{% extends "admin/base.html" %}
+{% load admin_static bootstrap_admin_template_tags %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+  {% block sidebar_menu %}
+
+    <div id="sidebar-menu" class="col-xs-6 col-sm-3 col-md-2 sidebar-menu">
+      {% block branding %}
+        <a href="{% url 'admin:index' %}" class="django-admin-logo">
+          <!-- Django Administration -->
+          <img height="100%" src="{% static 'citizenline/images/logo.svg' %}" alt="{{ site_header|default:_('Citizenline administration') }}">
+        </a>
+      {% endblock branding %}
+      {% block filters %}{% endblock filters %}
+      {% render_menu_app_list %}
+    </div>
+  {% endblock sidebar_menu %}
+
+
+{% block nav-global %}{% endblock %}
