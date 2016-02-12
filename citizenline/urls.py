@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from citizenline.apps.www.views import HomeView
+from .apps.www.views import HomeView
 
 admin.site.site_header = 'Citizenline admin'
 
