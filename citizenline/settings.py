@@ -34,6 +34,7 @@ SITE_ID = 1
 
 INSTALLED_APPS = (
     'improvetext',
+    'citizenline',
     'bootstrap3',
     'bootstrap_admin',
     'django.contrib.admin',
