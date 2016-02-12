@@ -1,7 +1,8 @@
 from citizenline.settings.base import *
 
 
-DEBUG = False
+DEBUG = True
+
 
 ALLOWED_HOSTS = ['.citizenline.nl']
 

@@ -154,20 +154,18 @@ MEDIA_URL = '/media/'
 
 # Email settings.
 
-EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_HOST = os.getenv('EMAIL_HOST', 'localhost')
 EMAIL_PORT = os.getenv('EMAIL_PORT', 587)
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 
-DEFAULT_FROM_EMAIL = 'Info <info@citizenline.com>'
-SERVER_EMAIL = 'Alerts <alerts@citizenline.com>'
+DEFAULT_FROM_EMAIL = 'Info <info@citizenline.nl>'
+SERVER_EMAIL = 'Alerts <alerts@citizenline.nl>'
 
 ADMINS = (
-    ('Admin', 'admin@citizenline.com'),
+    ('Admin', 'admin@citizenline.nl'),
 )
-
-
 
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
 CKEDITOR_CONFIGS = {
