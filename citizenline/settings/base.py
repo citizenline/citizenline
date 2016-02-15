@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
@@ -34,7 +34,6 @@ ALLOWED_HOSTS = ['localhost', '.citizenline.nl', '.citizenline.local']
 # Application definition
 
 INSTALLED_APPS = (
-    'improvetext',
     'bootstrap3',
     'bootstrap_admin',
     'django.contrib.admin',
@@ -44,14 +43,22 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'django.contrib.sites',
     'ckeditor',
     'star_ratings',
-    'django.contrib.sites',
     'django_comments',
     'compressor',
+    'email_registration',
+    'multisite',
+    'citizenline_admin',
+    'improvetext',
 )
 
+
+
 MIDDLEWARE_CLASSES = (
+    'multisite.middleware.CookieDomainMiddleware',
+    'multisite.middleware.DynamicSiteMiddleware',
     'improvetext.middleware.MultiSiteMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

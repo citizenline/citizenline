@@ -17,8 +17,6 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from . import views
 
-admin.site.site_header = 'Citizenline admin'
-
 urlpatterns = [
     url(r'^$', views.HomeView.as_view(), name='home'),
     url(r'^verbetertekst/', include('improvetext.urls')),
@@ -26,4 +24,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
     url(r'^comments/', include('django_comments.urls')),
+    url(r'^$', include('email_registration.urls')),
 ]

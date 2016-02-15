@@ -1,0 +1,10 @@
+[
+  {
+    "pk": 1,
+    "model": "sites.site",
+    "fields": {
+      "name": "www.citizenline.nl",
+      "domain": "localhost:8000"
+    }
+  }
+]
