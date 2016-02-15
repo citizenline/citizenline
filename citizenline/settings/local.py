@@ -1,5 +1,5 @@
 from citizenline.settings.base import *
-from multisite import SiteID
+
 
 INSTALLED_APPS += ('debug_toolbar',)
 
@@ -33,10 +33,10 @@ MULTISITE_FALLBACK_KWARGS = {'url': 'http://www.citizenline.local/',
 
 #SITE_ID = 1
 #SITE_ID = SiteID(default=1)
-SITE_ID = SiteID()
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
-    }
-}
+
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+#     }
+# }

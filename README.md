@@ -9,10 +9,24 @@ yum install numpy scipy python-matplotlib ipython python-pandas sympy python-nos
 
 nohup python ./manage.py runserver &
 
+## Getting started
+
+virtualenv citizenline
+clone repo
+pip install -r requirements/dev.txt
+manage.py migrate
+manage.py createsuperuser
+python
+  from improvetext.util.populate import *
+  Init.new()
+manage.py runserver
+
+
 ## Migrate database
 
 export DJANGO_SETTINGS_MODULE=citizenline.settings.production
 python manage.py migrate
+
 
 
 Issues:

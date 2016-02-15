@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from multisite import SiteID
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -30,6 +31,7 @@ ADMINS = [('Gerhard Messelink', 'admin@gmic.nl')]
 ALLOWED_HOSTS = ['localhost', '.citizenline.nl', '.citizenline.local']
 
 #SITE_ID = 1
+SITE_ID = SiteID(default=1)
 
 # Application definition
 
@@ -55,11 +57,11 @@ INSTALLED_APPS = (
 )
 
 
+#    'improvetext.middleware.MultiSiteMiddleware',
 
 MIDDLEWARE_CLASSES = (
     'multisite.middleware.CookieDomainMiddleware',
     'multisite.middleware.DynamicSiteMiddleware',
-    'improvetext.middleware.MultiSiteMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
