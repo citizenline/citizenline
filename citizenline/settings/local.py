@@ -16,7 +16,7 @@ DEBUG_TOOLBAR_CONFIG = {
     'HIDE_DJANGO_SQL': False,
 }
 
-AUTH_USER_MODEL = 'citizenline_admin.User'
+# AUTH_USER_MODEL = 'citizenline_admin.User'
 
 # The cache connection to use for django-multisite.
 # Default: 'default'

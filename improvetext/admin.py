@@ -84,3 +84,6 @@ admin.site.register(Type, TypeAdmin)
 # admin.site.register(Question, QuestionAdmin)
 # admin.site.register(Rating)
 admin.site.register(UserRating)
+
+# Reset header  ?? Should this be done here or is this a sub-app ??
+admin.site.site_header = 'Citizenline admin'

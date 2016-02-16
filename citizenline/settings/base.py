@@ -30,7 +30,6 @@ ADMINS = [('Gerhard Messelink', 'admin@gmic.nl')]
 
 ALLOWED_HOSTS = ['localhost', '.citizenline.nl', '.citizenline.local']
 
-#SITE_ID = 1
 SITE_ID = SiteID(default=1)
 
 # Application definition
@@ -52,9 +51,9 @@ INSTALLED_APPS = (
     'compressor',
     'email_registration',
     'multisite',
-    'citizenline_admin',
     'improvetext',
 )
+    # 'citizenline_admin',
 
 
 #    'improvetext.middleware.MultiSiteMiddleware',
@@ -186,7 +185,6 @@ CKEDITOR_CONFIGS = {
 }
 
 BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
-
 
 # 3rd-party apps tracking IDs.
 GOOGLE_ANALYTICS_TRACKING_ID = os.getenv('GOOGLE_ANALYTICS_TRACKING_ID')
