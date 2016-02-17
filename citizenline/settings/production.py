@@ -10,11 +10,11 @@ EMAIL_PORT = 25
 EMAIL_USE_TLS = False
 
 # TODO: Setup proper production cache
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
-    }
-}
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+#     }
+# }
 
 # Use the cached template loader so template is compiled once and read from
 # memory instead of reading from disk on each load.
