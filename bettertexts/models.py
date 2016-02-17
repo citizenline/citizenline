@@ -8,7 +8,6 @@ from django.db.models import Q, Avg, Count, Sum
 from django.utils.translation import ugettext as _
 from django_extensions.db.fields import RandomCharField
 from model_utils.models import TimeStampedModel
-
 from star_ratings.app_settings import STAR_RATINGS_RANGE
 
 from django.contrib.sites.models import Site
@@ -59,7 +58,7 @@ class Text(models.Model):
         return '{}: {} ({})'.format(self.type, self.title, self.slug)
 
     def get_absolute_url(self):
-        return "/improvetext/%s/" % self.slug
+        return "/bettertexts/%s/" % self.slug
 
 
 class Comment(models.Model):

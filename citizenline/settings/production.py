@@ -1,4 +1,4 @@
-from citizenline.settings.base import *
+from citizenline.settings.base import *  # noqa
 
 DEBUG = True
 

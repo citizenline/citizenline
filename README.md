@@ -18,7 +18,7 @@ pip install -r requirements/dev.txt
 manage.py migrate
 manage.py createsuperuser
 python
-  from improvetext.util.populate import *
+  from bettertexts.util.populate import *
   Init.new()
 manage.py runserver
 
@@ -28,6 +28,9 @@ manage.py runserver
 export DJANGO_SETTINGS_MODULE=citizenline.settings.production
 python manage.py migrate
 
+## Language
+
+python manage.py compilemessages
 
 
 Issues:

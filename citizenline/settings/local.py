@@ -1,4 +1,4 @@
-from citizenline.settings.base import *
+from citizenline.settings.base import *  # noqa
 
 
 INSTALLED_APPS += ('debug_toolbar',)

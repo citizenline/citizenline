@@ -1,18 +1,21 @@
 from django.contrib.sites.models import Site
 
-from improvetext.models import Question
-from improvetext.models import Text
-from improvetext.models import Type
+from bettertexts.models import Question
+from bettertexts.models import Text
+from bettertexts.models import Type
 
 
 class Init():
     @staticmethod
     def new():
+        # base_domain = "citizenline.local:8000"
+        base_domain = "citizenline.nl"
+
         s0 = Site.objects.get_or_create(pk=1, defaults={"domain": "example.com"})[0]
-        s0.domain = "localhost:8000"
+        s0.domain = "www." + base_domain
         s0.save()
 
-        s1 = Site.objects.get_or_create(pk=2, defaults={"domain": "denhaag.citizenline.local:8000"})[0]
+        s1 = Site.objects.get_or_create(pk=2, defaults={"domain": "denhaag." + base_domain})[0]
         s1.save()
 
         brief = Type.objects.get_or_create(site=s1, name="Brief", defaults={
@@ -46,21 +49,21 @@ class Init():
         </p>
         <p>• Schakel de geiser niet meer in totdat hij gerepareerd is.<br />
         • Maak een afspraak met een erkend bedrijf om de geiser te repareren of te vervangen.<br />
-        • Bel daarna de Haagse Pandenbrigade (14070).<br />
+        • Bel daarna de lokale Pandenbrigade (1234567).<br />
         </p>
         <p>Zij controleren of er geen koolmonoxide meer vrij komt.
         </p>
         <p><strong>Het gevaar van koolmonoxide</strong>
         </p>
-        <p>De GGD geeft informatie over het gevaar van koolmonoxide. Wij kunnen uw vragen beantwoorden, uitleggen hoe koolmonoxide ontstaat en wanneer het tot klachten kan leiden. Daarnaast geven wij u tips om de kans op koolmonoxide(ongelukken) in de toekomst te verkleinen. Leest u daarom ook de folder die bij deze brief zit. Heeft u na het lezen van de folder nog vragen, dan kunt u mij bereiken op het telefoonnummer (070) 353 71 82 of e-mailen naar gezondheidenmilieu@ggdhaaglanden.nl.
+        <p>De GGD geeft informatie over het gevaar van koolmonoxide. Wij kunnen uw vragen beantwoorden, uitleggen hoe koolmonoxide ontstaat en wanneer het tot klachten kan leiden. Daarnaast geven wij u tips om de kans op koolmonoxide(ongelukken) in de toekomst te verkleinen. Leest u daarom ook de folder die bij deze brief zit. Heeft u na het lezen van de folder nog vragen, dan kunt u mij bereiken op het telefoonnummer (012) 345 67 89 of e-mailen naar gezondheidenmilieu@example.nl.
         </p>
         <p>Koolmonoxide is een dodelijk gas. Als u nu nog gezondheidsklachten heeft neemt u dan contact op met uw huisarts. Vertel hem dat u koolmonoxide heeft ingeademd.
         </p>
         <p><strong>Enquêteformulier</strong>
         </p>
-        <p>Bij deze brief zit ook een enquêteformulier. De GGD Haaglanden wil graag weten hoeveel mensen gezondheids- klachten hebben door koolmonoxide(ongelukken). Daar is nog geen goed beeld van. Zou u de enquête willen invullen en terugsturen?
+        <p>Bij deze brief zit ook een enquêteformulier. De GGD in uw regio wil graag weten hoeveel mensen gezondheids- klachten hebben door koolmonoxide(ongelukken). Daar is nog geen goed beeld van. Zou u de enquête willen invullen en terugsturen?
         </p>
-        <p>Heeft u liever persoonlijk of telefonisch contact om de enquête in te vullen bel dan met (070) 353 71 82.
+        <p>Heeft u liever persoonlijk of telefonisch contact om de enquête in te vullen bel dan met (012) 345 67 89.
         </p>
         <p>
         </p>

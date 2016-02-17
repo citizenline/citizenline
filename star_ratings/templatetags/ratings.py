@@ -1,7 +1,7 @@
 from decimal import Decimal
 import uuid
 from django import template
-from improvetext.models import Rating, UserRating
+from bettertexts.models import Rating, UserRating
 from ..app_settings import STAR_RATINGS_RANGE
 
 register = template.Library()

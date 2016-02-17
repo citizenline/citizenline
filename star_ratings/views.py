@@ -1,8 +1,8 @@
 from django.core.exceptions import ValidationError
 from django.http import HttpResponseRedirect, JsonResponse
 from django.views.generic import View
-from improvetext.models import Text
-from improvetext.models import Rating
+from bettertexts.models import Text
+from bettertexts.models import Rating
 import json
 import random
 import string

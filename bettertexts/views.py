@@ -11,12 +11,12 @@ def index(request):
     context = RequestContext(request, {
         'latest_text_list': latest_text_list,
     })
-    return render(request, 'improvetext/index.html', context)
+    return render(request, 'bettertexts/index.html', context)
 
 
 def detail(request, slug):
     text = get_object_or_404(Text, slug=slug)
-    return render(request, 'improvetext/detail.html', {'text': text})
+    return render(request, 'bettertexts/detail.html', {'text': text})
 
 
 def results(request, text_id):

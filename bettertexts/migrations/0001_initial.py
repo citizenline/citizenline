@@ -8,7 +8,7 @@ import model_utils.fields
 import django.contrib.sites.managers
 from decimal import Decimal
 import django_extensions.db.fields
-import improvetext.models
+import bettertexts.models
 
 
 class Migration(migrations.Migration):
@@ -49,7 +49,7 @@ class Migration(migrations.Migration):
                 ('total', models.PositiveIntegerField(default=0)),
                 ('average', models.DecimalField(decimal_places=3, default=Decimal('0'), max_digits=6)),
                 ('version', models.PositiveIntegerField(default=0)),
-                ('question', models.ForeignKey(to='improvetext.Question')),
+                ('question', models.ForeignKey(to='bettertexts.Question')),
             ],
         ),
         migrations.CreateModel(
@@ -68,7 +68,7 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'teksten',
             },
             managers=[
-                ('objects', improvetext.models.TypeManager()),
+                ('objects', bettertexts.models.TypeManager()),
             ],
         ),
         migrations.CreateModel(
@@ -90,7 +90,7 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'communicatie soorten',
             },
             managers=[
-                ('objects', improvetext.models.TypeManager()),
+                ('objects', bettertexts.models.TypeManager()),
                 ('on_site', django.contrib.sites.managers.CurrentSiteManager()),
             ],
         ),
@@ -103,28 +103,28 @@ class Migration(migrations.Migration):
                 ('user', models.CharField(max_length=200)),
                 ('ip', models.GenericIPAddressField(null=True, blank=True)),
                 ('score', models.PositiveSmallIntegerField()),
-                ('rating', models.ForeignKey(related_name='user_ratings', to='improvetext.Rating')),
+                ('rating', models.ForeignKey(related_name='user_ratings', to='bettertexts.Rating')),
             ],
         ),
         migrations.AddField(
             model_name='text',
             name='type',
-            field=models.ForeignKey(to='improvetext.Type'),
+            field=models.ForeignKey(to='bettertexts.Type'),
         ),
         migrations.AddField(
             model_name='rating',
             name='text',
-            field=models.ForeignKey(to='improvetext.Text'),
+            field=models.ForeignKey(to='bettertexts.Text'),
         ),
         migrations.AddField(
             model_name='question',
             name='type',
-            field=models.ForeignKey(to='improvetext.Type'),
+            field=models.ForeignKey(to='bettertexts.Type'),
         ),
         migrations.AddField(
             model_name='comment',
             name='text',
-            field=models.ForeignKey(to='improvetext.Text'),
+            field=models.ForeignKey(to='bettertexts.Text'),
         ),
         migrations.AlterUniqueTogether(
             name='userrating',

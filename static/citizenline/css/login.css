@@ -2,7 +2,7 @@ body {
     padding-top: 120px;
 }
 #content-main {
-    background: #9fbf00;
+    background: #5bc0de;
     border-bottom: 2px solid #444;
     border-top: 2px solid #444;
     padding: 20px 0;
@@ -16,6 +16,8 @@ body {
 .logo-admin {
     margin:0 auto 20px auto;
     display: block;
+    border: solid 1px #222;
+    background-color: #f5f5dc;
 }
 #login-form legend {
     border-color: transparent;

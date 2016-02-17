@@ -1,0 +1,9 @@
+.sidebar-menu .django-admin-logo {
+  background: #f5f5dc;
+  border-bottom: 1px solid #222;
+  color: #fff;
+  display: block;
+  height: 61px;
+  margin: 0 -20px;
+  text-align: center;
+}

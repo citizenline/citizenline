@@ -51,12 +51,13 @@ INSTALLED_APPS = (
     'compressor',
     'email_registration',
     'multisite',
-    'improvetext',
+    'bettertexts',
+    'accounts',
 )
     # 'citizenline_admin',
 
 
-#    'improvetext.middleware.MultiSiteMiddleware',
+#    'bettertexts.middleware.MultiSiteMiddleware',
 
 MIDDLEWARE_CLASSES = (
     'multisite.middleware.CookieDomainMiddleware',
@@ -130,7 +131,7 @@ USE_L10N = True
 USE_TZ = True
 
 LOCALE_PATHS = (
-    BASE_DIR + '/improvetext/locale', )
+    BASE_DIR + '/bettertexts/locale', )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -188,3 +189,4 @@ BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
 # 3rd-party apps tracking IDs.
 GOOGLE_ANALYTICS_TRACKING_ID = os.getenv('GOOGLE_ANALYTICS_TRACKING_ID')
+STAR_RATINGS_RANGE = 10

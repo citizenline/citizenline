@@ -1,5 +1,8 @@
 {% extends "admin/base.html" %}
 {% load admin_static bootstrap_admin_template_tags %}
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static 'citizenline/css/admin.css' %}" />
+{% endblock %}
 
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
   {% block sidebar_menu %}

@@ -2,7 +2,7 @@ from django.test import TestCase
 
 # Create your util here.
 from django.contrib.sites.models import Site
-from improvetext.models import Type
+from bettertexts.models import Type
 
 
 class PopulateTypesTestCase(TestCase):

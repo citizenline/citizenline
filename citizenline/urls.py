@@ -19,8 +19,8 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.HomeView.as_view(), name='home'),
-    url(r'^verbetertekst/', include('improvetext.urls')),
-    url(r'^improvetext/', include('improvetext.urls')),
+    url(r'^verbetertekst/', include('bettertexts.urls')),
+    url(r'^bettertexts/', include('bettertexts.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
     url(r'^comments/', include('django_comments.urls')),
