@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     'multisite',
     'bettertexts',
     'accounts',
+    'adminsortable2',
 )
     # 'citizenline_admin',
 

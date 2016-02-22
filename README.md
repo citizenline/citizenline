@@ -14,12 +14,15 @@ nohup python ./manage.py runserver &
 
 virtualenv citizenline
 clone repo
+Add in ".bash_profile":
+    source /webapps/citizenline/bin/activate
+    export DJANGO_SETTINGS_MODULE=citizenline.settings.production
 pip install -r requirements/dev.txt
 manage.py migrate
 manage.py createsuperuser
-python
-  from bettertexts.util.populate import *
-  Init.new()
+manage.py shell
+  from bettertexts.management import *
+  initial_sites("citizenline.nl")
 manage.py runserver
 
 
@@ -30,7 +33,9 @@ python manage.py migrate
 
 ## Language
 
-python manage.py compilemessages
+manage.py makemessages
+- update po files
+manage.py compilemessages
 
 
 Issues:

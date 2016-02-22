@@ -1,6 +1,7 @@
 bootstrap-admin==0.3.6
 certifi==14.5.14
 Django<1.9
+-e git+https://github.com/citizenline/django-admin-sortable2.git@21cc59b61b57d7581d99af009c9c06f50f7725de#egg=django_admin_sortable2-bootstrap
 -e git+https://github.com/citizenline/django-bootstrap3.git@5846396ef53771f2170731d65e110c131056b85c#egg=django_bootstrap3-develop
 django-ckeditor==5.0.3
 django-contact-form==1.0
