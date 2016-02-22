@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-10 14:16+0100\n"
+"POT-Creation-Date: 2016-02-18 21:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,112 +18,183 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: improvetext/admin.py:70
+#: bettertexts/admin.py:71
 msgid "Headers"
 msgstr "Kopteksten"
 
-#: improvetext/admin.py:71
+#: bettertexts/admin.py:72
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
-#: improvetext/models.py:27
-msgid "name"
-msgstr "Naam"
+#: bettertexts/admin.py:82 star_ratings/admin.py:17
+msgid "Score"
+msgstr "Score"
 
-#: improvetext/models.py:28
+#: bettertexts/apps.py:8
+msgid "Better texts"
+msgstr "Betere teksten"
+
+#: bettertexts/models.py:26
+msgid "name"
+msgstr "naam"
+
+#: bettertexts/models.py:27
 msgid "main header"
 msgstr "hoofd header"
 
-#: improvetext/models.py:29
+#: bettertexts/models.py:28
 msgid "rating header"
 msgstr "beoordeling header"
 
-#: improvetext/models.py:30
+#: bettertexts/models.py:29
 msgid "comment header"
 msgstr "reactie plaatsen header"
 
-#: improvetext/models.py:31
+#: bettertexts/models.py:30
 msgid "response header"
 msgstr "reacties header"
 
-#: improvetext/models.py:32
+#: bettertexts/models.py:31
 msgid "rating enabled"
 msgstr "waardering tonen"
 
-#: improvetext/models.py:33
+#: bettertexts/models.py:32
 msgid "comment enabled"
 msgstr "reactie plaatsen tonen"
 
-#: improvetext/models.py:34
+#: bettertexts/models.py:33
 msgid "notification enabled"
 msgstr "notificatie vraag tonen"
 
-#: improvetext/models.py:37
+#: bettertexts/models.py:36
 msgid "communication type"
 msgstr "communicatie soort"
 
-#: improvetext/models.py:38
+#: bettertexts/models.py:37
 msgid "communication types"
 msgstr "communicatie soorten"
 
-#: improvetext/models.py:48
+#: bettertexts/models.py:47
 msgid "title"
 msgstr "titel"
 
-#: improvetext/models.py:49
+#: bettertexts/models.py:48
 msgid "slug"
-msgstr "slak"
+msgstr "kort"
 
-#: improvetext/models.py:50 improvetext/models.py:55
+#: bettertexts/models.py:49 bettertexts/models.py:54
 msgid "text"
 msgstr "tekst"
 
-#: improvetext/models.py:51
+#: bettertexts/models.py:50 bettertexts/models.py:111
 msgid "version"
 msgstr "versie"
 
-#: improvetext/models.py:52
+#: bettertexts/models.py:51
 msgid "date published"
 msgstr "Publicatie datum"
 
-#: improvetext/models.py:56
+#: bettertexts/models.py:55
 msgid "texts"
 msgstr "teksten"
 
-#: improvetext/models.py:77 improvetext/models.py:81
+#: bettertexts/models.py:76 bettertexts/models.py:80
 msgid "question"
 msgstr "vraag"
 
-#: improvetext/models.py:78
+#: bettertexts/models.py:77
 msgid "position"
 msgstr "positie"
 
-#: improvetext/models.py:82
+#: bettertexts/models.py:81
 msgid "questions"
 msgstr "vragen"
 
-#: improvetext/models.py:98
+#: bettertexts/models.py:97 star_ratings/models.py:35
 msgid "Already rated."
 msgstr "Al gewaardeerd"
 
-#: improvetext/templates/improvetext/detail.html:56
+#: bettertexts/models.py:114
+msgid "range"
+msgstr "bereik"
+
+#: bettertexts/models.py:115
+msgid "count"
+msgstr "aantal"
+
+#: bettertexts/models.py:116
+msgid "total"
+msgstr "totaal"
+
+#: bettertexts/models.py:117
+msgid "average"
+msgstr "gemiddeld"
+
+#: bettertexts/templates/bettertexts/detail.html:56
 msgid "Post"
 msgstr "Verstuur"
 
-#~ msgid "Rating average"
-#~ msgstr "Waardering gemiddelde"
+#: star_ratings/admin.py:35
+msgid "Rating average"
+msgstr "Waardering gemiddelde"
 
-#~ msgid "Average: "
-#~ msgstr "Gemiddeld: "
+#: star_ratings/templates/star_ratings/widget.html:5
+#: star_ratings/templates/star_ratings/widget_base.html:42
+msgid "Average: "
+msgstr "Gemiddeld: "
 
-#~ msgid "You Rated: "
-#~ msgstr "Uw waardering: "
+#: star_ratings/templates/star_ratings/widget.html:6
+#: star_ratings/templates/star_ratings/widget_base.html:48
+msgid "You Rated: "
+msgstr "Uw waardering: "
 
-#~ msgid "Not rated"
-#~ msgstr "Geen waardering"
+#: star_ratings/templates/star_ratings/widget.html:6
+#: star_ratings/templates/star_ratings/widget_base.html:48
+msgid "Not rated"
+msgstr "Geen waardering"
 
-#~ msgid "Rating Count: "
-#~ msgstr "Aantal waarderingen: "
+#: star_ratings/templates/star_ratings/widget_base.html:45
+msgid "Rating Count: "
+msgstr "Aantal waarderingen: "
 
-#~ msgid "Please log in to rate."
-#~ msgstr "Log in om een waardering te geven."
+#: star_ratings/templates/star_ratings/widget_base.html:50
+msgid "Please log in to rate."
+msgstr "Log in om een waardering te geven."
+
+#: templates/admin/base_site.html:7
+msgid "Django site admin"
+msgstr ""
+
+#: templates/admin/base_site.html:14
+msgid "Citizenline administration"
+msgstr "Citizenline admin"
+
+#: templates/admin/login.html:23 templates/admin/login.html.py:27
+msgid "Django administration"
+msgstr "Django admin"
+
+#: templates/admin/login.html:35
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "Herstel de fout hier onder."
+msgstr[1] "Herstel de fouten hier onder."
+
+#: templates/admin/login.html:76
+msgid "Log in"
+msgstr "Inloggen"
+
+#: templates/admin/login.html:87
+msgid "Forgotten your password or username?"
+msgstr "Wachtwoord of gebruikersnaam vergeten?"
+
+#: templates/home.html:23
+msgid "Send an activation link"
+msgstr "Stuur een activatie link"
+
+#: templates/home.html:29
+msgid "Email address"
+msgstr "Email adres"
+
+#: templates/home.html:32
+msgid "Register"
+msgstr "Registreer"

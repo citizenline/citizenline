@@ -2,16 +2,16 @@ from decimal import Decimal
 
 from ckeditor.fields import RichTextField
 from django.conf import settings
+from django.contrib.sites.managers import CurrentSiteManager
+from django.contrib.sites.models import Site
 from django.core.exceptions import ValidationError
 from django.db import models
-from django.db.models import Q, Avg, Count, Sum
-from django.utils.translation import ugettext as _
+from django.db.models import Avg, Count, Sum
+from django.utils.translation import ugettext_lazy as _
 from django_extensions.db.fields import RandomCharField
 from model_utils.models import TimeStampedModel
-from star_ratings.app_settings import STAR_RATINGS_RANGE
 
-from django.contrib.sites.models import Site
-from django.contrib.sites.managers import CurrentSiteManager
+from star_ratings.app_settings import STAR_RATINGS_RANGE
 
 
 class TypeManager(CurrentSiteManager):
@@ -23,8 +23,8 @@ class Type(models.Model):
     site = models.ForeignKey(Site)
     objects = TypeManager()
     on_site = CurrentSiteManager()
-    name = models.CharField(_("name"), max_length=200)
-    header = models.CharField(_("main header"), max_length=200)
+    name = models.CharField(_('name'), max_length=200)
+    header = models.CharField(_('main header'), max_length=200)
     rating_header = models.CharField(_("rating header"), max_length=200, blank=True)
     comment_header = models.CharField(_("comment header"), max_length=200, blank=True)
     response_header = models.CharField(_("response header"), max_length=200, blank=True)
@@ -79,6 +79,7 @@ class Question(models.Model):
     class Meta:
         verbose_name = _('question')
         verbose_name_plural = _('questions')
+        ordering = ('position',)
 
     def __str__(self):
         return self.question
@@ -90,7 +91,7 @@ class RatingManager(models.Manager):
         return ratings
 
     def rate(self, text, question, score, user, ip=None):
-        rating, created = self.get_or_create(text=text, version=text.version, question=question)
+        rating = self.get_or_create(text=text, version=text.version, question=question)
         existing_rating = UserRating.objects.filter(user=user, rating=rating).first()
         if existing_rating:
             if getattr(settings, 'STAR_RATINGS_RERATE', True) is False:
@@ -106,22 +107,27 @@ class Rating(models.Model):
     """
     Attaches Rating models and running counts for a question on a version of the text.
     """
-    count = models.PositiveIntegerField(default=0)
-    total = models.PositiveIntegerField(default=0)
-    average = models.DecimalField(max_digits=6, decimal_places=3, default=Decimal(0.0))
 
     text = models.ForeignKey(Text)
-    version = models.PositiveIntegerField(default=0)
+    version = models.PositiveIntegerField(_("version"), default=0)
     question = models.ForeignKey(Question)
+
+    range = models.PositiveIntegerField(_("range"), default=STAR_RATINGS_RANGE)
+    count = models.PositiveIntegerField(_("count"), default=0)
+    total = models.PositiveIntegerField(_("total"), default=0)
+    average = models.DecimalField(_("average"), max_digits=6, decimal_places=2, default=Decimal(0.0))
 
     objects = RatingManager()
 
     class Meta:
         unique_together = ['text', 'version', 'question']
 
+    def __str__(self):
+        return '{} [{}]: {}'.format(self.text.title, self.version, self.question)
+
     @property
     def percentage(self):
-        return (self.average / STAR_RATINGS_RANGE) * 100
+        return (self.average / self.range) * 100
 
     def to_dict(self):
         return {
@@ -143,7 +149,6 @@ class Rating(models.Model):
 
 
 class UserRatingManager(models.Manager):
-
     def for_rating_by_id(self, text, question, id):
         return self.filter(rating__text=text, rating__question=question, user=id).first()
 
@@ -155,7 +160,7 @@ class UserRating(TimeStampedModel):
     user = models.CharField(max_length=200)
     ip = models.GenericIPAddressField(blank=True, null=True)
     score = models.PositiveSmallIntegerField()
-    rating = models.ForeignKey(Rating, related_name='user_ratings')
+    rating = models.ForeignKey(Rating, related_name='user_ratings', editable=False)
 
     objects = UserRatingManager()
 
