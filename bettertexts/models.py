@@ -91,7 +91,7 @@ class RatingManager(models.Manager):
         return ratings
 
     def rate(self, text, question, score, user, ip=None):
-        rating = self.get_or_create(text=text, version=text.version, question=question)
+        rating = self.get_or_create(text=text, version=text.version, question=question)[0]
         existing_rating = UserRating.objects.filter(user=user, rating=rating).first()
         if existing_rating:
             if getattr(settings, 'STAR_RATINGS_RERATE', True) is False:
@@ -149,8 +149,8 @@ class Rating(models.Model):
 
 
 class UserRatingManager(models.Manager):
-    def for_rating_by_id(self, text, question, id):
-        return self.filter(rating__text=text, rating__question=question, user=id).first()
+    def for_rating_by_id(self, text, question, uid):
+        return self.filter(rating__text=text, rating__question=question, user=uid).first()
 
 
 class UserRating(TimeStampedModel):
