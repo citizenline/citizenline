@@ -121,6 +121,8 @@ class Rating(models.Model):
 
     class Meta:
         unique_together = ['text', 'version', 'question']
+        verbose_name = _('rating')
+        verbose_name_plural = _('ratings')
 
     def __str__(self):
         return '{} [{}]: {}'.format(self.text.title, self.version, self.question)
@@ -149,6 +151,7 @@ class Rating(models.Model):
 
 
 class UserRatingManager(models.Manager):
+
     def for_rating_by_id(self, text, question, uid):
         return self.filter(rating__text=text, rating__question=question, user=uid).first()
 

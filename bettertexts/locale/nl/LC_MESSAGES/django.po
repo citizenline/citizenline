@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-18 21:20+0100\n"
+"POT-Creation-Date: 2016-02-23 08:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,17 +18,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: bettertexts/admin.py:71
+#: bettertexts/admin.py:49
+msgid "Text"
+msgstr "Tekst"
+
+#: bettertexts/admin.py:50
+#, fuzzy
+#| msgid "version"
+msgid "Version"
+msgstr "Versie"
+
+#: bettertexts/admin.py:51
+#, fuzzy
+#| msgid "question"
+msgid "Question"
+msgstr "Vraag"
+
+#: bettertexts/admin.py:52 bettertexts/admin.py:116 star_ratings/admin.py:17
+msgid "Score"
+msgstr "Score"
+
+#: bettertexts/admin.py:53
+msgid "User"
+msgstr "Gebruiker"
+
+#: bettertexts/admin.py:54
+msgid "IP"
+msgstr "IP"
+
+#: bettertexts/admin.py:68
+msgid "Export ratings"
+msgstr "Exporteer beoordelingen"
+
+#: bettertexts/admin.py:101
 msgid "Headers"
 msgstr "Kopteksten"
 
-#: bettertexts/admin.py:72
+#: bettertexts/admin.py:102
 msgid "Enabled"
 msgstr "Ingeschakeld"
-
-#: bettertexts/admin.py:82 star_ratings/admin.py:17
-msgid "Score"
-msgstr "Score"
 
 #: bettertexts/apps.py:8
 msgid "Better texts"
@@ -86,7 +114,7 @@ msgstr "kort"
 msgid "text"
 msgstr "tekst"
 
-#: bettertexts/models.py:50 bettertexts/models.py:111
+#: bettertexts/models.py:50 bettertexts/models.py:112
 msgid "version"
 msgstr "versie"
 
@@ -110,25 +138,37 @@ msgstr "positie"
 msgid "questions"
 msgstr "vragen"
 
-#: bettertexts/models.py:97 star_ratings/models.py:35
+#: bettertexts/models.py:98 star_ratings/models.py:35
 msgid "Already rated."
 msgstr "Al gewaardeerd"
 
-#: bettertexts/models.py:114
+#: bettertexts/models.py:115
 msgid "range"
 msgstr "bereik"
 
-#: bettertexts/models.py:115
+#: bettertexts/models.py:116
 msgid "count"
 msgstr "aantal"
 
-#: bettertexts/models.py:116
+#: bettertexts/models.py:117
 msgid "total"
 msgstr "totaal"
 
-#: bettertexts/models.py:117
+#: bettertexts/models.py:118
 msgid "average"
 msgstr "gemiddeld"
+
+#: bettertexts/models.py:124
+#, fuzzy
+#| msgid "rating header"
+msgid "rating"
+msgstr "beoordeling"
+
+#: bettertexts/models.py:125
+#, fuzzy
+#| msgid "Export ratings"
+msgid "ratings"
+msgstr "beoordelingen"
 
 #: bettertexts/templates/bettertexts/detail.html:56
 msgid "Post"
@@ -136,7 +176,7 @@ msgstr "Verstuur"
 
 #: star_ratings/admin.py:35
 msgid "Rating average"
-msgstr "Waardering gemiddelde"
+msgstr "Gemiddelde beoordeling"
 
 #: star_ratings/templates/star_ratings/widget.html:5
 #: star_ratings/templates/star_ratings/widget_base.html:42
@@ -146,20 +186,20 @@ msgstr "Gemiddeld: "
 #: star_ratings/templates/star_ratings/widget.html:6
 #: star_ratings/templates/star_ratings/widget_base.html:48
 msgid "You Rated: "
-msgstr "Uw waardering: "
+msgstr "Uw beoordeling: "
 
 #: star_ratings/templates/star_ratings/widget.html:6
 #: star_ratings/templates/star_ratings/widget_base.html:48
 msgid "Not rated"
-msgstr "Geen waardering"
+msgstr "Geen beoordeling"
 
 #: star_ratings/templates/star_ratings/widget_base.html:45
 msgid "Rating Count: "
-msgstr "Aantal waarderingen: "
+msgstr "Aantal beoordelingen: "
 
 #: star_ratings/templates/star_ratings/widget_base.html:50
 msgid "Please log in to rate."
-msgstr "Log in om een waardering te geven."
+msgstr "Log in om een beoordeling te geven."
 
 #: templates/admin/base_site.html:7
 msgid "Django site admin"

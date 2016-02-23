@@ -38,6 +38,36 @@ def export_csv(modeladmin, request, queryset):
 export_csv.short_description = 'Export CSV'
 
 
+def export_rating(modeladmin, request, queryset):
+    import csv
+    from django.utils.encoding import smart_str
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=ratings.csv'
+    writer = csv.writer(response, delimiter=';', quotechar='"', quoting=csv.QUOTE_ALL)
+    response.write(u'\ufeff'.encode('utf8'))  # BOM (optional...Excel needs it to open UTF-8 file properly)
+    writer.writerow([
+        _('Text'),
+        _('Version'),
+        _('Question'),
+        _('Score'),
+        _('User'),
+        _('IP'),
+    ])
+    for rating in queryset:
+        for user_rating in UserRating.objects.filter(rating=rating):
+            writer.writerow([
+                smart_str(rating.text),
+                smart_str(rating.version),
+                smart_str(rating.question),
+                smart_str(user_rating.score),
+                smart_str(user_rating.user),
+                smart_str(user_rating.ip),
+            ])
+    return response
+
+export_rating.short_description = _('Export ratings')
+
+
 # For models using site to always set current site
 class SiteModelAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
@@ -87,6 +117,7 @@ class RatingAdmin(SiteModelAdmin):
     )
     readonly_fields = ('text', 'version', 'question', 'range', 'count', 'total', 'average',)
 
+    actions = [export_rating,]
 
 class UserRatingAdmin(SiteModelAdmin):
     list_display = ("rating", "score",)
