@@ -19,7 +19,7 @@ def export_csv(modeladmin, request, queryset):
     from django.utils.encoding import smart_str
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename=mymodel.csv'
-    writer = csv.writer(response, delimiter=b';', quotechar='"', quoting=csv.QUOTE_ALL)
+    writer = csv.writer(response, delimiter=b';', quotechar=b'"', quoting=csv.QUOTE_ALL)
     response.write(u'\ufeff'.encode('utf8'))  # BOM (optional...Excel needs it to open UTF-8 file properly)
     writer.writerow([
         'ID',
@@ -43,7 +43,7 @@ def export_rating(modeladmin, request, queryset):
     from django.utils.encoding import smart_str
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename=ratings.csv'
-    writer = csv.writer(response, delimiter=b';', quotechar='"', quoting=csv.QUOTE_ALL)
+    writer = csv.writer(response, delimiter=b';', quotechar=b'"', quoting=csv.QUOTE_ALL)
     response.write(u'\ufeff'.encode('utf8'))  # BOM (optional...Excel needs it to open UTF-8 file properly)
     writer.writerow([
         _('Text'),
