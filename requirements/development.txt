@@ -1,0 +1,4 @@
+-r common.txt
+
+watchdog==0.8.3
+django-debug-toolbar==1.4
