@@ -34,9 +34,14 @@ function bindRatings(el) {
         var maxRating = getMaxRating(this);
         var score = this.getAttribute('data-score');
         var parent = utils.findParent(this, "star-ratings");
+        var user_rating = parent.getAttribute("data-user-rating")
         var percentage = 100 / maxRating * avgRating + "%";
+        if (user_rating > 0) {
+            percentage = 100 / maxRating * user_rating + "%";
+        }
         parent.querySelector(".star-ratings-rating-foreground").style.width = percentage;
     };
+
 }
 
 
