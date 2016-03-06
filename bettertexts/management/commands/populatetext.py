@@ -8,10 +8,7 @@ from bettertexts.models import Type
 
 
 class Command(BaseCommand):
-    help = 'Populates with test data'
-
-    def add_arguments(self, parser):
-        parser.add_argument('poll_id', nargs='+', type=int)
+    help = 'Populate with test data'
 
     def handle(self, *args, **options):
         # base_domain = "citizenline.local:8000"
