@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.core.management.base import BaseCommand, CommandError
 from django.contrib.sites.models import Site
+from django.contrib.auth.models import User;
 
 from bettertexts.models import Question
 from bettertexts.models import Text
@@ -11,6 +12,8 @@ class Command(BaseCommand):
     help = 'Populate with test data'
 
     def handle(self, *args, **options):
+
+        User.objects.create_superuser('admin', 'admin@example.com', 'KjMbSa')
         # base_domain = "citizenline.local:8000"
         base_domain = "citizenline.nl"
 
