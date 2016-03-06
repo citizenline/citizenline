@@ -28,6 +28,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY',
 DEBUG = True
 ADMINS = [('Gerhard Messelink', 'admin@gmic.nl')]
 
+WWW_HOST = "www.citizenline.local"
 ALLOWED_HOSTS = ['localhost', '.citizenline.nl', '.citizenline.local']
 
 SITE_ID = SiteID(default=1)

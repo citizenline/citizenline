@@ -4,6 +4,7 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = ['.citizenline.nl']
+WWW_HOST = "www.citizenline.nl"
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 25
