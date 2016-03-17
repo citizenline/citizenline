@@ -112,6 +112,7 @@ function updateRating(rating, sender) {
     }
 
     parent.setAttribute("data-avg-rating", rating.average);
+    parent.setAttribute("data-user-rating", rating.user_rating);
 
     var avgElem = parent.getElementsByClassName("star-ratings-rating-average")[0];
     if(avgElem) {
