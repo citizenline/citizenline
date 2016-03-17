@@ -97,6 +97,7 @@ class RatingManager(models.Manager):
             if getattr(settings, 'STAR_RATINGS_RERATE', True) is False:
                 raise ValidationError(_('Already rated.'))
             existing_rating.score = score
+            existing_rating.ip = ip
             existing_rating.save()
             return existing_rating.rating
         else:
