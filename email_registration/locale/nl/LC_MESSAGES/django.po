@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-23 08:35+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: email_registration/templates/registration/email_registration_email.txt:2
+msgid "Registration link"
+msgstr ""
+
+#: email_registration/templates/registration/email_registration_email.txt:4
+msgid "Click the following link to activate your account:"
+msgstr ""
+
+#: email_registration/templates/registration/email_registration_email.txt:8
+msgid ""
+"Please note that this link expires after 3 days. If you wait\n"
+"longer, you'll have to request another registration link."
+msgstr ""
+
+#: email_registration/templates/registration/email_registration_email.txt:11
+msgid "Best regards"
+msgstr ""
+
+#: email_registration/templates/registration/email_registration_form.html:11
+#: email_registration/templates/registration/email_registration_include.html:11
+msgid "Register"
+msgstr ""
+
+#: email_registration/templates/registration/email_registration_include.html:7
+msgid "Email address"
+msgstr ""
+
+#: email_registration/templates/registration/email_registration_sent.html:3
+#, python-format
+msgid ""
+"We sent you an email to %(email)s.\n"
+"  Please click the contained link to finish your registration."
+msgstr ""
+
+#: email_registration/templates/registration/password_set_form.html:4
+#: email_registration/templates/registration/password_set_form.html:8
+#: email_registration/templates/registration/password_set_form.html:21
+msgid "Set password"
+msgstr ""
+
+#: email_registration/utils.py:90
+msgid "The link is expired. Please request another registration link."
+msgstr ""
+
+#: email_registration/utils.py:94
+msgid "Unable to verify the signature. Please request a new registration link."
+msgstr ""
+
+#: email_registration/utils.py:100 email_registration/utils.py:109
+msgid ""
+"Something went wrong while decoding the registration request. Please try "
+"again."
+msgstr ""
+
+#: email_registration/utils.py:113
+msgid "The link has already been used."
+msgstr ""
+
+#: email_registration/views.py:26 email_registration/views.py:29
+msgid "email address"
+msgstr ""
+
+#: email_registration/views.py:37 email_registration/views.py:71
+msgid ""
+"This email address already exists as an account. Did you want to reset your "
+"password?"
+msgstr ""
+
+#: email_registration/views.py:113
+msgid "Successfully set the new password. Please login now."
+msgstr ""
+
+#: email_registration/views.py:118
+msgid "Please set a password."
+msgstr ""

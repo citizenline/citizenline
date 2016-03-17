@@ -26,6 +26,17 @@ manage.py shell
 manage.py runserver
 
 
+## Watch and build javascript and css
+
+npm install
+
+npm run-script watch-js
+npm run-script watch-scss
+
+npm run-script build-js
+npm run-script build-scss
+
+
 ## Migrate database
 
 export DJANGO_SETTINGS_MODULE=citizenline.settings.production
@@ -49,7 +60,7 @@ Issues:
 2. gebruik slug voor brief waarderen                OK
 3. multi site (NiceToHave)                          OK
 4. email address as user!!
-5. Authenticate for site
+5. Autorisaties per site
 6. Register as admin for site (sitename based on email host)
    -- else confirm via admin proces
 7. Create invitation for site -- other user -- enable self-registration for email-domain

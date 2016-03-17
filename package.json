@@ -1,10 +1,23 @@
 {
   "name": "citizenline",
+  "version": "0.0.1",
+  "description": "Citizenline",
+  "main": "./star_ratings/static/star-ratings/js/index.js",
   "private": true,
   "dependencies": {
     "bower": "^1.4.1"
   },
   "scripts": {
-    "bower": "bower"
+    "bower": "bower",
+    "build": "npm run build-js; npm run build-scss;",
+    "build-scss": "compass compile -I node_modules --sass-dir ./star_ratings/static/star-ratings/sass/ --css-dir ./star_ratings/static/star-ratings/css/",
+    "watch-scss": "compass watch -I node_modules --sass-dir ./star_ratings/static/star-ratings/sass/ --css-dir ./star_ratings/static/star-ratings/css/",
+    "build-js": "browserify ./star_ratings/static/star-ratings/js/index.js -o ./star_ratings/static/star-ratings/js/dist/star-ratings.js -s starRatings && yuglify ./star_ratings/static/star-ratings/js/dist/star-ratings.js",
+    "watch-js": "watchify ./star_ratings/static/star-ratings/js/index.js -o ./star_ratings/static/star-ratings/js/dist/star-ratings.js -d -v"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.4",
+    "yuglify": "^0.1.4",
+    "watchify": "^3.7.0"
   }
 }
