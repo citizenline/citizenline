@@ -22,7 +22,7 @@ class Rate(View):
             uid = request.session['id'] = Rate.generate_id()
 
         return_url = request.GET.get('next', '/')
-        ip = self.request.META.get('REMOTE_ADDR') or '0.0.0.0'
+        ip = self.request.META.get('HTTP_X_FORWARDED_FOR') or '0.0.0.0'
         data = json.loads(request.body.decode())
         score = data.get('score')
         try:
