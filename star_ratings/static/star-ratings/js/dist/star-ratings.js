@@ -46,6 +46,17 @@ function bindRatings(el) {
         parent.querySelector(".star-ratings-rating-foreground").style.width = percentage;
     };
 
+    // Set rating while binding
+    var avgRating = getAvgRating(el);
+    var maxRating = getMaxRating(el);
+    var parent = utils.findParent(el, "star-ratings");
+    var user_rating = parent.getAttribute("data-user-rating")
+    var percentage = 100 / maxRating * avgRating + "%";
+    if (user_rating > 0) {
+        percentage = 100 / maxRating * user_rating + "%";
+    }
+    parent.querySelector(".star-ratings-rating-foreground").style.width = percentage;
+
 }
 
 
@@ -86,7 +97,7 @@ function getMaxRating(el) {
 function getAvgRating(el) {
     var parent = utils.findParent(el, "star-ratings");
     if (parent) {
-        return parent.getAttribute('data-avg-rating');
+        return parent.getAttribute('data-avg-rating').replace(',', '.');
     }
 
     return -1;
