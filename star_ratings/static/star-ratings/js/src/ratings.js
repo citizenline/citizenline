@@ -138,7 +138,7 @@ function updateRating(rating, sender) {
         }
     }
 
-    parent.querySelector(".star-ratings-rating-foreground").style.width = rating.percentage + '%';
+    // parent.querySelector(".star-ratings-rating-foreground").style.width = rating.percentage + '%';
 }
 
 
