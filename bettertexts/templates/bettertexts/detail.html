@@ -24,6 +24,7 @@
                 </div>
             </div>
 
+            {% if text.type.rating_enabled %}
             <div class="col-md-4" id="improvetext">
                 <h3>{{ text.type.rating_header }}</h3>
                 {% for question in text.type.question_set.all %}
@@ -31,9 +32,11 @@
                     {% ratings text question %}
                 {% endfor %}
             </div>
+            {% endif %}
 
         </div>
 
+        {% if text.type.comment_enabled %}
         <div class="row">
 
             <div class="col-md-8" id="improvetext">
@@ -67,6 +70,7 @@
             </div>
 
         </div>
+        {%  endif %}
     </div>
 
 {% endblock %}
