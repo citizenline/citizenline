@@ -62,7 +62,7 @@ INSTALLED_APPS = (
 #    'bettertexts.middleware.MultiSiteMiddleware',
 
 MIDDLEWARE_CLASSES = (
-    'bettertexts.middleware.SetRemoteAddrFromForwardedFor',
+    'citizenline.middleware.SetRemoteAddrFromForwardedFor',
     'multisite.middleware.CookieDomainMiddleware',
     'multisite.middleware.DynamicSiteMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
