@@ -8,10 +8,12 @@ from .models import Text
 from .models import Rating
 from .models import UserRating
 from .models import Question
+from .models import TextComment
 from django.http import HttpResponse
 from django.contrib.sites.models import Site
 from django.utils.translation import ugettext as _
 from adminsortable2.admin import SortableInlineAdminMixin
+from django_comments.admin import CommentsAdmin
 
 
 def export_csv(modeladmin, request, queryset):
@@ -131,7 +133,7 @@ class QuestionAdmin(admin.ModelAdmin):
 admin.site.register(Text, TextAdmin)
 
 admin.site.register(Type, TypeAdmin)
-# admin.site.register(Comment)
+admin.site.register(TextComment, CommentsAdmin)
 # admin.site.register(Question, QuestionAdmin)
 admin.site.register(Rating, RatingAdmin)
 admin.site.register(UserRating, UserRatingAdmin)
