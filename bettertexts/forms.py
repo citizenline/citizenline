@@ -14,7 +14,7 @@ class TextCommentForm(CommentForm):
         self.fields['comment'].label = _('Comment')
 
     inform = forms.BooleanField(required=False,
-                                label=_('Hou me op de hoogte'))
+                                label=_('Keep me informed'))
 
     class Meta:
         fields = ['name', 'email', 'inform', 'comment']
