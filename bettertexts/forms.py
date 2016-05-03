@@ -10,11 +10,16 @@ class TextCommentForm(CommentForm):
     def __init__(self, *args, **kwargs):
         super(TextCommentForm, self).__init__(*args, **kwargs)
         self.fields['name'].label = _("Name")
+        self.fields['name'].required = True
         self.fields['email'].label = _("Email address")
+        self.fields['email'].required = True
         self.fields['comment'].label = _('Comment')
+        self.fields['comment'].required = True
+        self.fields['url'].widget = forms.HiddenInput()
 
     inform = forms.BooleanField(required=False,
-                                label=_('Keep me informed'))
+                                label=_('Keep me informed'),
+                                widget=forms.CheckboxInput)
 
     class Meta:
         fields = ['name', 'email', 'inform', 'comment']

@@ -11,6 +11,7 @@ def get_model():
     """
     return TextComment
 
+
 def get_form():
     from bettertexts.forms import TextCommentForm
     """
