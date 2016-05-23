@@ -21,6 +21,10 @@ class TextCommentForm(CommentForm):
                                 label=_('Keep me informed'),
                                 widget=forms.CheckboxInput)
 
+    involved = forms.BooleanField(required=False,
+                                  label=_('Keep me involved'),
+                                  widget=forms.CheckboxInput)
+
     class Meta:
         fields = ['name', 'email', 'inform', 'comment']
 

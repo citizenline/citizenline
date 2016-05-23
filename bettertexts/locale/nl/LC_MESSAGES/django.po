@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-03 07:45+0200\n"
+"POT-Creation-Date: 2016-05-23 09:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,17 +66,21 @@ msgstr "Betere teksten"
 msgid "Name"
 msgstr "Naam"
 
-#: bettertexts/forms.py:13 templates/home.html:29
+#: bettertexts/forms.py:14 templates/home.html:29
 msgid "Email address"
-msgstr "Email adres"
+msgstr "E-mailadres"
 
-#: bettertexts/forms.py:14
+#: bettertexts/forms.py:16
 msgid "Comment"
 msgstr "Opmerkingen"
 
-#: bettertexts/forms.py:17
+#: bettertexts/forms.py:21
 msgid "Keep me informed"
-msgstr "Hou me op de hoogte"
+msgstr "Houd me op de hoogte over nieuwe versies van bovenstaande tekst"
+
+#: bettertexts/forms.py:25
+msgid "Keep me involved"
+msgstr "Ik doe graag mee met het verbeteren van nog meer teksten"
 
 #: bettertexts/models.py:32
 msgid "name"
@@ -198,7 +202,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Email address"
 msgid "user's email address"
-msgstr "Email adres"
+msgstr "E-mailadres"
 
 #: bettertexts/models.py:189
 msgid "user's URL"
@@ -212,62 +216,68 @@ msgstr ""
 msgid "Check this box to keep me informed about updates."
 msgstr ""
 
-#: bettertexts/models.py:194 bettertexts/models.py:214
+#: bettertexts/models.py:193
+msgid "Stay involved"
+msgstr ""
+
+#: bettertexts/models.py:194
+msgid "Check this box to make more texts better."
+msgstr ""
+
+#: bettertexts/models.py:197 bettertexts/models.py:217
 #, fuzzy
 #| msgid "comment header"
 msgid "comment"
 msgstr "reactie plaatsen header"
 
-#: bettertexts/models.py:197
+#: bettertexts/models.py:200
 #, fuzzy
 #| msgid "date published"
 msgid "date/time submitted"
 msgstr "Publicatie datum"
 
-#: bettertexts/models.py:198
-#, fuzzy
-#| msgid "Email address"
+#: bettertexts/models.py:201
 msgid "IP address"
-msgstr "Email adres"
+msgstr "IP adres"
 
-#: bettertexts/models.py:199
+#: bettertexts/models.py:202
 msgid "is public"
-msgstr ""
+msgstr "Publiek"
 
-#: bettertexts/models.py:200
+#: bettertexts/models.py:203
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
 msgstr ""
 
-#: bettertexts/models.py:202
+#: bettertexts/models.py:205
 msgid "is removed"
-msgstr ""
+msgstr "Verwijderd"
 
-#: bettertexts/models.py:203
+#: bettertexts/models.py:206
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
 msgstr ""
 
-#: bettertexts/models.py:215
+#: bettertexts/models.py:218
 #, fuzzy
 #| msgid "comment header"
 msgid "comments"
 msgstr "reactie plaatsen header"
 
-#: bettertexts/models.py:260
+#: bettertexts/models.py:263
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
 msgstr ""
 
-#: bettertexts/models.py:271
+#: bettertexts/models.py:274
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
 msgstr ""
 
-#: bettertexts/models.py:299
+#: bettertexts/models.py:302
 #, python-format
 msgid ""
 "Posted by %(user)s at %(date)s\n"
@@ -277,7 +287,8 @@ msgid ""
 "http://%(domain)s%(url)s"
 msgstr ""
 
-#: bettertexts/templates/bettertexts/detail.html:59
+#: bettertexts/templates/bettertexts/detail.html:73
+#: templates/comments/form.html:18 templates/comments/preview.html:42
 msgid "Post"
 msgstr "Verstuur"
 
@@ -333,6 +344,99 @@ msgstr "Inloggen"
 #: templates/admin/login.html:87
 msgid "Forgotten your password or username?"
 msgstr "Wachtwoord of gebruikersnaam vergeten?"
+
+#: templates/comments/approve.html:4
+msgid "Approve a comment"
+msgstr ""
+
+#: templates/comments/approve.html:7
+msgid "Really make this comment public?"
+msgstr ""
+
+#: templates/comments/approve.html:13
+msgid "Approve"
+msgstr ""
+
+#: templates/comments/approved.html:4
+msgid "Thanks for approving"
+msgstr ""
+
+#: templates/comments/approved.html:7 templates/comments/deleted.html:7
+#: templates/comments/flagged.html:7
+msgid ""
+"Thanks for taking the time to improve the quality of discussion on our site"
+msgstr ""
+
+#: templates/comments/delete.html:4
+#, fuzzy
+#| msgid "comment header"
+msgid "Remove a comment"
+msgstr "reactie plaatsen header"
+
+#: templates/comments/delete.html:7
+msgid "Really remove this comment?"
+msgstr ""
+
+#: templates/comments/delete.html:13
+msgid "Remove"
+msgstr ""
+
+#: templates/comments/deleted.html:4
+msgid "Thanks for removing"
+msgstr ""
+
+#: templates/comments/flag.html:4
+msgid "Flag this comment"
+msgstr ""
+
+#: templates/comments/flag.html:7
+msgid "Really flag this comment?"
+msgstr ""
+
+#: templates/comments/flag.html:13
+msgid "Flag"
+msgstr ""
+
+#: templates/comments/flagged.html:4
+msgid "Thanks for flagging"
+msgstr ""
+
+#: templates/comments/form.html:19
+msgid "Preview"
+msgstr ""
+
+#: templates/comments/posted.html:4
+msgid "Thanks for commenting"
+msgstr ""
+
+#: templates/comments/posted.html:7
+msgid "Thank you for your comment"
+msgstr ""
+
+#: templates/comments/preview.html:5 templates/comments/preview.html.py:18
+msgid "Preview your comment"
+msgstr ""
+
+#: templates/comments/preview.html:16
+#, fuzzy
+#| msgid "Please correct the error below."
+#| msgid_plural "Please correct the errors below."
+msgid "Please correct the error below"
+msgid_plural "Please correct the errors below"
+msgstr[0] "Herstel de fout hier onder."
+msgstr[1] "Herstel de fouten hier onder."
+
+#: templates/comments/preview.html:21
+msgid "and"
+msgstr ""
+
+#: templates/comments/preview.html:21
+msgid "Post your comment"
+msgstr ""
+
+#: templates/comments/preview.html:22
+msgid "or make changes"
+msgstr ""
 
 #: templates/home.html:23
 msgid "Send an activation link"

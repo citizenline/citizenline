@@ -190,6 +190,9 @@ class TextComment(BaseCommentAbstractModel):
     inform = models.BooleanField(_("Keep informed"), default=False,
                                  help_text=_('Check this box to keep me informed '
                                              'about updates.'))
+    involved = models.BooleanField(_("Stay involved"), default=False,
+                                   help_text=_('Check this box to make more texts '
+                                               'better.'))
 
     comment = models.TextField(_('comment'), max_length=COMMENT_MAX_LENGTH)
 
