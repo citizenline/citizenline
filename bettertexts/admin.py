@@ -21,7 +21,7 @@ from django.utils.encoding import smart_str
 def export_csv(modeladmin, request, queryset):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename=mymodel.csv'
-    writer = csv.writer(response, delimiter=';', quotechar='"', quoting=csv.QUOTE_ALL)
+    writer = csv.writer(response, delimiter=str(u';'), quotechar=str(u'"'), quoting=csv.QUOTE_ALL)
     response.write(u'\ufeff'.encode('utf8'))  # BOM (optional...Excel needs it to open UTF-8 file properly)
     writer.writerow([
         'ID',
@@ -42,7 +42,7 @@ export_csv.short_description = 'Export CSV'
 def export_coments(modeladmin, request, queryset):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename=comments.csv'
-    writer = csv.writer(response, delimiter=';', quotechar='"', quoting=csv.QUOTE_ALL)
+    writer = csv.writer(response, delimiter=str(u';'), quotechar=str(u'"'), quoting=csv.QUOTE_ALL)
     response.write(u'\ufeff'.encode('utf8'))  # BOM (optional...Excel needs it to open UTF-8 file properly)
     writer.writerow([
         'ID',
@@ -64,7 +64,7 @@ def export_coments(modeladmin, request, queryset):
             ])
     return response
 
-export_coments.short_description = _('Export commments')
+export_coments.short_description = _('Export comments')
 
 
 def export_rating(modeladmin, request, queryset):
