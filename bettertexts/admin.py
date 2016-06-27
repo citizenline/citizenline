@@ -14,14 +14,14 @@ from django.contrib.sites.models import Site
 from django.utils.translation import ugettext as _
 from adminsortable2.admin import SortableInlineAdminMixin
 from django_comments.admin import CommentsAdmin
+import csv
+from django.utils.encoding import smart_str
 
 
 def export_csv(modeladmin, request, queryset):
-    import csv
-    from django.utils.encoding import smart_str
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename=mymodel.csv'
-    writer = csv.writer(response, delimiter=b';', quotechar=b'"', quoting=csv.QUOTE_ALL)
+    writer = csv.writer(response, delimiter=';', quotechar='"', quoting=csv.QUOTE_ALL)
     response.write(u'\ufeff'.encode('utf8'))  # BOM (optional...Excel needs it to open UTF-8 file properly)
     writer.writerow([
         'ID',
@@ -36,13 +36,38 @@ def export_csv(modeladmin, request, queryset):
         ])
     return response
 
-
 export_csv.short_description = 'Export CSV'
 
 
+def export_coments(modeladmin, request, queryset):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=comments.csv'
+    writer = csv.writer(response, delimiter=';', quotechar='"', quoting=csv.QUOTE_ALL)
+    response.write(u'\ufeff'.encode('utf8'))  # BOM (optional...Excel needs it to open UTF-8 file properly)
+    writer.writerow([
+        'ID',
+        'Title',
+        'Name',
+        'Email',
+        'Inform',
+        'Involved',
+    ])
+    for txt in queryset:
+        for comment in TextComment.objects.for_model(model=txt):
+            writer.writerow([
+                smart_str(txt.slug),
+                smart_str(txt.title),
+                smart_str(comment.name),
+                smart_str(comment.email),
+                smart_str(comment.inform),
+                smart_str(comment.involved),
+            ])
+    return response
+
+export_coments.short_description = _('Export commments')
+
+
 def export_rating(modeladmin, request, queryset):
-    import csv
-    from django.utils.encoding import smart_str
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename=ratings.csv'
     writer = csv.writer(response, delimiter=b';', quotechar=b'"', quoting=csv.QUOTE_ALL)
@@ -82,7 +107,7 @@ class TextAdmin(SiteModelAdmin):
     list_filter = (
         'type__name',
     )
-    actions = [export_csv]
+    actions = [export_csv, export_coments]
     pass
 
 
