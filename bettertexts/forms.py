@@ -36,8 +36,9 @@ class TextCommentForm(CommentForm):
 
     def get_comment_create_data(self):
         """
-        Override to add inform field
+        Override to add inform and involved field
         """
         data = super(TextCommentForm, self).get_comment_create_data()
-        data.update({'inform': True})
+        data.update({'inform': self.cleaned_data["inform"],
+                     'involved': self.cleaned_data["involved"]})
         return data
