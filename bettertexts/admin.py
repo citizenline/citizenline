@@ -154,11 +154,30 @@ class QuestionAdmin(admin.ModelAdmin):
     list_filter = ('type__name',)
 
 
+class CommentsAdmin2(SiteModelAdmin):
+    fieldsets = (
+        (
+            None,
+            {'fields': ('content_type', 'object_pk')}
+        ),
+        (
+            _('Content'),
+            {'fields': ('user', 'user_name', 'user_email', 'user_url', 'comment')}
+        ),
+        (
+            _('Metadata'),
+            {'fields': ('submit_date', 'ip_address', 'is_public', 'is_removed')}
+        ),
+    )
+
+    list_filter = ('submit_date', 'is_public', 'is_removed')
+
+
 # my_admin_site = MyAdminSite()
 admin.site.register(Text, TextAdmin)
 
 admin.site.register(Type, TypeAdmin)
-admin.site.register(TextComment, CommentsAdmin)
+admin.site.register(TextComment, CommentsAdmin2)
 # admin.site.register(Question, QuestionAdmin)
 admin.site.register(Rating, RatingAdmin)
 admin.site.register(UserRating, UserRatingAdmin)

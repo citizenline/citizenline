@@ -2,28 +2,34 @@
 
 Open source project for citizen participation tools
 
-sudo su -
-yum update
-yum -y install python-virtualenv
-yum -y install python-virtualenvwrapper
-yum install numpy scipy python-matplotlib ipython python-pandas sympy python-nose
+    sudo su -
+    yum update
+    yum -y install python-virtualenv
+    yum -y install python-virtualenvwrapper
+    yum install numpy scipy python-matplotlib ipython python-pandas sympy python-nose
 
-nohup python ./manage.py runserver &
+    nohup python ./manage.py runserver &
 
 ## Getting started
 
-virtualenv citizenline
+    virtualenv citizenline
+
 clone repo
 Add in ".bash_profile":
+
     source /webapps/citizenline/bin/activate
     export DJANGO_SETTINGS_MODULE=citizenline.settings.production
-pip install -r requirements/dev.txt
-manage.py migrate
-manage.py createsuperuser
-manage.py shell
-  from bettertexts.management import *
-  initial_sites("citizenline.nl")
-manage.py runserver
+
+    pip install -r requirements/dev.txt
+    ./manage.py migrate
+
+    ./manage.py createsuperuser
+
+or create test text and default admin user:
+
+    ./manage.py populatetext
+
+    ./manage.py runserver
 
 
 ## Watch and build javascript and css
@@ -39,8 +45,8 @@ npm run-script build-scss
 
 ## Migrate database
 
-export DJANGO_SETTINGS_MODULE=citizenline.settings.production
-python manage.py migrate
+    export DJANGO_SETTINGS_MODULE=citizenline.settings.production
+    python manage.py migrate
 
 ## Language
 
