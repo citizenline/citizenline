@@ -154,7 +154,7 @@ class QuestionAdmin(admin.ModelAdmin):
     list_filter = ('type__name',)
 
 
-class CommentsAdmin2(SiteModelAdmin):
+class CommentsAdminText(CommentsAdmin):
     fieldsets = (
         (
             None,
@@ -170,14 +170,17 @@ class CommentsAdmin2(SiteModelAdmin):
         ),
     )
 
+    list_display = ('__str__', 'content_object', 'user_name', 'user_email', 'ip_address', 'submit_date', 'is_public', 'is_removed')
     list_filter = ('submit_date', 'is_public', 'is_removed')
 
+    search_fields = ('comment', 'user_name', 'user_email', 'ip_address')
+    actions = ["remove_comments"]
 
 # my_admin_site = MyAdminSite()
 admin.site.register(Text, TextAdmin)
 
 admin.site.register(Type, TypeAdmin)
-admin.site.register(TextComment, CommentsAdmin2)
+admin.site.register(TextComment, CommentsAdminText)
 # admin.site.register(Question, QuestionAdmin)
 admin.site.register(Rating, RatingAdmin)
 admin.site.register(UserRating, UserRatingAdmin)
