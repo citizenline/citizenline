@@ -50,3 +50,8 @@
   display: inline-block;
   position: relative;
 }
+
+/* line 42, ../sass/star-ratings.scss */
+.star-ratings-rating-value {
+  color: #ff8c00;
+}
