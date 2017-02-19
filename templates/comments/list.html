@@ -4,7 +4,7 @@
       {{ comment.submit_date }} - {{ comment.name }}
     </dt>
     <dd>
-      <p>{{ comment.comment }}</p>
+      <p>{%  if comments.is_removed %}{% trans "This comment has been removed" %}{% else %}{{ comment.comment }}{% endif %}</p>
     </dd>
   {% endfor %}
 </dl>
