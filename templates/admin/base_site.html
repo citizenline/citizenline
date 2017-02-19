@@ -1,6 +1,8 @@
 {% extends "admin/base.html" %}
 {% load admin_static bootstrap_admin_template_tags %}
 {% block extrastyle %}
+    <link rel="apple-touch-icon" href=""{% static "apple-touch-icon-precomposed.png" %}">
+    <link rel="icon" href="{% static "favicon.ico" %}">
     <link rel="stylesheet" type="text/css" href="{% static 'citizenline/css/admin.css' %}" />
 {% endblock %}
 
