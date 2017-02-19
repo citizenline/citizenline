@@ -31,7 +31,7 @@
             <div class="col-md-4" id="improvetext">
                 <h3>{{ text.type.rating_header }}</h3>
                 {% for question in text.type.question_set.all %}
-                    <h4>{{ question.question }}</h4>
+                    <h4 class="star-header">{{ question.question }}</h4>
                     {% ratings text question %}
                 {% endfor %}
             </div>
