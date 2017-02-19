@@ -8,6 +8,8 @@
 {% block bootstrap3_title %} {{ text.title }} {% endblock %}
 
 {% block bootstrap3_extra_head %}
+    <link rel="apple-touch-icon" href=""{% static "apple-touch-icon-precomposed.png" %}">
+    <link rel="icon" href="{% static "favicon.ico" %}">
     <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
     <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
 {% endblock %}
