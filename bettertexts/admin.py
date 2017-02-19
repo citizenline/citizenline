@@ -108,6 +108,7 @@ class TextAdmin(SiteModelAdmin):
         'type__name',
     )
     actions = [export_csv, export_coments]
+    save_as = True
     pass
 
 
@@ -158,11 +159,11 @@ class CommentsAdminText(CommentsAdmin):
     fieldsets = (
         (
             None,
-            {'fields': ('content_type', 'object_pk')}
+            {'fields': ('content_object',)}
         ),
         (
             _('Content'),
-            {'fields': ('user', 'user_name', 'user_email', 'user_url', 'comment')}
+            {'fields': ('user_name', 'user_email', 'comment')}
         ),
         (
             _('Metadata'),
@@ -175,6 +176,7 @@ class CommentsAdminText(CommentsAdmin):
 
     search_fields = ('comment', 'user_name', 'user_email', 'ip_address')
     actions = ["remove_comments"]
+    readonly_fields = ('content_object', 'submit_date', 'ip_address',)
 
 # my_admin_site = MyAdminSite()
 admin.site.register(Text, TextAdmin)
