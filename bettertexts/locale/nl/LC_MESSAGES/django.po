@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-23 09:04+0200\n"
+"POT-Creation-Date: 2017-02-20 07:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,45 +18,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: bettertexts/admin.py:51
+#: bettertexts/admin.py:67
+msgid "Export comments"
+msgstr "Exporteer opmerkingen"
+
+#: bettertexts/admin.py:76
 msgid "Text"
 msgstr "Tekst"
 
-#: bettertexts/admin.py:52
+#: bettertexts/admin.py:77
 #, fuzzy
 #| msgid "version"
 msgid "Version"
 msgstr "Versie"
 
-#: bettertexts/admin.py:53
+#: bettertexts/admin.py:78
 #, fuzzy
 #| msgid "question"
 msgid "Question"
 msgstr "Vraag"
 
-#: bettertexts/admin.py:54 bettertexts/admin.py:118 star_ratings/admin.py:17
+#: bettertexts/admin.py:79 bettertexts/admin.py:144 star_ratings/admin.py:17
 msgid "Score"
 msgstr "Score"
 
-#: bettertexts/admin.py:55
+#: bettertexts/admin.py:80
 msgid "User"
 msgstr "Gebruiker"
 
-#: bettertexts/admin.py:56
+#: bettertexts/admin.py:81
 msgid "IP"
 msgstr "IP"
 
-#: bettertexts/admin.py:70
+#: bettertexts/admin.py:95
 msgid "Export ratings"
 msgstr "Exporteer beoordelingen"
 
-#: bettertexts/admin.py:103
+#: bettertexts/admin.py:129
 msgid "Headers"
 msgstr "Kopteksten"
 
-#: bettertexts/admin.py:104
+#: bettertexts/admin.py:130
 msgid "Enabled"
 msgstr "Ingeschakeld"
+
+#: bettertexts/admin.py:165
+msgid "Content"
+msgstr "Inhoud"
+
+#: bettertexts/admin.py:169
+msgid "Metadata"
+msgstr "Meta gegevens"
 
 #: bettertexts/apps.py:8
 msgid "Better texts"
@@ -72,7 +84,7 @@ msgstr "E-mailadres"
 
 #: bettertexts/forms.py:16
 msgid "Comment"
-msgstr "Opmerkingen"
+msgstr "Opmerking"
 
 #: bettertexts/forms.py:21
 msgid "Keep me informed"
@@ -82,202 +94,96 @@ msgstr "Houd me op de hoogte over nieuwe versies van bovenstaande tekst"
 msgid "Keep me involved"
 msgstr "Ik doe graag mee met het verbeteren van nog meer teksten"
 
-#: bettertexts/models.py:32
-msgid "name"
-msgstr "naam"
-
 #: bettertexts/models.py:33
-msgid "main header"
-msgstr "hoofd header"
-
-#: bettertexts/models.py:34
-msgid "rating header"
-msgstr "beoordeling header"
+msgid "user"
+msgstr "gebruiker"
 
 #: bettertexts/models.py:35
-msgid "comment header"
-msgstr "reactie plaatsen header"
-
-#: bettertexts/models.py:36
-msgid "response header"
-msgstr "reacties header"
+msgid "user's name"
+msgstr "gebruikersnaam"
 
 #: bettertexts/models.py:37
-msgid "rating enabled"
-msgstr "waardering tonen"
-
-#: bettertexts/models.py:38
-msgid "comment enabled"
-msgstr "reactie plaatsen tonen"
-
-#: bettertexts/models.py:39
-msgid "notification enabled"
-msgstr "notificatie vraag tonen"
-
-#: bettertexts/models.py:42
-msgid "communication type"
-msgstr "communicatie soort"
-
-#: bettertexts/models.py:43
-msgid "communication types"
-msgstr "communicatie soorten"
-
-#: bettertexts/models.py:53
-msgid "title"
-msgstr "titel"
-
-#: bettertexts/models.py:54
-msgid "slug"
-msgstr "kort"
-
-#: bettertexts/models.py:55 bettertexts/models.py:60
-msgid "text"
-msgstr "tekst"
-
-#: bettertexts/models.py:56 bettertexts/models.py:110
-msgid "version"
-msgstr "versie"
-
-#: bettertexts/models.py:57
-msgid "date published"
-msgstr "Publicatie datum"
-
-#: bettertexts/models.py:61
-msgid "texts"
-msgstr "teksten"
-
-#: bettertexts/models.py:73 bettertexts/models.py:77
-msgid "question"
-msgstr "vraag"
-
-#: bettertexts/models.py:74
-msgid "position"
-msgstr "positie"
-
-#: bettertexts/models.py:78
-msgid "questions"
-msgstr "vragen"
-
-#: bettertexts/models.py:95 star_ratings/models.py:35
-msgid "Already rated."
-msgstr "Al gewaardeerd"
-
-#: bettertexts/models.py:113
-msgid "range"
-msgstr "bereik"
-
-#: bettertexts/models.py:114
-msgid "count"
-msgstr "aantal"
-
-#: bettertexts/models.py:115
-msgid "total"
-msgstr "totaal"
-
-#: bettertexts/models.py:116
-msgid "average"
-msgstr "gemiddeld"
-
-#: bettertexts/models.py:122
-#, fuzzy
-#| msgid "rating header"
-msgid "rating"
-msgstr "beoordeling"
-
-#: bettertexts/models.py:123
-#, fuzzy
-#| msgid "Export ratings"
-msgid "ratings"
-msgstr "beoordelingen"
-
-#: bettertexts/models.py:183
-msgid "user"
-msgstr ""
-
-#: bettertexts/models.py:185
-msgid "user's name"
-msgstr ""
-
-#: bettertexts/models.py:187
 #, fuzzy
 #| msgid "Email address"
 msgid "user's email address"
 msgstr "E-mailadres"
 
-#: bettertexts/models.py:189
+#: bettertexts/models.py:39
 msgid "user's URL"
-msgstr ""
+msgstr "gebruikers URL"
 
-#: bettertexts/models.py:190
+#: bettertexts/models.py:40
 msgid "Keep informed"
-msgstr ""
+msgstr "Blijf op de hoogte"
 
-#: bettertexts/models.py:191
+#: bettertexts/models.py:41
 msgid "Check this box to keep me informed about updates."
-msgstr ""
+msgstr "Kruis dit vakje aan om me op de hoogte gehouden te worden."
 
-#: bettertexts/models.py:193
+#: bettertexts/models.py:43
 msgid "Stay involved"
-msgstr ""
+msgstr "Blijf betrokken"
 
-#: bettertexts/models.py:194
+#: bettertexts/models.py:44
 msgid "Check this box to make more texts better."
-msgstr ""
+msgstr "Kruis dit vakje aan om meer teksten te verbeteren."
 
-#: bettertexts/models.py:197 bettertexts/models.py:217
+#: bettertexts/models.py:47 bettertexts/models.py:67
 #, fuzzy
 #| msgid "comment header"
 msgid "comment"
-msgstr "reactie plaatsen header"
+msgstr "opmerking"
 
-#: bettertexts/models.py:200
+#: bettertexts/models.py:50
 #, fuzzy
 #| msgid "date published"
 msgid "date/time submitted"
 msgstr "Publicatie datum"
 
-#: bettertexts/models.py:201
+#: bettertexts/models.py:51
 msgid "IP address"
 msgstr "IP adres"
 
-#: bettertexts/models.py:202
+#: bettertexts/models.py:52
 msgid "is public"
 msgstr "Publiek"
 
-#: bettertexts/models.py:203
+#: bettertexts/models.py:53
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
 msgstr ""
 
-#: bettertexts/models.py:205
+#: bettertexts/models.py:55
 msgid "is removed"
 msgstr "Verwijderd"
 
-#: bettertexts/models.py:206
+#: bettertexts/models.py:56
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
 msgstr ""
+"Vink dit vakje aan als de reactie ongewenst is. \"Deze reactie is verwijderd"
+"\" zal worden getoond."
 
-#: bettertexts/models.py:218
+#: bettertexts/models.py:68
 #, fuzzy
 #| msgid "comment header"
 msgid "comments"
-msgstr "reactie plaatsen header"
+msgstr "Opmerkingen"
 
-#: bettertexts/models.py:263
+#: bettertexts/models.py:113
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
 msgstr ""
 
-#: bettertexts/models.py:274
+#: bettertexts/models.py:124
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
 msgstr ""
 
-#: bettertexts/models.py:302
+#: bettertexts/models.py:152
 #, python-format
 msgid ""
 "Posted by %(user)s at %(date)s\n"
@@ -287,7 +193,115 @@ msgid ""
 "http://%(domain)s%(url)s"
 msgstr ""
 
-#: bettertexts/templates/bettertexts/detail.html:73
+#: bettertexts/models.py:164
+msgid "name"
+msgstr "naam"
+
+#: bettertexts/models.py:165
+msgid "main header"
+msgstr "hoofd header"
+
+#: bettertexts/models.py:166
+msgid "rating header"
+msgstr "beoordeling header"
+
+#: bettertexts/models.py:167
+msgid "comment header"
+msgstr "opmerking plaatsen header"
+
+#: bettertexts/models.py:168
+msgid "response header"
+msgstr "reacties header"
+
+#: bettertexts/models.py:169
+msgid "rating enabled"
+msgstr "waardering tonen"
+
+#: bettertexts/models.py:170
+msgid "comment enabled"
+msgstr "opmerking plaatsen tonen"
+
+#: bettertexts/models.py:171
+msgid "notification enabled"
+msgstr "notificatie vraag tonen"
+
+#: bettertexts/models.py:174
+msgid "communication type"
+msgstr "communicatie soort"
+
+#: bettertexts/models.py:175
+msgid "communication types"
+msgstr "communicatie soorten"
+
+#: bettertexts/models.py:185
+msgid "title"
+msgstr "titel"
+
+#: bettertexts/models.py:186
+msgid "slug"
+msgstr "kort"
+
+#: bettertexts/models.py:187 bettertexts/models.py:193
+msgid "text"
+msgstr "tekst"
+
+#: bettertexts/models.py:188 bettertexts/models.py:243
+msgid "version"
+msgstr "versie"
+
+#: bettertexts/models.py:189
+msgid "date published"
+msgstr "Publicatie datum"
+
+#: bettertexts/models.py:194
+msgid "texts"
+msgstr "teksten"
+
+#: bettertexts/models.py:206 bettertexts/models.py:210
+msgid "question"
+msgstr "vraag"
+
+#: bettertexts/models.py:207
+msgid "position"
+msgstr "positie"
+
+#: bettertexts/models.py:211
+msgid "questions"
+msgstr "vragen"
+
+#: bettertexts/models.py:228 star_ratings/models.py:35
+msgid "Already rated."
+msgstr "Al gewaardeerd"
+
+#: bettertexts/models.py:246
+msgid "range"
+msgstr "bereik"
+
+#: bettertexts/models.py:247
+msgid "count"
+msgstr "aantal"
+
+#: bettertexts/models.py:248
+msgid "total"
+msgstr "totaal"
+
+#: bettertexts/models.py:249
+msgid "average"
+msgstr "gemiddeld"
+
+#: bettertexts/models.py:255
+#, fuzzy
+#| msgid "rating header"
+msgid "rating"
+msgstr "beoordeling"
+
+#: bettertexts/models.py:256
+#, fuzzy
+#| msgid "Export ratings"
+msgid "ratings"
+msgstr "beoordelingen"
+
+#: bettertexts/templates/bettertexts/detail.html:75
 #: templates/comments/form.html:18 templates/comments/preview.html:42
 msgid "Post"
 msgstr "Verstuur"
@@ -319,11 +333,11 @@ msgstr "Aantal beoordelingen: "
 msgid "Please log in to rate."
 msgstr "Log in om een beoordeling te geven."
 
-#: templates/admin/base_site.html:7
+#: templates/admin/base_site.html:9
 msgid "Django site admin"
 msgstr ""
 
-#: templates/admin/base_site.html:14
+#: templates/admin/base_site.html:16
 msgid "Citizenline administration"
 msgstr "Citizenline admin"
 
@@ -371,7 +385,7 @@ msgstr ""
 #, fuzzy
 #| msgid "comment header"
 msgid "Remove a comment"
-msgstr "reactie plaatsen header"
+msgstr "Verwijder opmerking"
 
 #: templates/comments/delete.html:7
 msgid "Really remove this comment?"
@@ -405,17 +419,21 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
+#: templates/comments/list.html:8
+msgid "This comment has been removed"
+msgstr "Deze opmerking is verwijderd"
+
 #: templates/comments/posted.html:4
 msgid "Thanks for commenting"
-msgstr ""
+msgstr "Bedankt voor het geven van opmerkingen"
 
 #: templates/comments/posted.html:7
 msgid "Thank you for your comment"
-msgstr ""
+msgstr "Bedankt voor je opmerking"
 
 #: templates/comments/preview.html:5 templates/comments/preview.html.py:18
 msgid "Preview your comment"
-msgstr ""
+msgstr "Voorbeeld van je opmerking"
 
 #: templates/comments/preview.html:16
 #, fuzzy
@@ -428,15 +446,15 @@ msgstr[1] "Herstel de fouten hier onder."
 
 #: templates/comments/preview.html:21
 msgid "and"
-msgstr ""
+msgstr "en"
 
 #: templates/comments/preview.html:21
 msgid "Post your comment"
-msgstr ""
+msgstr "Plaats je opmerking"
 
 #: templates/comments/preview.html:22
 msgid "or make changes"
-msgstr ""
+msgstr "of maak wijzigingen"
 
 #: templates/home.html:23
 msgid "Send an activation link"
