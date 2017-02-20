@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-20 07:28+0100\n"
+"POT-Creation-Date: 2017-02-20 21:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,11 +62,11 @@ msgstr "Kopteksten"
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
-#: bettertexts/admin.py:165
+#: bettertexts/admin.py:166
 msgid "Content"
 msgstr "Inhoud"
 
-#: bettertexts/admin.py:169
+#: bettertexts/admin.py:170
 msgid "Metadata"
 msgstr "Meta gegevens"
 
@@ -166,8 +166,6 @@ msgstr ""
 "\" zal worden getoond."
 
 #: bettertexts/models.py:68
-#, fuzzy
-#| msgid "comment header"
 msgid "comments"
 msgstr "Opmerkingen"
 

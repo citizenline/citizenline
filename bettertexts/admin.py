@@ -147,6 +147,7 @@ class RatingAdmin(SiteModelAdmin):
 
     actions = [export_rating,]
 
+
 class UserRatingAdmin(SiteModelAdmin):
     list_display = ("rating", "score",)
 
