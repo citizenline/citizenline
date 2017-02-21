@@ -27,14 +27,10 @@ msgid "Text"
 msgstr "Tekst"
 
 #: bettertexts/admin.py:77
-#, fuzzy
-#| msgid "version"
 msgid "Version"
 msgstr "Versie"
 
 #: bettertexts/admin.py:78
-#, fuzzy
-#| msgid "question"
 msgid "Question"
 msgstr "Vraag"
 
@@ -103,10 +99,8 @@ msgid "user's name"
 msgstr "gebruikersnaam"
 
 #: bettertexts/models.py:37
-#, fuzzy
-#| msgid "Email address"
 msgid "user's email address"
-msgstr "E-mailadres"
+msgstr "E-mailadres van gebruiker"
 
 #: bettertexts/models.py:39
 msgid "user's URL"
@@ -129,16 +123,12 @@ msgid "Check this box to make more texts better."
 msgstr "Kruis dit vakje aan om meer teksten te verbeteren."
 
 #: bettertexts/models.py:47 bettertexts/models.py:67
-#, fuzzy
-#| msgid "comment header"
 msgid "comment"
 msgstr "opmerking"
 
 #: bettertexts/models.py:50
-#, fuzzy
-#| msgid "date published"
 msgid "date/time submitted"
-msgstr "Publicatie datum"
+msgstr "datum verstuurd"
 
 #: bettertexts/models.py:51
 msgid "IP address"
@@ -288,14 +278,10 @@ msgid "average"
 msgstr "gemiddeld"
 
 #: bettertexts/models.py:255
-#, fuzzy
-#| msgid "rating header"
 msgid "rating"
 msgstr "beoordeling"
 
 #: bettertexts/models.py:256
-#, fuzzy
-#| msgid "Export ratings"
 msgid "ratings"
 msgstr "beoordelingen"
 
@@ -380,8 +366,6 @@ msgid ""
 msgstr ""
 
 #: templates/comments/delete.html:4
-#, fuzzy
-#| msgid "comment header"
 msgid "Remove a comment"
 msgstr "Verwijder opmerking"
 
@@ -434,9 +418,6 @@ msgid "Preview your comment"
 msgstr "Voorbeeld van je opmerking"
 
 #: templates/comments/preview.html:16
-#, fuzzy
-#| msgid "Please correct the error below."
-#| msgid_plural "Please correct the errors below."
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
 msgstr[0] "Herstel de fout hier onder."
