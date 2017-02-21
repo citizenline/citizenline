@@ -241,7 +241,7 @@ class Rating(models.Model):
 
     text = models.ForeignKey(Text)
     version = models.PositiveIntegerField(_("version"), default=0)
-    question = models.ForeignKey(Question)
+    question = models.ForeignKey(Question, verbose_name=_("Question"))
 
     range = models.PositiveIntegerField(_("range"), default=STAR_RATINGS_RANGE)
     count = models.PositiveIntegerField(_("count"), default=0)
