@@ -1,36 +1,29 @@
 {% extends 'base.html' %}
-
+{% load bootstrap3 %}
 {% load static %}
 {% load i18n %}
 
-{% block main %}
-
-  <!-- Top Ad -->
-  {% if ad_top %}
-    <div class="row text-center">
-      {{ ad_top.code|safe }}
-    </div>
-  {% endif %}
+{% block bootstrap3_content %}
 
   <div class="row">
     <div class="col-md-12">
         <div class="text-center">
-          <h3>Home for citizenline</h3>
+          <h2>Home for citizenline</h2>
         </div>
     </div>
   </div>
 
-    <h2>{% trans "Send an activation link" %}</h2>
-<form method="post" action="{% url "email_registration_form" %}"
-    class="well" id="registration">
-  {% csrf_token %}
-  <div class="controls">
-    <input id="id_email" type="text" name="email" maxlength="30"
-      placeholder="{% trans "Email address" %}">
-  </div>
-  <button type="submit" class="btn btn-primary">
-    {% trans "Register" %}</button>
-</form>
+    <h3>{% trans "Send an activation link" %}</h3>
+    <form method="post" action="{% url "email_registration_form" %}"
+        class="well" id="registration">
+      {% csrf_token %}
+      <div class="controls">
+        <input id="id_email" type="text" name="email" maxlength="30"
+          placeholder="{% trans "Email address" %}">
+      </div>
+      <button type="submit" class="btn btn-primary">
+        {% trans "Register" %}</button>
+    </form>
 
 <script>
 function init_registration($) {
@@ -46,16 +39,4 @@ function init_registration($) {
 $(init_registration);
 </script>
 
-
-  <!-- Bottom Ad -->
-  {% if ad_bottom %}
-    <div class="row text-center">
-      {{ ad_bottom.code|safe }}
-    </div>
-  {% endif %}
-
-{% endblock %}
-
-{% block extrajs %}
-  <script src="{% static 'js/main.js' %}"></script>
 {% endblock %}
