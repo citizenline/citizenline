@@ -187,6 +187,7 @@ class Text(models.Model):
     body = RichTextField(_("text"), max_length=20000)
     version = models.PositiveIntegerField(_("version"), default=0)
     pub_date = models.DateTimeField(_('date published'), auto_now_add=True)
+    end_date = models.DateTimeField(_('date end'), blank=True, null=True)
     comments = GenericRelation(TextComment, object_id_field='object_pk',)
 
     class Meta:
@@ -198,6 +199,9 @@ class Text(models.Model):
 
     def get_absolute_url(self):
         return "/bettertexts/%s/" % self.slug
+
+    def active(self):
+        return self.end_date is None or timezone.now() <= self.end_date
 
 
 # , editable=False

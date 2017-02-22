@@ -24,6 +24,7 @@ def ratings(context, text, question, icon_height=32, icon_width=32):
     stars = [i for i in range(1, STAR_RATINGS_RANGE + 1)]
 
     return {
+        'active': text.active(),
         'rating': rating,
         'request': request,
         'user': request.user,

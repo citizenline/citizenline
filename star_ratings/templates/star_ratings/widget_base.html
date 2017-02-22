@@ -1,4 +1,5 @@
 {% load i18n %}
+{% if active %}
 <style>
     #{{ id }} .star-ratings-rating-full, #{{ id }} .star-ratings-rating-empty {
         width: {{ icon_width }}px;
@@ -53,3 +54,13 @@
     <div class="star-ratings-errors"></div>
     {% endblock rating_detail %}
 </div>
+{% else %}
+    {% block rating_inactive %}
+    {% block rating_average_inactive %}
+    <div class="star-ratings-rating-average">{% trans 'Average: ' %} <span class='star-ratings-rating-value'>{{ rating.average|floatformat:"-2" }}</span></div>
+    {% endblock rating_average_inactive %}
+    {% block rating_count_inactive %}
+    <div class="star-ratings-rating-count">{% trans 'Rating Count: ' %} <span class='star-ratings-rating-value'>{{ rating.count }}</span></div>
+    {% endblock rating_count_inactive %}
+    {% endblock rating_inactive %}
+{% endif %}

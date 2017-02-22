@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-21 07:01+0100\n"
+"POT-Creation-Date: 2017-02-21 07:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr "Tekst"
 msgid "Version"
 msgstr "Versie"
 
-#: bettertexts/admin.py:78 bettertexts/models.py:244
+#: bettertexts/admin.py:78 bettertexts/models.py:245
 msgid "Question"
 msgstr "Vraag"
 
@@ -229,11 +229,11 @@ msgstr "titel"
 msgid "slug"
 msgstr "kort"
 
-#: bettertexts/models.py:187 bettertexts/models.py:193
+#: bettertexts/models.py:187 bettertexts/models.py:194
 msgid "text"
 msgstr "tekst"
 
-#: bettertexts/models.py:188 bettertexts/models.py:243
+#: bettertexts/models.py:188 bettertexts/models.py:244
 msgid "version"
 msgstr "versie"
 
@@ -241,47 +241,51 @@ msgstr "versie"
 msgid "date published"
 msgstr "Publicatie datum"
 
-#: bettertexts/models.py:194
+#: bettertexts/models.py:190
+msgid "date end"
+msgstr "eind datum"
+
+#: bettertexts/models.py:195
 msgid "texts"
 msgstr "teksten"
 
-#: bettertexts/models.py:206 bettertexts/models.py:210
+#: bettertexts/models.py:207 bettertexts/models.py:211
 msgid "question"
 msgstr "vraag"
 
-#: bettertexts/models.py:207
+#: bettertexts/models.py:208
 msgid "position"
 msgstr "positie"
 
-#: bettertexts/models.py:211
+#: bettertexts/models.py:212
 msgid "questions"
 msgstr "vragen"
 
-#: bettertexts/models.py:228 star_ratings/models.py:35
+#: bettertexts/models.py:229 star_ratings/models.py:35
 msgid "Already rated."
 msgstr "Al gewaardeerd"
 
-#: bettertexts/models.py:246
+#: bettertexts/models.py:247
 msgid "range"
 msgstr "bereik"
 
-#: bettertexts/models.py:247
+#: bettertexts/models.py:248
 msgid "count"
 msgstr "aantal"
 
-#: bettertexts/models.py:248
+#: bettertexts/models.py:249
 msgid "total"
 msgstr "totaal"
 
-#: bettertexts/models.py:249
+#: bettertexts/models.py:250
 msgid "average"
 msgstr "gemiddeld"
 
-#: bettertexts/models.py:255
+#: bettertexts/models.py:256
 msgid "rating"
 msgstr "beoordeling"
 
-#: bettertexts/models.py:256
+#: bettertexts/models.py:257
 msgid "ratings"
 msgstr "beoordelingen"
 
