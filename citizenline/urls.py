@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
     url(r'^comments/', include('django_comments.urls')),
     url(r'^$', include('email_registration.urls')),
+    url(r'^robots\.txt$', views.robots),
 ]
