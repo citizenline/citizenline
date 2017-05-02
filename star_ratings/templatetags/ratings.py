@@ -31,7 +31,7 @@ def ratings(context, text, question, icon_height=32, icon_width=32):
         'user_rating': user_rating,
         'stars': stars,
         'star_count': STAR_RATINGS_RANGE,
-        'percentage': 100 * (rating.average / Decimal(STAR_RATINGS_RANGE)),
+        'percentage': int(100 * (rating.average / Decimal(STAR_RATINGS_RANGE))),
         'icon_height': icon_height,
         'icon_width': icon_width,
         'id': 'dsr{}'.format(uuid.uuid4().hex)
