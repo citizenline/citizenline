@@ -17,6 +17,9 @@
 {% block bootstrap3_content %}
 
     <div id="container" class="container">
+        <div id="thanks" class="alert alert-info hidden" role="alert">
+            Bedankt voor uw reactie!
+        </div>
         <h2>{{ text.type.header }}</h2>
         <div class="row">
             <div class="col-md-8">
@@ -48,7 +51,7 @@
                 {% get_comment_form for text as form %}
 
                 <form action="{% comment_form_target %}" method="post">{% csrf_token %}
-                    <div><input type="hidden" name="next" value="{% url 'detail' text.slug %}"/></div>
+                    <div><input type="hidden" name="next" value="{% url 'detail' text.slug %}#thanks"/></div>
 
 
                     {% for field in form %}
@@ -90,5 +93,9 @@
         </div>
         {%  endif %}
     </div>
-
+    <script type="text/javascript">
+        if (location.href.indexOf("#thanks") != -1) {
+            document.querySelector("#thanks").setAttribute("class", "alert alert-info")
+        }
+    </script>
 {% endblock %}
