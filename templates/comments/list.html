@@ -1,11 +1,12 @@
 {% load i18n %}
+{% load bettertexts %}
 <dl id="comments">
   {% for comment in comment_list %}
     <dt id="c{{ comment.id }}">
       {{ comment.submit_date }} - {{ comment.name }}
     </dt>
     <dd>
-      <p>{% if comment.is_removed %}{% trans "This comment has been removed" %}{% else %}{{ comment.comment }}{% endif %}</p>
+      <p>{% if comment.is_removed %}{% trans "This comment has been removed" %}{% else %}{{ comment.comment|as_html }}{% endif %}</p>
     </dd>
   {% endfor %}
 </dl>

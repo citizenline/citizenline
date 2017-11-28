@@ -3,6 +3,8 @@ from django.template.loader import render_to_string
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.utils.encoding import smart_text
+from django.utils.html import conditional_escape
+from django.utils.safestring import mark_safe
 
 import bettertexts
 
@@ -43,3 +45,10 @@ def render_question_list(parser, token):
 @register.filter(name='add_class')
 def add_class(field, classes):
     return field.as_widget(attrs={"class": classes})
+
+
+@register.filter(needs_autoescape=True)
+def as_html(value, autoescape=True):
+    if autoescape:
+        value = conditional_escape(value)
+    return mark_safe(value.replace('\n', '<br />\n'))
