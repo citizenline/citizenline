@@ -22,8 +22,18 @@
         </div>
         <h2>{{ text.type.header }}</h2>
         <div class="row">
-            <div class="col-md-8">
+            {% if text.intro %}
+            <div class="col-md-12">
                 <h3>{{ text.title }}</h3>
+                <div id="intro">
+                    {{ text.intro|safe }}
+                </div>
+            </div>
+            {% endif %}
+            <div class="col-md-8">
+                {% if not text.intro %}
+                <h3>{{ text.title }}</h3>
+                {% endif %}
                 <div id="improvetext"
                      style="border-bottom: 1px solid #DFDFDF; padding: 35px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);">
                     {{ text.body|safe }}
@@ -31,7 +41,7 @@
             </div>
 
             {% if text.type.rating_enabled %}
-            <div class="col-md-4" id="improvetext">
+            <div class="col-md-4" id="rating">
                 <h3>{{ text.type.rating_header }}</h3>
                 {% for question in text.type.question_set.all %}
                     <h4 class="star-header">{{ question.question }}</h4>
@@ -46,7 +56,7 @@
         {% if text.active %}
         <div class="row">
 
-            <div class="col-md-8" id="improvetext">
+            <div class="col-md-8" id="comment">
                 <h3>{{ text.type.comment_header }}</h3>
                 {% get_comment_form for text as form %}
 
@@ -85,7 +95,7 @@
         {% endif %}
         <div class="row">
 
-            <div class="col-md-8" id="improvetext">
+            <div class="col-md-8" id="response">
                 <h3>{{ text.type.response_header }}</h3>
                 {% render_comment_list for text %}
             </div>

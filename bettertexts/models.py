@@ -184,6 +184,7 @@ class Text(models.Model):
     type = models.ForeignKey(Type, on_delete=models.CASCADE)
     title = models.CharField(_("title"), max_length=200)
     slug = RandomCharField(_("slug"), length=8, unique=True)
+    intro = RichTextField(_("intro"), max_length=20000, null=True)
     body = RichTextField(_("text"), max_length=20000)
     version = models.PositiveIntegerField(_("version"), default=0)
     pub_date = models.DateTimeField(_('date published'), auto_now_add=True)
