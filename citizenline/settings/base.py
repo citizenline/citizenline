@@ -183,7 +183,7 @@ CKEDITOR_ALLOW_NONIMAGE_FILES = False
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
-        'height': 500,
+        'height': 'auto',
         'width': 'auto',
     },
 }
