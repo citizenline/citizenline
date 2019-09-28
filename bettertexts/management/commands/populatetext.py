@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.core.management.base import BaseCommand, CommandError
 from django.contrib.sites.models import Site
-from django.contrib.auth.models import User;
+from django.contrib.auth.models import User
 
 from bettertexts.models import Question
 from bettertexts.models import Text
@@ -9,11 +9,11 @@ from bettertexts.models import Type
 
 
 class Command(BaseCommand):
-    help = 'Populate with test data'
+    help = "Populate with test data"
 
     def handle(self, *args, **options):
 
-        User.objects.create_superuser('admin', 'admin@example.com', 'KjMbSa')
+        User.objects.create_superuser("admin", "admin@example.com", "KjMbSa")
         # base_domain = "citizenline.local:8000"
         base_domain = "citizenline.nl"
 
@@ -21,24 +21,30 @@ class Command(BaseCommand):
         s0.domain = "www-test." + base_domain
         s0.save()
 
-        s1 = Site.objects.get_or_create(pk=2, defaults={"domain": "denhaag-test." + base_domain})[0]
+        s1 = Site.objects.get_or_create(
+            pk=2, defaults={"domain": "denhaag-test." + base_domain}
+        )[0]
         s1.save()
 
-        brief = Type.objects.get_or_create(site=s1, name="Brief", defaults={
-            "header": "Te beoordelen tekst",
-            "rating_header": "Geef uw waardering",
-            "comment_header": "Geef een reactie",
-        })[0]
+        brief = Type.objects.get_or_create(
+            site=s1,
+            name="Brief",
+            defaults={
+                "header": "Te beoordelen tekst",
+                "rating_header": "Geef uw waardering",
+                "comment_header": "Geef een reactie",
+            },
+        )[0]
         brief.save()
 
-        q1 = Question.objects.get_or_create(type=brief, position=0,defaults={
-            "question": "Is de brief duidelijk?",
-        })[0]
+        q1 = Question.objects.get_or_create(
+            type=brief, position=0, defaults={"question": "Is de brief duidelijk?"}
+        )[0]
         q1.save()
 
-        q2 = Question.objects.get_or_create(type=brief, position=1,defaults={
-            "question": "Is de brief leesbaar?",
-        })[0]
+        q2 = Question.objects.get_or_create(
+            type=brief, position=1, defaults={"question": "Is de brief leesbaar?"}
+        )[0]
         q2.save()
 
         text = Text()

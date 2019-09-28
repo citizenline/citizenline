@@ -1,0 +1,14 @@
+{% extends 'admin/login.html' %}
+{% load i18n static %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static "citizenline/css/login.css" %}" />
+{% endblock %}
+
+{% block branding %}
+    <a href="{% url 'admin:index' %}" class="django-admin-logo">
+        <!-- Django Administration -->
+        <img width="80%" alt="{{ site_header|default:_('Django administration') }}" src="{% static "citizenline/images/logo.svg" %}" class="logo-admin">
+    </a>
+{% endblock branding %}

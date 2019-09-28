@@ -61,7 +61,7 @@
                 {% get_comment_form for text as form %}
 
                 <form action="{% comment_form_target %}" method="post">{% csrf_token %}
-                    <div><input type="hidden" name="next" value="{% url 'detail' text.slug %}#thanks"/></div>
+                    <div><input type="hidden" name="next" value="{% url 'bettertexts:detail' text.slug %}#thanks"/></div>
 
 
                     {% for field in form %}

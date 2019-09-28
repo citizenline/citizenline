@@ -23,9 +23,9 @@ class RenderQuestionListNode(template.Node):
         return "output of handle_token()"
 
     def render(self, context):
-#        qs = self.get_queryset(context)
-#        context[self.as_varname] = self.get_context_value_from_queryset(context, qs)
-        return ''
+        #        qs = self.get_queryset(context)
+        #        context[self.as_varname] = self.get_context_value_from_queryset(context, qs)
+        return ""
 
 
 @register.tag
@@ -42,7 +42,7 @@ def render_question_list(parser, token):
     return RenderQuestionListNode.handle_token(parser, token)
 
 
-@register.filter(name='add_class')
+@register.filter(name="add_class")
 def add_class(field, classes):
     return field.as_widget(attrs={"class": classes})
 
@@ -51,4 +51,4 @@ def add_class(field, classes):
 def as_html(value, autoescape=True):
     if autoescape:
         value = conditional_escape(value)
-    return mark_safe(value.replace('\n', '<br />\n'))
+    return mark_safe(value.replace("\n", "<br />\n"))

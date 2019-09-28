@@ -14,11 +14,7 @@ class PopulateTypesTestCase(TestCase):
         # )
         site = Site.objects.get(id=1)
 
-        Type.objects.create(
-            id=1,
-            site=site,
-            name='Letter',
-        )
+        Type.objects.create(id=1, site=site, name="Letter")
 
     def test_populate_types(self):
         """
@@ -26,6 +22,6 @@ class PopulateTypesTestCase(TestCase):
         :return:
         """
         first_type = Type.objects.get(id=1)
-        self.assertEqual(first_type.name, 'Letter')
+        self.assertEqual(first_type.name, "Letter")
         #
-        self.assertEqual(first_type.site.domain, 'example.com')
+        self.assertEqual(first_type.site.domain, "example.com")

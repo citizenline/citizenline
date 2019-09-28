@@ -1,12 +1,10 @@
-from django.conf.urls import patterns, url
+from django.urls import path
 
+from . import views
 
-urlpatterns = patterns(
-    'email_registration.views',
-    url(r'^$',
-        'email_registration_form',
-        name='email_registration_form'),
-    url(r'^(?P<code>[^/]+)/$',
-        'email_registration_confirm',
-        name='email_registration_confirm'),
-)
+app_name = "email_registration"
+
+urlpatterns = [
+    path("", views.email_registration_form, name="email_registration_form"),
+    path("<code>/", views.email_registration_confirm, name="email_registration_confirm"),
+]
