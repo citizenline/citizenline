@@ -1,15 +1,15 @@
-from django.conf.urls import url
+from django.urls import path
 
 from . import views
 
-app_name = 'bettertexts'
+app_name = "bettertexts"
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    path("", views.index, name="index"),
     # ex: /bettertexts/5/
-    url(r'^(?P<slug>[\w]+)/$', views.detail, name='detail'),
+    path("<slug>/", views.detail, name="detail"),
     # ex: /bettertexts/5/results/
-    url(r'^(?P<text_id>[0-9]+)/results/$', views.results, name='results'),
+    path("<int:text_id>/results/", views.results, name="results"),
     # ex: /bettertexts/5/vote/
-    url(r'^(?P<text_id>[0-9]+)/vote/$', views.vote, name='vote'),
+    path("<int:text_id>/vote/", views.vote, name="vote"),
 ]

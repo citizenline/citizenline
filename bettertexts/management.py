@@ -12,28 +12,34 @@ def initial_sites(base_domain="citizenline.local:8000"):
     s0.domain = "www." + base_domain
     s0.save()
 
-    s1 = Site.objects.get_or_create(pk=2, defaults={"domain": "denhaag." + base_domain})[0]
+    s1 = Site.objects.get_or_create(
+        pk=2, defaults={"domain": "denhaag." + base_domain}
+    )[0]
     s1.save()
 
     add_demo_content(s1)
 
 
 def add_demo_content(s1):
-    brief = Type.objects.get_or_create(site=s1, name="Brief", defaults={
-        "header": "Te beoordelen tekst",
-        "rating_header": "Geef uw waardering",
-        "comment_header": "Geef een reactie",
-    })[0]
+    brief = Type.objects.get_or_create(
+        site=s1,
+        name="Brief",
+        defaults={
+            "header": "Te beoordelen tekst",
+            "rating_header": "Geef uw waardering",
+            "comment_header": "Geef een reactie",
+        },
+    )[0]
     brief.save()
 
-    q1 = Question.objects.get_or_create(type=brief, position=0,defaults={
-        "question": "Is de brief duidelijk?",
-    })[0]
+    q1 = Question.objects.get_or_create(
+        type=brief, position=0, defaults={"question": "Is de brief duidelijk?"}
+    )[0]
     q1.save()
 
-    q2 = Question.objects.get_or_create(type=brief, position=1,defaults={
-        "question": "Is de brief leesbaar?",
-    })[0]
+    q2 = Question.objects.get_or_create(
+        type=brief, position=1, defaults={"question": "Is de brief leesbaar?"}
+    )[0]
     q2.save()
 
     text = Text()

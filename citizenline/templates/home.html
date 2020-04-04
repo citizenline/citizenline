@@ -14,7 +14,7 @@
   </div>
 
     <h3>{% trans "Send an activation link" %}</h3>
-    <form method="post" action="{% url "email_registration_form" %}"
+    <form method="post" action="{% url "email_registration:email_registration_form" %}"
         class="well" id="registration">
       {% csrf_token %}
       <div class="controls">

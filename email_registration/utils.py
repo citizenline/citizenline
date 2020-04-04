@@ -1,13 +1,13 @@
 from django.contrib.auth.models import User
 from django.core import signing
 from django.core.mail import EmailMultiAlternatives
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.template.loader import TemplateDoesNotExist, render_to_string
 from django.utils.http import int_to_base36
 from django.utils.translation import ugettext as _
 
 
-def get_signer(salt='email_registration'):
+def get_signer(salt="email_registration"):
     """
     Returns the signer instance used to sign and unsign the registration
     link tokens
@@ -19,24 +19,24 @@ def get_last_login_timestamp(user):
     """
     Django 1.7 allows the `last_login` timestamp to be `None` for new users.
     """
-    return int(user.last_login.strftime('%s')) if user.last_login else 0
+    return int(user.last_login.strftime("%s")) if user.last_login else 0
 
 
 def get_confirmation_url(email, request, user=None):
     """
     Returns the confirmation URL
     """
-    code = [email, '', '']
+    code = [email, "", ""]
     if user:
         code[1] = str(user.id)
         code[2] = int_to_base36(get_last_login_timestamp(user))
 
     return request.build_absolute_uri(
         reverse(
-            'email_registration_confirm',
-            kwargs={
-                'code': get_signer().sign(u':'.join(code)),
-            }))
+            "email_registration_confirm",
+            kwargs={"code": get_signer().sign(u":".join(code))},
+        )
+    )
 
 
 def send_registration_mail(email, request, user=None):
@@ -61,16 +61,15 @@ def send_registration_mail(email, request, user=None):
     """
 
     render_to_mail(
-        'registration/email_registration_email',
-        {
-            'url': get_confirmation_url(email, request, user=user),
-        },
+        "registration/email_registration_email",
+        {"url": get_confirmation_url(email, request, user=user)},
         to=[email],
     ).send()
 
 
 class InvalidCode(Exception):
     """Problems occurred during decoding the registration link"""
+
     pass
 
 
@@ -86,31 +85,41 @@ def decode(code, max_age=3 * 86400):
     try:
         data = get_signer().unsign(code, max_age=max_age)
     except signing.SignatureExpired:
-        raise InvalidCode(_(
-            'The link is expired. Please request another registration link.'))
+        raise InvalidCode(
+            _("The link is expired. Please request another registration link.")
+        )
 
     except signing.BadSignature:
-        raise InvalidCode(_(
-            'Unable to verify the signature. Please request a new'
-            ' registration link.'))
+        raise InvalidCode(
+            _(
+                "Unable to verify the signature. Please request a new"
+                " registration link."
+            )
+        )
 
-    parts = data.rsplit(':', 2)
+    parts = data.rsplit(":", 2)
     if len(parts) != 3:
-        raise InvalidCode(_(
-            'Something went wrong while decoding the'
-            ' registration request. Please try again.'))
+        raise InvalidCode(
+            _(
+                "Something went wrong while decoding the"
+                " registration request. Please try again."
+            )
+        )
 
     email, uid, timestamp = parts
     if uid and timestamp:
         try:
             user = User.objects.get(pk=uid)
         except (User.DoesNotExist, TypeError, ValueError):
-            raise InvalidCode(_(
-                'Something went wrong while decoding the'
-                ' registration request. Please try again.'))
+            raise InvalidCode(
+                _(
+                    "Something went wrong while decoding the"
+                    " registration request. Please try again."
+                )
+            )
 
         if timestamp != int_to_base36(get_last_login_timestamp(user)):
-            raise InvalidCode(_('The link has already been used.'))
+            raise InvalidCode(_("The link has already been used."))
 
     else:
         user = None
@@ -140,22 +149,22 @@ def render_to_mail(template, context, **kwargs):
         message = render_to_mail('myproject/hello_mail', {}, to=[email])
         message.send()
     """
-    lines = iter(render_to_string('%s.txt' % template, context).splitlines())
+    lines = iter(render_to_string("%s.txt" % template, context).splitlines())
 
-    subject = u''
+    subject = u""
     while True:
         line = next(lines)
         if line:
             subject = line
             break
 
-    body = u'\n'.join(lines).strip('\n')
+    body = u"\n".join(lines).strip("\n")
     message = EmailMultiAlternatives(subject=subject, body=body, **kwargs)
 
     try:
         message.attach_alternative(
-            render_to_string('%s.html' % template, context),
-            'text/html')
+            render_to_string("%s.html" % template, context), "text/html"
+        )
     except TemplateDoesNotExist:
         pass
 

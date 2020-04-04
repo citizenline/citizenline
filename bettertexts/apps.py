@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class ImprovetextAppConfig(AppConfig):
-    name = 'bettertexts'
+    name = "bettertexts"
     verbose_name = _("Better texts")
 
     def ready(self):
