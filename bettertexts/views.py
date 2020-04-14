@@ -14,7 +14,8 @@ def index(request):
 
 def detail(request, slug):
     text = get_object_or_404(Text, slug=slug)
-    return render(request, "bettertexts/detail.html", {"text": text})
+    siteProfile = text.site.siteProfile
+    return render(request, "bettertexts/detail.html", {"text": text, "siteProfile":siteProfile})
 
 
 def results(request, text_id):

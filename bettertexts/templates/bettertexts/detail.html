@@ -16,6 +16,9 @@
 
 {% block bootstrap3_content %}
 
+{% if siteProfile.header %}
+{{ siteProfile.header|safe }}
+{% endif %}
     <div id="container" class="container">
         <div id="thanks" class="alert alert-info hidden" role="alert">
             Bedankt voor uw reactie!
@@ -35,7 +38,7 @@
                 <h3>{{ text.title }}</h3>
                 {% endif %}
                 <div id="improvetext"
-                     style="border-bottom: 1px solid #DFDFDF; padding: 35px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);">
+                    style="border-bottom: 1px solid #DFDFDF; padding: 35px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);">
                     {{ text.body|safe }}
                 </div>
             </div>
@@ -60,7 +63,7 @@
                 <h3>{{ text.type.comment_header }}</h3>
                 {% get_comment_form for text as form %}
 
-                <form action="{% comment_form_target %}" method="post">{% csrf_token %}
+                <form action="{% comment_form_target %}" method="post" class="form">{% csrf_token %}
                     <div><input type="hidden" name="next" value="{% url 'bettertexts:detail' text.slug %}#thanks"/></div>
 
 
@@ -108,4 +111,8 @@
             document.querySelector("#thanks").setAttribute("class", "alert alert-info")
         }
     </script>
+
+{% if siteProfile.footer %}
+{{ siteProfile.footer|safe }}
+{% endif %}
 {% endblock %}
