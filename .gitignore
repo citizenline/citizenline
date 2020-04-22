@@ -8,3 +8,5 @@ node_modules/
 .idea
 db.sqlite3
 bower_components/
+env
+venv
