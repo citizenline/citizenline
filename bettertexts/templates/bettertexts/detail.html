@@ -16,8 +16,8 @@
 
 {% block bootstrap3_content %}
 
-{% if siteProfile.header %}
-{{ siteProfile.header|safe }}
+{% if text.site.profile.header %}
+{{ text.site.profile.header|safe }}
 {% endif %}
     <div id="container" class="container">
         <div id="thanks" class="alert alert-info hidden" role="alert">
@@ -112,7 +112,7 @@
         }
     </script>
 
-{% if siteProfile.footer %}
-{{ siteProfile.footer|safe }}
+{% if text.site.profile.footer %}
+{{ text.site.profile.footer|safe }}
 {% endif %}
 {% endblock %}
