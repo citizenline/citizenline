@@ -20,14 +20,19 @@
 .star-ratings ul li {
   display: inline-block;
 }
+/* line 22, ../sass/star-ratings.scss */
+.star-ratings output {
+  font-size: 1em;
+  padding: 0em;
+}
 
-/* line 24, ../sass/star-ratings.scss */
+/* line 28, ../sass/star-ratings.scss */
 .star-ratings-rating-full, .star-ratings-rating-empty {
   display: block;
   background: url("/static/star-ratings/images/stars.png") no-repeat;
 }
 
-/* line 29, ../sass/star-ratings.scss */
+/* line 33, ../sass/star-ratings.scss */
 .star-ratings-rating-foreground {
   top: 0;
   position: absolute;
@@ -45,13 +50,91 @@
   transition-timing-function: ease-in;
 }
 
-/* line 37, ../sass/star-ratings.scss */
+/* line 41, ../sass/star-ratings.scss */
 .star-ratings-rating-stars-container {
   display: inline-block;
   position: relative;
 }
+/* line 44, ../sass/star-ratings.scss */
+.star-ratings-rating-stars-container svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+  stroke: currentColor;
+}
+/* line 50, ../sass/star-ratings.scss */
+.star-ratings-rating-stars-container label {
+  display: block;
+  float: left;
+  font-size: 32px;
+  height: 1.2em;
+  color: #f9b705;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  width: auto;
+}
+/* line 61, ../sass/star-ratings.scss */
+.star-ratings-rating-stars-container input:checked ~ label {
+  color: #999;
+}
+/* line 64, ../sass/star-ratings.scss */
+.star-ratings-rating-stars-container input:checked + label {
+  color: #f9b705;
+  border-bottom-color: #036;
+}
+/* line 68, ../sass/star-ratings.scss */
+.star-ratings-rating-stars-container input:focus + label {
+  border-bottom-style: dotted;
+}
+/* line 71, ../sass/star-ratings.scss */
+.star-ratings-rating-stars-container :hover input + label {
+  color: #f9b705;
+}
+/* line 74, ../sass/star-ratings.scss */
+.star-ratings-rating-stars-container input:hover ~ label,
+.star-ratings-rating-stars-container input:focus ~ label,
+.star-ratings-rating-stars-container input[id="star0"] + label {
+  color: #999;
+}
+/* line 79, ../sass/star-ratings.scss */
+.star-ratings-rating-stars-container input:hover + label,
+.star-ratings-rating-stars-container input:focus + label {
+  color: #f9b705;
+}
+/* line 83, ../sass/star-ratings.scss */
+.star-ratings-rating-stars-container input[id="star0"]:checked + label {
+  color: #ff2d21;
+}
+/* line 86, ../sass/star-ratings.scss */
+.star-ratings-rating-stars-container [type="submit"] {
+  float: none;
+}
 
-/* line 42, ../sass/star-ratings.scss */
+/* line 92, ../sass/star-ratings.scss */
 .star-ratings-rating-value {
-  color: #ff8c00;
+  color: #645800;
+}
+
+/* line 96, ../sass/star-ratings.scss */
+.star-ratings-result {
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23999999" width="32px" viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg"><path d="M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z"></path></svg>');
+  width: 320px;
+  height: 32px;
+  display: block;
+  background-size: 32px 32px;
+  background-repeat: repeat-x;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 107, ../sass/star-ratings.scss */
+.star-ratings-result span {
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23f9b705" width="32px" viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg"><path d="M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z"></path></svg>');
+  width: 0px;
+  height: 32px;
+  display: block;
+  background-size: 32px 32px;
+  background-repeat: repeat-x;
+  overflow: hidden;
+  position: relative;
 }

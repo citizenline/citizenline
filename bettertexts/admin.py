@@ -68,7 +68,7 @@ export_coments.short_description = _("Export comments")
 def export_rating(modeladmin, request, queryset):
     response = HttpResponse(content_type="text/csv")
     response["Content-Disposition"] = "attachment; filename=ratings.csv"
-    writer = csv.writer(response, delimiter=b";", quotechar=b'"', quoting=csv.QUOTE_ALL)
+    writer = csv.writer(response, delimiter=str(";"), quotechar=str('"'), quoting=csv.QUOTE_ALL)
     response.write(
         "\ufeff".encode("utf8")
     )  # BOM (optional...Excel needs it to open UTF-8 file properly)

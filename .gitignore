@@ -11,3 +11,4 @@ bower_components/
 env
 venv
 media
+package-lock.json

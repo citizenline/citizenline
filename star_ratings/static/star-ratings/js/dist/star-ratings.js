@@ -164,6 +164,7 @@ function showError (errors, sender) {
 document.addEventListener('DOMContentLoaded', function(event) {
     if (document.querySelector('.star-ratings')) {
         init();
+        init_extra();
     }
 });
 
@@ -171,6 +172,37 @@ document.addEventListener('DOMContentLoaded', function(event) {
 module.exports = {
     bindRating: bindRatings
 };
+
+
+function init_extra() {
+  var radios = document.querySelectorAll('.star-ratings-rating-stars-container input[type=radio]');
+
+  var rest_rate = function(form) {
+    // An AJAX request could send the data to the server
+    stars = form.querySelector(':checked ~ label span').textContent
+    radio = form.querySelector('.star-ratings-rating-stars-container :checked')
+    rate(form.action, radio.value, radio);
+
+    //output = form.querySelector('.star-ratings output');
+    //output.textContent = stars;
+  };
+
+  // Iterate through all radio buttons and add a click
+  // event listener to the labels
+  Array.prototype.forEach.call(radios, function(el, i){
+    el.onchange = function () {
+      radio = this;
+      rest_rate(radio.form);
+    }
+  });
+
+  // If the form gets submitted, do a rest rate
+  document.querySelector('.star-ratings').addEventListener('submit', function(event){
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    rest_rate(event.target);
+  });
+}
 
 },{"./rest.js":3,"./utils":4}],3:[function(require,module,exports){
 /*jslint browser:true */

@@ -11,6 +11,7 @@
     <link rel="apple-touch-icon" href="{% static "apple-touch-icon-precomposed.png" %}">
     <link rel="icon" href="{% static "favicon.ico" %}">
     <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <link rel="stylesheet" href="{% static 'bettertexts/css/bettertext.css' %}">
     <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
 {% endblock %}
 
@@ -37,8 +38,7 @@
                 {% if not text.intro %}
                 <h3>{{ text.title }}</h3>
                 {% endif %}
-                <div id="improvetext"
-                    style="border-bottom: 1px solid #DFDFDF; padding: 35px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);">
+                <div id="improvetext">
                     {{ text.body|safe }}
                 </div>
             </div>
