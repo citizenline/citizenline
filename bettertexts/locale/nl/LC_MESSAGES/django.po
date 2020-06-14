@@ -449,12 +449,12 @@ msgid "Rating average"
 msgstr "Gemiddelde beoordeling"
 
 #: star_ratings/templates/star_ratings/widget.html:18
-msgid "Star"
-msgstr "Ster"
+msgid "star"
+msgstr "ster"
 
 #: star_ratings/templates/star_ratings/widget.html:18
-msgid "Stars"
-msgstr "Sterren"
+msgid "stars"
+msgstr "sterren"
 
 #: star_ratings/templates/star_ratings/widget.html:24
 msgid "Submit"

@@ -15,7 +15,7 @@
     {% for star in stars %}
     <input value="{{ star }}" id="{{ id }}_star{{ star }}" type="radio" name="score" class="sr-only" {% ifequal user_rating.score star %}checked{% endifequal %}>
     <label for="{{ id }}_star{{ star }}">
-      <span class="sr-only">{{ star }} {% if star == 1 %}{% trans 'Star' %}{% else %}{% trans 'Stars' %}{% endif %}</span>
+      <span class="sr-only">{{ star }} {% if star == 1 %}{% trans 'star' %}{% else %}{% trans 'stars' %}{% endif %}</span>
       <svg viewBox="0 0 560 560"><path d="M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z"></path></svg>
     </label>
     {% endfor %}
