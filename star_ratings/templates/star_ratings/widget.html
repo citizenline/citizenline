@@ -37,7 +37,7 @@
 
 <div id="{{ id }}" class="star-ratings">
   <h4 class="star-header">{{ rating.question.question }}</h4>
-  <span class="star-ratings-result" role="img" aria-label="{% trans 'Average: ' %}{{ rating.average|floatformat:"-2" }}">
+  <span class="star-ratings-result" role="img" aria-label="{% trans 'stars ' %}{{ rating.average|floatformat:"-2" }}">
     <span style="width: {{ percentage }}%"></span>
   </span>
 
