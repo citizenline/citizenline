@@ -24,11 +24,11 @@
         <div id="thanks" class="alert alert-info hidden" role="alert">
             Bedankt voor uw reactie!
         </div>
-        <h2>{{ text.type.header }}</h2>
+        <h1>{{ text.type.header }}</h1>
         <div class="row">
             {% if text.intro %}
             <div class="col-md-12">
-                <h3>{{ text.title }}</h3>
+                <h2>{{ text.title }}</h2>
                 <div id="intro">
                     {{ text.intro|safe }}
                 </div>
@@ -36,7 +36,7 @@
             {% endif %}
             <div class="col-md-8">
                 {% if not text.intro %}
-                <h3>{{ text.title }}</h3>
+                <h2>{{ text.title }}</h2>
                 {% endif %}
                 <div id="improvetext">
                     {{ text.body|safe }}
@@ -45,7 +45,7 @@
 
             {% if text.type.rating_enabled %}
             <div class="col-md-4" id="rating">
-                <h3>{{ text.type.rating_header }}</h3>
+                <h2>{{ text.type.rating_header }}</h2>
                 {% for question in text.type.question_set.all %}
                     {% ratings text question %}
                 {% endfor %}
