@@ -59,7 +59,7 @@
         <div class="row">
 
             <div class="col-md-8" id="comment">
-                <h3>{{ text.type.comment_header }}</h3>
+                <h2>{{ text.type.comment_header }}</h2>
                 {% get_comment_form for text as form %}
 
                 <form action="{% comment_form_target %}" method="post" class="form">{% csrf_token %}
