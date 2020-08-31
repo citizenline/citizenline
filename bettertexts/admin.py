@@ -111,7 +111,7 @@ class TextAdmin(SiteModelAdmin):
 class QuestionInLine(SortableInlineAdminMixin, admin.TabularInline):
     model = Question
     extra = 0
-    fieldsets = ((None, {"fields": ("question", "position")}),)
+    fieldsets = ((None, {"fields": ("question", "position", "description")}),)
     ordering = ("position",)
     original = False
 
@@ -132,7 +132,7 @@ class TypeAdmin(SiteModelAdmin):
         ),
         (
             _("Content"),
-            {"fields": ("comment_form_intro", )},
+            {"fields": ("comment_form_intro", "thanks", "inform_label", "involved_label")},
         ),
     )
 

@@ -212,6 +212,9 @@ class Type(models.Model):
     comment_enabled = models.BooleanField(_("comment enabled"), default=True)
     notification_enabled = models.BooleanField(_("notification enabled"), default=True)
     comment_form_intro = models.TextField(_("comment form intro"), max_length=20000, blank=True)
+    thanks = models.CharField(_("thanks text"), max_length=2000, blank=True, default="Bedankt voor je reactie!")
+    inform_label = models.CharField(_("inform label"), max_length=200, blank=True)
+    involved_label = models.CharField(_("involved label"), max_length=200, blank=True)
 
     class Meta:
         verbose_name = _("communication type")
@@ -253,6 +256,7 @@ class Question(models.Model):
     type = models.ForeignKey(Type, on_delete=models.CASCADE)
     question = models.CharField(_("question"), max_length=200)
     position = models.IntegerField(_("position"))
+    description = models.CharField(_("description"), max_length=1000, blank=True)
 
     class Meta:
         verbose_name = _("question")

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 21:11+0200\n"
+"POT-Creation-Date: 2020-08-31 22:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr "Tekst"
 msgid "Version"
 msgstr "Versie"
 
-#: bettertexts/admin.py:76 bettertexts/models.py:299
+#: bettertexts/admin.py:76 bettertexts/models.py:303
 msgid "Question"
 msgstr "Vraag"
 
@@ -85,11 +85,11 @@ msgstr "E-mailadres"
 msgid "Comment"
 msgstr "Opmerking"
 
-#: bettertexts/forms.py:20
+#: bettertexts/forms.py:20 bettertexts/templates/bettertexts/detail.html:85
 msgid "Keep me informed"
 msgstr "Houd me op de hoogte over nieuwe versies van bovenstaande tekst"
 
-#: bettertexts/forms.py:24
+#: bettertexts/forms.py:24 bettertexts/templates/bettertexts/detail.html:87
 msgid "Keep me involved"
 msgstr "Ik doe graag mee met het verbeteren van nog meer teksten"
 
@@ -221,87 +221,103 @@ msgstr "notificatie vraag tonen"
 msgid "comment form intro"
 msgstr "reactie formulier intro"
 
+#: bettertexts/models.py:215
+msgid "thanks text"
+msgstr "bedankt tekst"
+
+#: bettertexts/models.py:216
+msgid "inform label"
+msgstr "blijf op de hoogte label"
+
 #: bettertexts/models.py:217
+msgid "involved label"
+msgstr "blijf betrokken label"
+
+#: bettertexts/models.py:220
 msgid "communication type"
 msgstr "communicatie soort"
 
-#: bettertexts/models.py:218
+#: bettertexts/models.py:221
 msgid "communication types"
 msgstr "communicatie soorten"
 
-#: bettertexts/models.py:228
+#: bettertexts/models.py:231
 msgid "title"
 msgstr "titel"
 
-#: bettertexts/models.py:229
+#: bettertexts/models.py:232
 msgid "slug"
 msgstr "kort"
 
-#: bettertexts/models.py:230
+#: bettertexts/models.py:233
 msgid "intro"
 msgstr ""
 
-#: bettertexts/models.py:231 bettertexts/models.py:238
+#: bettertexts/models.py:234 bettertexts/models.py:241
 msgid "text"
 msgstr "tekst"
 
-#: bettertexts/models.py:232 bettertexts/models.py:297
+#: bettertexts/models.py:235 bettertexts/models.py:301
 msgid "version"
 msgstr "versie"
 
-#: bettertexts/models.py:233
+#: bettertexts/models.py:236
 msgid "date published"
 msgstr "Publicatie datum"
 
-#: bettertexts/models.py:234
+#: bettertexts/models.py:237
 msgid "date end"
 msgstr "eind datum"
 
-#: bettertexts/models.py:239
+#: bettertexts/models.py:242
 msgid "texts"
 msgstr "teksten"
 
-#: bettertexts/models.py:254 bettertexts/models.py:258
+#: bettertexts/models.py:257 bettertexts/models.py:262
 msgid "question"
 msgstr "vraag"
 
-#: bettertexts/models.py:255
+#: bettertexts/models.py:258
 msgid "position"
 msgstr "positie"
 
 #: bettertexts/models.py:259
+msgid "description"
+msgstr "omschrijving"
+
+#: bettertexts/models.py:263
 msgid "questions"
 msgstr "vragen"
 
-#: bettertexts/models.py:280 star_ratings/models.py:42
+#: bettertexts/models.py:284 star_ratings/models.py:42
 msgid "Already rated."
 msgstr "Al gewaardeerd"
 
-#: bettertexts/models.py:302
+#: bettertexts/models.py:306
 msgid "range"
 msgstr "bereik"
 
-#: bettertexts/models.py:303
+#: bettertexts/models.py:307
 msgid "count"
 msgstr "aantal"
 
-#: bettertexts/models.py:304
+#: bettertexts/models.py:308
 msgid "total"
 msgstr "totaal"
 
-#: bettertexts/models.py:306
+#: bettertexts/models.py:310
 msgid "average"
 msgstr "gemiddeld"
 
-#: bettertexts/models.py:313
+#: bettertexts/models.py:317
 msgid "rating"
 msgstr "beoordeling"
 
-#: bettertexts/models.py:314
+#: bettertexts/models.py:318
 msgid "ratings"
 msgstr "beoordelingen"
 
-#: bettertexts/templates/bettertexts/detail.html:92
+#: bettertexts/templates/bettertexts/detail.html:96
 #: citizenline/templates/comments/form.html:18
 #: citizenline/templates/comments/preview.html:42
 msgid "Post"

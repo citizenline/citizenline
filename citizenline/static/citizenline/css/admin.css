@@ -7,3 +7,11 @@
   margin: 0 -20px;
   text-align: center;
 }
+
+.field-question .vTextField {
+  width: 250px;
+}
+
+.field-description .vTextField {
+  width: 350px;
+}

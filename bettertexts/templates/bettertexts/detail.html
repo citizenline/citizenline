@@ -22,7 +22,7 @@
 {% endif %}
     <div id="container" class="container-fluid">
         <div id="thanks" class="alert alert-info hidden" role="alert">
-            Bedankt voor uw reactie!
+            {{ text.type.thanks }}
         </div>
         <h1>{{ text.type.header }}</h1>
         <div class="row">
@@ -81,6 +81,10 @@
                                     {% ifequal field.name "honeypot" %} style="display:none;"{% endifequal %}>
                                 {{ field.label_tag }} {{ field|add_class:"form-control" }}
                             </div>
+                        {% elif field.name == "inform" %}
+                            <div class="form-group"><div class="checkbox"><label for="id_inform"><input type="checkbox" name="inform" class="" id="id_inform"> {% if text.type.inform_label %}{{ text.type.inform_label }}{% else %}{{ _("Keep me informed") }}{% endif %}</label></div></div>
+                        {% elif field.name == "involved" %}
+                            <div class="form-group"><div class="checkbox"><label for="id_involved"><input type="checkbox" name="involved" class="" id="id_involved"> {% if text.type.involved_label %}{{ text.type.involved_label }}{% else %}{{ _("Keep me involved") }}{% endif %}</label></div></div>
                         {% else %}
 
                             {% bootstrap_field field %}
