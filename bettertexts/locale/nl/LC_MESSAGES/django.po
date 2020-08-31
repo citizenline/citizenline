@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-14 19:38+0200\n"
+"POT-Creation-Date: 2020-08-31 21:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,11 +31,11 @@ msgstr "Tekst"
 msgid "Version"
 msgstr "Versie"
 
-#: bettertexts/admin.py:76 bettertexts/models.py:298
+#: bettertexts/admin.py:76 bettertexts/models.py:299
 msgid "Question"
 msgstr "Vraag"
 
-#: bettertexts/admin.py:76 bettertexts/admin.py:146 star_ratings/admin.py:24
+#: bettertexts/admin.py:76 bettertexts/admin.py:150 star_ratings/admin.py:24
 msgid "Score"
 msgstr "Score"
 
@@ -60,11 +60,11 @@ msgstr "Kopteksten"
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
-#: bettertexts/admin.py:172
+#: bettertexts/admin.py:134 bettertexts/admin.py:176
 msgid "Content"
 msgstr "Inhoud"
 
-#: bettertexts/admin.py:174
+#: bettertexts/admin.py:178
 msgid "Metadata"
 msgstr "Meta gegevens"
 
@@ -217,83 +217,87 @@ msgstr "opmerking plaatsen tonen"
 msgid "notification enabled"
 msgstr "notificatie vraag tonen"
 
-#: bettertexts/models.py:216
+#: bettertexts/models.py:214
+msgid "comment form intro"
+msgstr "reactie formulier intro"
+
+#: bettertexts/models.py:217
 msgid "communication type"
 msgstr "communicatie soort"
 
-#: bettertexts/models.py:217
+#: bettertexts/models.py:218
 msgid "communication types"
 msgstr "communicatie soorten"
 
-#: bettertexts/models.py:227
+#: bettertexts/models.py:228
 msgid "title"
 msgstr "titel"
 
-#: bettertexts/models.py:228
+#: bettertexts/models.py:229
 msgid "slug"
 msgstr "kort"
 
-#: bettertexts/models.py:229
+#: bettertexts/models.py:230
 msgid "intro"
 msgstr ""
 
-#: bettertexts/models.py:230 bettertexts/models.py:237
+#: bettertexts/models.py:231 bettertexts/models.py:238
 msgid "text"
 msgstr "tekst"
 
-#: bettertexts/models.py:231 bettertexts/models.py:296
+#: bettertexts/models.py:232 bettertexts/models.py:297
 msgid "version"
 msgstr "versie"
 
-#: bettertexts/models.py:232
+#: bettertexts/models.py:233
 msgid "date published"
 msgstr "Publicatie datum"
 
-#: bettertexts/models.py:233
+#: bettertexts/models.py:234
 msgid "date end"
 msgstr "eind datum"
 
-#: bettertexts/models.py:238
+#: bettertexts/models.py:239
 msgid "texts"
 msgstr "teksten"
 
-#: bettertexts/models.py:253 bettertexts/models.py:257
+#: bettertexts/models.py:254 bettertexts/models.py:258
 msgid "question"
 msgstr "vraag"
 
-#: bettertexts/models.py:254
+#: bettertexts/models.py:255
 msgid "position"
 msgstr "positie"
 
-#: bettertexts/models.py:258
+#: bettertexts/models.py:259
 msgid "questions"
 msgstr "vragen"
 
-#: bettertexts/models.py:279 star_ratings/models.py:42
+#: bettertexts/models.py:280 star_ratings/models.py:42
 msgid "Already rated."
 msgstr "Al gewaardeerd"
 
-#: bettertexts/models.py:301
+#: bettertexts/models.py:302
 msgid "range"
 msgstr "bereik"
 
-#: bettertexts/models.py:302
+#: bettertexts/models.py:303
 msgid "count"
 msgstr "aantal"
 
-#: bettertexts/models.py:303
+#: bettertexts/models.py:304
 msgid "total"
 msgstr "totaal"
 
-#: bettertexts/models.py:305
+#: bettertexts/models.py:306
 msgid "average"
 msgstr "gemiddeld"
 
-#: bettertexts/models.py:312
+#: bettertexts/models.py:313
 msgid "rating"
 msgstr "beoordeling"
 
-#: bettertexts/models.py:313
+#: bettertexts/models.py:314
 msgid "ratings"
 msgstr "beoordelingen"
 
@@ -448,37 +452,37 @@ msgstr "Registreer"
 msgid "Rating average"
 msgstr "Gemiddelde beoordeling"
 
-#: star_ratings/templates/star_ratings/widget.html:18
+#: star_ratings/templates/star_ratings/widget.html:19
 msgid "star"
 msgstr "ster"
 
-#: star_ratings/templates/star_ratings/widget.html:18
+#: star_ratings/templates/star_ratings/widget.html:19
+#: star_ratings/templates/star_ratings/widget.html:40
 msgid "stars"
 msgstr "sterren"
 
-#: star_ratings/templates/star_ratings/widget.html:24
+#: star_ratings/templates/star_ratings/widget.html:25
 msgid "Submit"
 msgstr "Verstuur"
 
-#: star_ratings/templates/star_ratings/widget.html:28
-#: star_ratings/templates/star_ratings/widget.html:39
-#: star_ratings/templates/star_ratings/widget.html:47
+#: star_ratings/templates/star_ratings/widget.html:29
+#: star_ratings/templates/star_ratings/widget.html:48
 #: star_ratings/templates/star_ratings/widget_base.html:43
 #: star_ratings/templates/star_ratings/widget_base.html:88
 msgid "Average: "
 msgstr "Gemiddeld: "
 
-#: star_ratings/templates/star_ratings/widget.html:29
+#: star_ratings/templates/star_ratings/widget.html:30
 #: star_ratings/templates/star_ratings/widget_base.html:49
 msgid "You Rated: "
 msgstr "Uw beoordeling: "
 
-#: star_ratings/templates/star_ratings/widget.html:29
+#: star_ratings/templates/star_ratings/widget.html:30
 #: star_ratings/templates/star_ratings/widget_base.html:49
 msgid "Not rated"
 msgstr "Geen beoordeling"
 
-#: star_ratings/templates/star_ratings/widget.html:50
+#: star_ratings/templates/star_ratings/widget.html:51
 #: star_ratings/templates/star_ratings/widget_base.html:46
 #: star_ratings/templates/star_ratings/widget_base.html:91
 msgid "Rating Count: "

@@ -38,7 +38,7 @@
                 {% if not text.intro %}
                 <h2>{{ text.title }}</h2>
                 {% endif %}
-                <div id="improvetext" role=”region” aria-label=”{{ text.type.header }}”>
+                <div id="improvetext" role="region" aria-label="{{ text.type.header }}">
                     {{ text.body|safe }}
                 </div>
             </div>
@@ -65,10 +65,7 @@
                 <form action="{% comment_form_target %}" method="post" class="form">{% csrf_token %}
                     <div><input type="hidden" name="next" value="{% url 'bettertexts:detail' text.slug %}#thanks"/></div>
 
-                    <ul>
-                      <li>De gemeente verwerkt en beschermt wettelijk uw persoonsgegevens volgens de <a href="https://www.denhaag.nl/nl/verklaring-inzake-gegevensbescherming.htm"> Verklaring inzake Gegevensbescherming</a>.</li>
-                      <li>Alle velden zijn verplicht, tenzij anders aangegeven.</li>
-                    </ul>
+                    {{ text.type.comment_form_intro|safe }}
 
                     {% for field in form %}
                         {% if field.is_hidden %}
