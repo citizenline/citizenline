@@ -13,6 +13,7 @@
   {% block rating_stars %}
   <fieldset class="star-ratings-rating-stars-container">
     <legend class="star-header h4">{{ rating.question.question }}</legend>
+    <p>{{ rating.question.description }}</p>
     {% for star in stars %}
     <input value="{{ star }}" id="{{ id }}_star{{ star }}" type="radio" name="score" class="sr-only" {% ifequal user_rating.score star %}checked{% endifequal %}>
     <label for="{{ id }}_star{{ star }}">
