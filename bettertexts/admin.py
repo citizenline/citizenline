@@ -130,6 +130,10 @@ class TypeAdmin(SiteModelAdmin):
             _("Enabled"),
             {"fields": ("rating_enabled", "comment_enabled", "notification_enabled")},
         ),
+        (
+            _("Content"),
+            {"fields": ("comment_form_intro", )},
+        ),
     )
 
     inlines = [QuestionInLine]

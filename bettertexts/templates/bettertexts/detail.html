@@ -12,7 +12,7 @@
     <link rel="icon" href="{% static "favicon.ico" %}">
     <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
     <link rel="stylesheet" href="{% static 'bettertexts/css/bettertext.css' %}">
-    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+    <script src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
 {% endblock %}
 
 {% block bootstrap3_content %}
@@ -20,32 +20,32 @@
 {% if text.site.profile.header %}
 {{ text.site.profile.header|safe }}
 {% endif %}
-    <div id="container" class="container">
+    <div id="container" class="container-fluid">
         <div id="thanks" class="alert alert-info hidden" role="alert">
             Bedankt voor uw reactie!
         </div>
         <h1>{{ text.type.header }}</h1>
         <div class="row">
             {% if text.intro %}
-            <div class="col-md-12">
+            <div class="col-lg-12">
                 <h2>{{ text.title }}</h2>
                 <div id="intro">
                     {{ text.intro|safe }}
                 </div>
             </div>
             {% endif %}
-            <div class="col-md-8">
+            <div class="col-lg-8">
                 {% if not text.intro %}
                 <h2>{{ text.title }}</h2>
                 {% endif %}
-                <div id="improvetext">
+                <div id="improvetext" role=”region” aria-label=”{{ text.type.header }}”>
                     {{ text.body|safe }}
                 </div>
             </div>
 
             {% if text.type.rating_enabled %}
-            <div class="col-md-4" id="rating">
-                <h2>{{ text.type.rating_header }}</h2>
+            <div class="col-lg-4" id="rating">
+                <h3>{{ text.type.rating_header }}</h3>
                 {% for question in text.type.question_set.all %}
                     {% ratings text question %}
                 {% endfor %}
@@ -58,13 +58,17 @@
         {% if text.active %}
         <div class="row">
 
-            <div class="col-md-8" id="comment">
-                <h2>{{ text.type.comment_header }}</h2>
+            <div class="col-lg-8" id="comment">
+                <h3>{{ text.type.comment_header }}</h3>
                 {% get_comment_form for text as form %}
 
                 <form action="{% comment_form_target %}" method="post" class="form">{% csrf_token %}
                     <div><input type="hidden" name="next" value="{% url 'bettertexts:detail' text.slug %}#thanks"/></div>
 
+                    <ul>
+                      <li>De gemeente verwerkt en beschermt wettelijk uw persoonsgegevens volgens de <a href="https://www.denhaag.nl/nl/verklaring-inzake-gegevensbescherming.htm"> Verklaring inzake Gegevensbescherming</a>.</li>
+                      <li>Alle velden zijn verplicht, tenzij anders aangegeven.</li>
+                    </ul>
 
                     {% for field in form %}
                         {% if field.is_hidden %}
@@ -97,15 +101,15 @@
         {% endif %}
         <div class="row">
 
-            <div class="col-md-8" id="response">
-                <h2>{{ text.type.response_header }}</h2>
+            <div class="col-lg-8" id="response">
+                <h3>{{ text.type.response_header }}</h3>
                 {% render_comment_list for text %}
             </div>
 
         </div>
         {%  endif %}
     </div>
-    <script type="text/javascript">
+    <script>
         if (location.href.indexOf("#thanks") != -1) {
             document.querySelector("#thanks").setAttribute("class", "alert alert-info")
         }

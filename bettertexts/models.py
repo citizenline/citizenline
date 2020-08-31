@@ -211,6 +211,7 @@ class Type(models.Model):
     rating_enabled = models.BooleanField(_("rating enabled"), default=True)
     comment_enabled = models.BooleanField(_("comment enabled"), default=True)
     notification_enabled = models.BooleanField(_("notification enabled"), default=True)
+    comment_form_intro = models.TextField(_("comment form intro"), max_length=20000, blank=True)
 
     class Meta:
         verbose_name = _("communication type")

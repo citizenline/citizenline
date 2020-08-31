@@ -29,3 +29,7 @@
     border: 1px solid transparent;
     border-radius: 4px;
 }
+
+.container-fluid {
+    max-width: 1080px;
+}

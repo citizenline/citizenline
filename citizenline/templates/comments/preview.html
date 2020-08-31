@@ -6,9 +6,9 @@
 
 {% block bootstrap3_content %}
   {% load comments %}
-        <div id="container" class="container">
+        <div id="container" class="container-fluid">
             <div class="row">
-            <div class="col-md-8" id="improvetext">
+            <div class="col-lg-8" id="improvetext">
   <form action="{% comment_form_target %}" method="post">{% csrf_token %}
     {% if next %}
       <div><input type="hidden" name="next" value="{{ next }}"/></div>{% endif %}
