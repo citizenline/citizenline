@@ -14,6 +14,18 @@
   <fieldset class="star-ratings-rating-stars-container">
     <legend class="star-header h4">{{ rating.question.question }}</legend>
     <p>{{ rating.question.description }}</p>
+    {% if rating.question.rating_type == rating.question.POINTS %}
+    {% for star in stars %}
+    <input value="{{ star }}" id="{{ id }}_point{{ star }}" type="radio" name="score" class="sr-only" {% ifequal user_rating.score star %}checked{% endifequal %}>
+    <label for="{{ id }}_point{{ star }}">
+      <span class="sr-only">{{ star }} {% if star == 1 %}{% trans 'point' %}{% else %}{% trans 'points' %}{% endif %}</span>
+      <svg viewBox="0 0 560 560">
+        <circle cx="280" cy="280" stroke="black" stroke-width="40" r="240"></circle>
+        <text fill="black" stroke="black" stroke-width="4" x="270" y="400" font-size="350" width="500" alignment-baseline="baseline" text-anchor="middle">{{ star }}</text>
+        </svg>
+      </label>
+    {% endfor %}
+    {% else %}
     {% for star in stars %}
     <input value="{{ star }}" id="{{ id }}_star{{ star }}" type="radio" name="score" class="sr-only" {% ifequal user_rating.score star %}checked{% endifequal %}>
     <label for="{{ id }}_star{{ star }}">
@@ -21,6 +33,7 @@
       <svg viewBox="0 0 560 560"><path stroke="#000" stroke-width="30" d="M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z"></path></svg>
     </label>
     {% endfor %}
+    {% endif %}
   </fieldset>
   {% endblock rating_stars %}
   <input type="submit" class="btn btn-primary hidden" value="{% trans 'Submit' %}">

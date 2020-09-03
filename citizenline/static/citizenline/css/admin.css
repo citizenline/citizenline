@@ -15,3 +15,7 @@
 .field-description .vTextField {
   width: 350px;
 }
+
+.ui-sortable th, .ui-sortable td {
+  padding: 2px;
+}

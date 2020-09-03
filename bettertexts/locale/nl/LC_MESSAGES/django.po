@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-31 22:54+0200\n"
+"POT-Creation-Date: 2020-09-03 09:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr "Tekst"
 msgid "Version"
 msgstr "Versie"
 
-#: bettertexts/admin.py:76 bettertexts/models.py:303
+#: bettertexts/admin.py:76 bettertexts/models.py:313
 msgid "Question"
 msgstr "Vraag"
 
@@ -257,7 +257,7 @@ msgstr ""
 msgid "text"
 msgstr "tekst"
 
-#: bettertexts/models.py:235 bettertexts/models.py:301
+#: bettertexts/models.py:235 bettertexts/models.py:311
 msgid "version"
 msgstr "versie"
 
@@ -273,47 +273,65 @@ msgstr "eind datum"
 msgid "texts"
 msgstr "teksten"
 
-#: bettertexts/models.py:257 bettertexts/models.py:262
+#: bettertexts/models.py:261
+#, fuzzy
+#| msgid "stars"
+msgid "Stars"
+msgstr "sterren"
+
+#: bettertexts/models.py:262
+#, fuzzy
+#| msgid "points"
+msgid "Points"
+msgstr "punten"
+
+#: bettertexts/models.py:266 bettertexts/models.py:272
 msgid "question"
 msgstr "vraag"
 
-#: bettertexts/models.py:258
+#: bettertexts/models.py:267
 msgid "position"
 msgstr "positie"
 
-#: bettertexts/models.py:259
+#: bettertexts/models.py:268
 msgid "description"
 msgstr "omschrijving"
 
-#: bettertexts/models.py:263
+#: bettertexts/models.py:269
+#, fuzzy
+#| msgid "rating"
+msgid "rating type"
+msgstr "beoordeling"
+
+#: bettertexts/models.py:273
 msgid "questions"
 msgstr "vragen"
 
-#: bettertexts/models.py:284 star_ratings/models.py:42
+#: bettertexts/models.py:294 star_ratings/models.py:42
 msgid "Already rated."
 msgstr "Al gewaardeerd"
 
-#: bettertexts/models.py:306
+#: bettertexts/models.py:316
 msgid "range"
 msgstr "bereik"
 
-#: bettertexts/models.py:307
+#: bettertexts/models.py:317
 msgid "count"
 msgstr "aantal"
 
-#: bettertexts/models.py:308
+#: bettertexts/models.py:318
 msgid "total"
 msgstr "totaal"
 
-#: bettertexts/models.py:310
+#: bettertexts/models.py:320
 msgid "average"
 msgstr "gemiddeld"
 
-#: bettertexts/models.py:317
+#: bettertexts/models.py:327
 msgid "rating"
 msgstr "beoordeling"
 
-#: bettertexts/models.py:318
+#: bettertexts/models.py:328
 msgid "ratings"
 msgstr "beoordelingen"
 
@@ -331,15 +349,15 @@ msgstr "Kopteksten"
 
 #: citizenline/models.py:17
 msgid "footer"
-msgstr ""
+msgstr "voettekst"
 
 #: citizenline/models.py:20
 msgid "site profile"
-msgstr ""
+msgstr "profiel"
 
 #: citizenline/models.py:21
 msgid "site profiles"
-msgstr ""
+msgstr "profielen"
 
 #: citizenline/templates/admin/base_site.html:9
 #: venv/lib/python3.8/site-packages/bootstrap_admin/templates/admin/base_site.html:4
@@ -468,37 +486,45 @@ msgstr "Registreer"
 msgid "Rating average"
 msgstr "Gemiddelde beoordeling"
 
-#: star_ratings/templates/star_ratings/widget.html:19
+#: star_ratings/templates/star_ratings/widget.html:21
+msgid "point"
+msgstr "punt"
+
+#: star_ratings/templates/star_ratings/widget.html:21
+msgid "points"
+msgstr "punten"
+
+#: star_ratings/templates/star_ratings/widget.html:32
 msgid "star"
 msgstr "ster"
 
-#: star_ratings/templates/star_ratings/widget.html:19
-#: star_ratings/templates/star_ratings/widget.html:40
+#: star_ratings/templates/star_ratings/widget.html:32
+#: star_ratings/templates/star_ratings/widget.html:54
 msgid "stars"
 msgstr "sterren"
 
-#: star_ratings/templates/star_ratings/widget.html:25
+#: star_ratings/templates/star_ratings/widget.html:39
 msgid "Submit"
 msgstr "Verstuur"
 
-#: star_ratings/templates/star_ratings/widget.html:29
-#: star_ratings/templates/star_ratings/widget.html:48
+#: star_ratings/templates/star_ratings/widget.html:43
+#: star_ratings/templates/star_ratings/widget.html:62
 #: star_ratings/templates/star_ratings/widget_base.html:43
 #: star_ratings/templates/star_ratings/widget_base.html:88
 msgid "Average: "
 msgstr "Gemiddeld: "
 
-#: star_ratings/templates/star_ratings/widget.html:30
+#: star_ratings/templates/star_ratings/widget.html:44
 #: star_ratings/templates/star_ratings/widget_base.html:49
 msgid "You Rated: "
 msgstr "Uw beoordeling: "
 
-#: star_ratings/templates/star_ratings/widget.html:30
+#: star_ratings/templates/star_ratings/widget.html:44
 #: star_ratings/templates/star_ratings/widget_base.html:49
 msgid "Not rated"
 msgstr "Geen beoordeling"
 
-#: star_ratings/templates/star_ratings/widget.html:51
+#: star_ratings/templates/star_ratings/widget.html:65
 #: star_ratings/templates/star_ratings/widget_base.html:46
 #: star_ratings/templates/star_ratings/widget_base.html:91
 msgid "Rating Count: "

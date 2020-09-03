@@ -111,7 +111,7 @@ class TextAdmin(SiteModelAdmin):
 class QuestionInLine(SortableInlineAdminMixin, admin.TabularInline):
     model = Question
     extra = 0
-    fieldsets = ((None, {"fields": ("question", "position", "description")}),)
+    fieldsets = ((None, {"fields": ("question", "position", "description", "rating_type")}),)
     ordering = ("position",)
     original = False
 

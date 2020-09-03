@@ -253,10 +253,20 @@ class Text(models.Model):
 
 # , editable=False
 class Question(models.Model):
+
+    STARS = "S"
+    POINTS = "P"
+
+    RATING_TYPE_CHOICES = (
+        (STARS, _("Sterren")),
+        (POINTS, _("Punten")),
+    )
+
     type = models.ForeignKey(Type, on_delete=models.CASCADE)
     question = models.CharField(_("question"), max_length=200)
     position = models.IntegerField(_("position"))
     description = models.CharField(_("description"), max_length=1000, blank=True)
+    rating_type = models.CharField(_("type"), max_length=2, choices=RATING_TYPE_CHOICES, default=STARS)
 
     class Meta:
         verbose_name = _("question")
