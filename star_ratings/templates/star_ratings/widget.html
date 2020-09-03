@@ -1,8 +1,68 @@
-{% extends "star_ratings/widget_base.html" %}
 {% load i18n %}
 
+{% if active %}
+
+{% block rating_style %}
+{% endblock rating_style %}
+
+{% block rating_container %}
+<form action="{% url 'ratings:rate' rating.text.slug rating.question.pk %}" id="{{ id }}" class="star-ratings" data-max-rating="{{ star_count }}" data-avg-rating="{{ rating.average }}">
+  {% csrf_token %}
+  <input type="hidden" value="{{ request.path }}" name="next">
+
+  {% block rating_stars %}
+  <fieldset class="star-ratings-rating-stars-container">
+    <legend class="star-header h4">{{ rating.question.question }}</legend>
+    <p>{{ rating.question.description }}</p>
+    {% if rating.question.rating_type == rating.question.POINTS %}
+    {% for star in stars %}
+    <input value="{{ star }}" id="{{ id }}_point{{ star }}" type="radio" name="score" class="sr-only" {% ifequal user_rating.score star %}checked{% endifequal %}>
+    <label for="{{ id }}_point{{ star }}">
+      <span class="sr-only">{{ star }} {% if star == 1 %}{% trans 'point' %}{% else %}{% trans 'points' %}{% endif %}</span>
+      <svg viewBox="0 0 560 560">
+        <circle cx="280" cy="280" stroke="black" stroke-width="40" r="240"></circle>
+        <text fill="black" stroke="black" stroke-width="4" x="270" y="400" font-size="350" width="500" alignment-baseline="baseline" text-anchor="middle">{{ star }}</text>
+        </svg>
+      </label>
+    {% endfor %}
+    {% else %}
+    {% for star in stars %}
+    <input value="{{ star }}" id="{{ id }}_star{{ star }}" type="radio" name="score" class="sr-only" {% ifequal user_rating.score star %}checked{% endifequal %}>
+    <label for="{{ id }}_star{{ star }}">
+      <span class="sr-only">{{ star }} {% if star == 1 %}{% trans 'star' %}{% else %}{% trans 'stars' %}{% endif %}</span>
+      <svg viewBox="0 0 560 560"><path stroke="#000" stroke-width="30" d="M512 198.525l-176.89-25.704-79.11-160.291-79.108 160.291-176.892 25.704 128 124.769-30.216 176.176 158.216-83.179 158.216 83.179-30.217-176.176 128.001-124.769z"></path></svg>
+    </label>
+    {% endfor %}
+    {% endif %}
+  </fieldset>
+  {% endblock rating_stars %}
+  <input type="submit" class="btn btn-primary hidden" value="{% trans 'Submit' %}">
+
+  <output>
     {% block rating_detail %}
         <div class="star-ratings-rating-average">{% trans 'Average: ' %} <span class='star-ratings-rating-value'>{{ rating.average|floatformat:"-2" }}</span></div>
         <div class="star-ratings-rating-user">{% trans 'You Rated: ' %} <span class='star-ratings-rating-value'>{% if user_rating %}{{ user_rating.score }}{% else %}{% trans 'Not rated' %}{% endif %}</span></div>
         <div class="star-ratings-errors"></div>
     {% endblock rating_detail %}
+  </output>
+  </form>
+{% endblock rating_container %}
+{% else %}
+
+<div id="{{ id }}" class="star-ratings">
+  <h4 class="star-header">{{ rating.question.question }}</h4>
+  <span class="star-ratings-result" role="img" aria-label="{{ rating.average|floatformat:"-2" }} {% trans 'stars' %}">
+    <span style="width: {{ percentage }}%"></span>
+  </span>
+
+</div>
+
+{% block rating_inactive %}
+{% block rating_average_inactive %}
+<div class="star-ratings-rating-average">{% trans 'Average: ' %} <span class='star-ratings-rating-value'>{{ rating.average|floatformat:"-2" }}</span></div>
+{% endblock rating_average_inactive %}
+{% block rating_count_inactive %}
+<div class="star-ratings-rating-count">{% trans 'Rating Count: ' %} <span class='star-ratings-rating-value'>{{ rating.count }}</span></div>
+{% endblock rating_count_inactive %}
+{% endblock rating_inactive %}
+{% endif %}

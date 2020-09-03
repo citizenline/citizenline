@@ -3,7 +3,7 @@ from citizenline.settings.base import *  # noqa
 DEBUG = True
 
 
-ALLOWED_HOSTS = [".citizenline.nl"]
+ALLOWED_HOSTS = [".citizenline.nl", "localhost"]
 WWW_HOST = "www-test.citizenline.nl"
 
 EMAIL_HOST = "localhost"

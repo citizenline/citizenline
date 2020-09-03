@@ -68,7 +68,7 @@ export_coments.short_description = _("Export comments")
 def export_rating(modeladmin, request, queryset):
     response = HttpResponse(content_type="text/csv")
     response["Content-Disposition"] = "attachment; filename=ratings.csv"
-    writer = csv.writer(response, delimiter=b";", quotechar=b'"', quoting=csv.QUOTE_ALL)
+    writer = csv.writer(response, delimiter=str(";"), quotechar=str('"'), quoting=csv.QUOTE_ALL)
     response.write(
         "\ufeff".encode("utf8")
     )  # BOM (optional...Excel needs it to open UTF-8 file properly)
@@ -111,7 +111,7 @@ class TextAdmin(SiteModelAdmin):
 class QuestionInLine(SortableInlineAdminMixin, admin.TabularInline):
     model = Question
     extra = 0
-    fieldsets = ((None, {"fields": ("question", "position")}),)
+    fieldsets = ((None, {"fields": ("question", "position", "description", "rating_type")}),)
     ordering = ("position",)
     original = False
 
@@ -129,6 +129,10 @@ class TypeAdmin(SiteModelAdmin):
         (
             _("Enabled"),
             {"fields": ("rating_enabled", "comment_enabled", "notification_enabled")},
+        ),
+        (
+            _("Content"),
+            {"fields": ("comment_form_intro", "thanks", "inform_label", "involved_label")},
         ),
     )
 

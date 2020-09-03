@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-21 07:31+0100\n"
+"POT-Creation-Date: 2020-09-03 09:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,39 +18,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: bettertexts/admin.py:67
+#: bettertexts/admin.py:65
 msgid "Export comments"
 msgstr "Exporteer opmerkingen"
 
 #: bettertexts/admin.py:76
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:2081
 msgid "Text"
 msgstr "Tekst"
 
-#: bettertexts/admin.py:77
+#: bettertexts/admin.py:76
 msgid "Version"
 msgstr "Versie"
 
-#: bettertexts/admin.py:78 bettertexts/models.py:245
+#: bettertexts/admin.py:76 bettertexts/models.py:313
 msgid "Question"
 msgstr "Vraag"
 
-#: bettertexts/admin.py:79 bettertexts/admin.py:144 star_ratings/admin.py:17
+#: bettertexts/admin.py:76 bettertexts/admin.py:150 star_ratings/admin.py:24
 msgid "Score"
 msgstr "Score"
 
-#: bettertexts/admin.py:80
+#: bettertexts/admin.py:76
+#: venv/lib/python3.8/site-packages/bootstrap_admin/templates/admin/object_history.html:30
 msgid "User"
 msgstr "Gebruiker"
 
-#: bettertexts/admin.py:81
+#: bettertexts/admin.py:76
 msgid "IP"
 msgstr "IP"
 
-#: bettertexts/admin.py:95
+#: bettertexts/admin.py:93
 msgid "Export ratings"
 msgstr "Exporteer beoordelingen"
 
-#: bettertexts/admin.py:129
+#: bettertexts/admin.py:126
 msgid "Headers"
 msgstr "Kopteksten"
 
@@ -58,11 +60,11 @@ msgstr "Kopteksten"
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
-#: bettertexts/admin.py:166
+#: bettertexts/admin.py:134 bettertexts/admin.py:176
 msgid "Content"
 msgstr "Inhoud"
 
-#: bettertexts/admin.py:170
+#: bettertexts/admin.py:178
 msgid "Metadata"
 msgstr "Meta gegevens"
 
@@ -70,84 +72,86 @@ msgstr "Meta gegevens"
 msgid "Better texts"
 msgstr "Betere teksten"
 
-#: bettertexts/forms.py:12
+#: bettertexts/forms.py:11
 msgid "Name"
 msgstr "Naam"
 
-#: bettertexts/forms.py:14 templates/home.html:29
+#: bettertexts/forms.py:13 citizenline/templates/home.html:22
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1646
 msgid "Email address"
 msgstr "E-mailadres"
 
-#: bettertexts/forms.py:16
+#: bettertexts/forms.py:15
 msgid "Comment"
 msgstr "Opmerking"
 
-#: bettertexts/forms.py:21
+#: bettertexts/forms.py:20 bettertexts/templates/bettertexts/detail.html:85
 msgid "Keep me informed"
 msgstr "Houd me op de hoogte over nieuwe versies van bovenstaande tekst"
 
-#: bettertexts/forms.py:25
+#: bettertexts/forms.py:24 bettertexts/templates/bettertexts/detail.html:87
 msgid "Keep me involved"
 msgstr "Ik doe graag mee met het verbeteren van nog meer teksten"
 
-#: bettertexts/models.py:33
+#: bettertexts/models.py:35
 msgid "user"
 msgstr "gebruiker"
 
-#: bettertexts/models.py:35
+#: bettertexts/models.py:41
 msgid "user's name"
 msgstr "gebruikersnaam"
 
-#: bettertexts/models.py:37
+#: bettertexts/models.py:44
 msgid "user's email address"
 msgstr "E-mailadres van gebruiker"
 
-#: bettertexts/models.py:39
+#: bettertexts/models.py:46
 msgid "user's URL"
 msgstr "gebruikers URL"
 
-#: bettertexts/models.py:40
+#: bettertexts/models.py:48
 msgid "Keep informed"
 msgstr "Blijf op de hoogte"
 
-#: bettertexts/models.py:41
+#: bettertexts/models.py:50
 msgid "Check this box to keep me informed about updates."
 msgstr "Kruis dit vakje aan om me op de hoogte gehouden te worden."
 
-#: bettertexts/models.py:43
+#: bettertexts/models.py:53
 msgid "Stay involved"
 msgstr "Blijf betrokken"
 
-#: bettertexts/models.py:44
+#: bettertexts/models.py:55
 msgid "Check this box to make more texts better."
 msgstr "Kruis dit vakje aan om meer teksten te verbeteren."
 
-#: bettertexts/models.py:47 bettertexts/models.py:67
+#: bettertexts/models.py:58 bettertexts/models.py:90
 msgid "comment"
 msgstr "opmerking"
 
-#: bettertexts/models.py:50
+#: bettertexts/models.py:61
 msgid "date/time submitted"
 msgstr "datum verstuurd"
 
-#: bettertexts/models.py:51
+#: bettertexts/models.py:63
+#: venv/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1897
 msgid "IP address"
 msgstr "IP adres"
 
-#: bettertexts/models.py:52
+#: bettertexts/models.py:66
 msgid "is public"
 msgstr "Publiek"
 
-#: bettertexts/models.py:53
+#: bettertexts/models.py:69
 msgid ""
 "Uncheck this box to make the comment effectively disappear from the site."
 msgstr ""
 
-#: bettertexts/models.py:55
+#: bettertexts/models.py:74
 msgid "is removed"
 msgstr "Verwijderd"
 
-#: bettertexts/models.py:56
+#: bettertexts/models.py:77
 msgid ""
 "Check this box if the comment is inappropriate. A \"This comment has been "
 "removed\" message will be displayed instead."
@@ -155,23 +159,23 @@ msgstr ""
 "Vink dit vakje aan als de reactie ongewenst is. \"Deze reactie is verwijderd"
 "\" zal worden getoond."
 
-#: bettertexts/models.py:68
+#: bettertexts/models.py:91
 msgid "comments"
 msgstr "Opmerkingen"
 
-#: bettertexts/models.py:113
+#: bettertexts/models.py:138
 msgid ""
 "This comment was posted by an authenticated user and thus the name is read-"
 "only."
 msgstr ""
 
-#: bettertexts/models.py:124
+#: bettertexts/models.py:155
 msgid ""
 "This comment was posted by an authenticated user and thus the email is read-"
 "only."
 msgstr ""
 
-#: bettertexts/models.py:152
+#: bettertexts/models.py:191
 #, python-format
 msgid ""
 "Posted by %(user)s at %(date)s\n"
@@ -181,268 +185,351 @@ msgid ""
 "http://%(domain)s%(url)s"
 msgstr ""
 
-#: bettertexts/models.py:164
+#: bettertexts/models.py:206
 msgid "name"
 msgstr "naam"
 
-#: bettertexts/models.py:165
+#: bettertexts/models.py:207
 msgid "main header"
 msgstr "hoofd header"
 
-#: bettertexts/models.py:166
+#: bettertexts/models.py:208
 msgid "rating header"
 msgstr "beoordeling header"
 
-#: bettertexts/models.py:167
+#: bettertexts/models.py:209
 msgid "comment header"
 msgstr "opmerking plaatsen header"
 
-#: bettertexts/models.py:168
+#: bettertexts/models.py:210
 msgid "response header"
 msgstr "reacties header"
 
-#: bettertexts/models.py:169
+#: bettertexts/models.py:211
 msgid "rating enabled"
 msgstr "waardering tonen"
 
-#: bettertexts/models.py:170
+#: bettertexts/models.py:212
 msgid "comment enabled"
 msgstr "opmerking plaatsen tonen"
 
-#: bettertexts/models.py:171
+#: bettertexts/models.py:213
 msgid "notification enabled"
 msgstr "notificatie vraag tonen"
 
-#: bettertexts/models.py:174
+#: bettertexts/models.py:214
+msgid "comment form intro"
+msgstr "reactie formulier intro"
+
+#: bettertexts/models.py:215
+msgid "thanks text"
+msgstr "bedankt tekst"
+
+#: bettertexts/models.py:216
+msgid "inform label"
+msgstr "blijf op de hoogte label"
+
+#: bettertexts/models.py:217
+msgid "involved label"
+msgstr "blijf betrokken label"
+
+#: bettertexts/models.py:220
 msgid "communication type"
 msgstr "communicatie soort"
 
-#: bettertexts/models.py:175
+#: bettertexts/models.py:221
 msgid "communication types"
 msgstr "communicatie soorten"
 
-#: bettertexts/models.py:185
+#: bettertexts/models.py:231
 msgid "title"
 msgstr "titel"
 
-#: bettertexts/models.py:186
+#: bettertexts/models.py:232
 msgid "slug"
 msgstr "kort"
 
-#: bettertexts/models.py:187 bettertexts/models.py:194
+#: bettertexts/models.py:233
+msgid "intro"
+msgstr ""
+
+#: bettertexts/models.py:234 bettertexts/models.py:241
 msgid "text"
 msgstr "tekst"
 
-#: bettertexts/models.py:188 bettertexts/models.py:244
+#: bettertexts/models.py:235 bettertexts/models.py:311
 msgid "version"
 msgstr "versie"
 
-#: bettertexts/models.py:189
+#: bettertexts/models.py:236
 msgid "date published"
 msgstr "Publicatie datum"
 
-#: bettertexts/models.py:190
+#: bettertexts/models.py:237
 msgid "date end"
 msgstr "eind datum"
 
-#: bettertexts/models.py:195
+#: bettertexts/models.py:242
 msgid "texts"
 msgstr "teksten"
 
-#: bettertexts/models.py:207 bettertexts/models.py:211
+#: bettertexts/models.py:261
+#, fuzzy
+#| msgid "stars"
+msgid "Stars"
+msgstr "sterren"
+
+#: bettertexts/models.py:262
+#, fuzzy
+#| msgid "points"
+msgid "Points"
+msgstr "punten"
+
+#: bettertexts/models.py:266 bettertexts/models.py:272
 msgid "question"
 msgstr "vraag"
 
-#: bettertexts/models.py:208
+#: bettertexts/models.py:267
 msgid "position"
 msgstr "positie"
 
-#: bettertexts/models.py:212
+#: bettertexts/models.py:268
+msgid "description"
+msgstr "omschrijving"
+
+#: bettertexts/models.py:269
+#, fuzzy
+#| msgid "rating"
+msgid "rating type"
+msgstr "beoordeling"
+
+#: bettertexts/models.py:273
 msgid "questions"
 msgstr "vragen"
 
-#: bettertexts/models.py:229 star_ratings/models.py:35
+#: bettertexts/models.py:294 star_ratings/models.py:42
 msgid "Already rated."
 msgstr "Al gewaardeerd"
 
-#: bettertexts/models.py:247
+#: bettertexts/models.py:316
 msgid "range"
 msgstr "bereik"
 
-#: bettertexts/models.py:248
+#: bettertexts/models.py:317
 msgid "count"
 msgstr "aantal"
 
-#: bettertexts/models.py:249
+#: bettertexts/models.py:318
 msgid "total"
 msgstr "totaal"
 
-#: bettertexts/models.py:250
+#: bettertexts/models.py:320
 msgid "average"
 msgstr "gemiddeld"
 
-#: bettertexts/models.py:256
+#: bettertexts/models.py:327
 msgid "rating"
 msgstr "beoordeling"
 
-#: bettertexts/models.py:257
+#: bettertexts/models.py:328
 msgid "ratings"
 msgstr "beoordelingen"
 
-#: bettertexts/templates/bettertexts/detail.html:75
-#: templates/comments/form.html:18 templates/comments/preview.html:42
+#: bettertexts/templates/bettertexts/detail.html:96
+#: citizenline/templates/comments/form.html:18
+#: citizenline/templates/comments/preview.html:42
 msgid "Post"
 msgstr "Verstuur"
 
-#: star_ratings/admin.py:35
-msgid "Rating average"
-msgstr "Gemiddelde beoordeling"
+#: citizenline/models.py:16
+#, fuzzy
+#| msgid "Headers"
+msgid "header"
+msgstr "Kopteksten"
 
-#: star_ratings/templates/star_ratings/widget.html:5
-#: star_ratings/templates/star_ratings/widget_base.html:42
-msgid "Average: "
-msgstr "Gemiddeld: "
+#: citizenline/models.py:17
+msgid "footer"
+msgstr "voettekst"
 
-#: star_ratings/templates/star_ratings/widget.html:6
-#: star_ratings/templates/star_ratings/widget_base.html:48
-msgid "You Rated: "
-msgstr "Uw beoordeling: "
+#: citizenline/models.py:20
+msgid "site profile"
+msgstr "profiel"
 
-#: star_ratings/templates/star_ratings/widget.html:6
-#: star_ratings/templates/star_ratings/widget_base.html:48
-msgid "Not rated"
-msgstr "Geen beoordeling"
+#: citizenline/models.py:21
+msgid "site profiles"
+msgstr "profielen"
 
-#: star_ratings/templates/star_ratings/widget_base.html:45
-msgid "Rating Count: "
-msgstr "Aantal beoordelingen: "
-
-#: star_ratings/templates/star_ratings/widget_base.html:50
-msgid "Please log in to rate."
-msgstr "Log in om een beoordeling te geven."
-
-#: templates/admin/base_site.html:9
+#: citizenline/templates/admin/base_site.html:9
+#: venv/lib/python3.8/site-packages/bootstrap_admin/templates/admin/base_site.html:4
 msgid "Django site admin"
 msgstr ""
 
-#: templates/admin/base_site.html:16
+#: citizenline/templates/admin/base_site.html:14
 msgid "Citizenline administration"
 msgstr "Citizenline admin"
 
-#: templates/admin/login.html:23 templates/admin/login.html.py:27
+#: citizenline/templates/admin/login.html:12
+#: venv/lib/python3.8/site-packages/bootstrap_admin/templates/admin/base.html:72
+#: venv/lib/python3.8/site-packages/bootstrap_admin/templates/admin/base.html:116
+#: venv/lib/python3.8/site-packages/bootstrap_admin/templates/admin/base.html:119
+#: venv/lib/python3.8/site-packages/bootstrap_admin/templates/admin/base_site.html:9
+#: venv/lib/python3.8/site-packages/bootstrap_admin/templates/admin/login.html:31
+#: venv/lib/python3.8/site-packages/bootstrap_admin/templates/admin/login.html:36
 msgid "Django administration"
 msgstr "Django admin"
 
-#: templates/admin/login.html:35
-msgid "Please correct the error below."
-msgid_plural "Please correct the errors below."
-msgstr[0] "Herstel de fout hier onder."
-msgstr[1] "Herstel de fouten hier onder."
-
-#: templates/admin/login.html:76
-msgid "Log in"
-msgstr "Inloggen"
-
-#: templates/admin/login.html:87
-msgid "Forgotten your password or username?"
-msgstr "Wachtwoord of gebruikersnaam vergeten?"
-
-#: templates/comments/approve.html:4
+#: citizenline/templates/comments/approve.html:4
 msgid "Approve a comment"
 msgstr ""
 
-#: templates/comments/approve.html:7
+#: citizenline/templates/comments/approve.html:7
 msgid "Really make this comment public?"
 msgstr ""
 
-#: templates/comments/approve.html:13
+#: citizenline/templates/comments/approve.html:13
 msgid "Approve"
 msgstr ""
 
-#: templates/comments/approved.html:4
+#: citizenline/templates/comments/approved.html:4
 msgid "Thanks for approving"
 msgstr ""
 
-#: templates/comments/approved.html:7 templates/comments/deleted.html:7
-#: templates/comments/flagged.html:7
+#: citizenline/templates/comments/approved.html:7
+#: citizenline/templates/comments/deleted.html:7
+#: citizenline/templates/comments/flagged.html:7
 msgid ""
 "Thanks for taking the time to improve the quality of discussion on our site"
 msgstr ""
 
-#: templates/comments/delete.html:4
+#: citizenline/templates/comments/delete.html:4
 msgid "Remove a comment"
 msgstr "Verwijder opmerking"
 
-#: templates/comments/delete.html:7
+#: citizenline/templates/comments/delete.html:7
 msgid "Really remove this comment?"
 msgstr ""
 
-#: templates/comments/delete.html:13
+#: citizenline/templates/comments/delete.html:13
 msgid "Remove"
 msgstr ""
 
-#: templates/comments/deleted.html:4
+#: citizenline/templates/comments/deleted.html:4
 msgid "Thanks for removing"
 msgstr ""
 
-#: templates/comments/flag.html:4
+#: citizenline/templates/comments/flag.html:4
 msgid "Flag this comment"
 msgstr ""
 
-#: templates/comments/flag.html:7
+#: citizenline/templates/comments/flag.html:7
 msgid "Really flag this comment?"
 msgstr ""
 
-#: templates/comments/flag.html:13
+#: citizenline/templates/comments/flag.html:13
 msgid "Flag"
 msgstr ""
 
-#: templates/comments/flagged.html:4
+#: citizenline/templates/comments/flagged.html:4
 msgid "Thanks for flagging"
 msgstr ""
 
-#: templates/comments/form.html:19
+#: citizenline/templates/comments/form.html:19
 msgid "Preview"
 msgstr ""
 
-#: templates/comments/list.html:8
+#: citizenline/templates/comments/list.html:9
 msgid "This comment has been removed"
 msgstr "Deze opmerking is verwijderd"
 
-#: templates/comments/posted.html:4
+#: citizenline/templates/comments/posted.html:4
 msgid "Thanks for commenting"
 msgstr "Bedankt voor het geven van opmerkingen"
 
-#: templates/comments/posted.html:7
+#: citizenline/templates/comments/posted.html:7
 msgid "Thank you for your comment"
 msgstr "Bedankt voor je opmerking"
 
-#: templates/comments/preview.html:5 templates/comments/preview.html.py:18
+#: citizenline/templates/comments/preview.html:5
+#: citizenline/templates/comments/preview.html:18
 msgid "Preview your comment"
 msgstr "Voorbeeld van je opmerking"
 
-#: templates/comments/preview.html:16
+#: citizenline/templates/comments/preview.html:16
 msgid "Please correct the error below"
 msgid_plural "Please correct the errors below"
 msgstr[0] "Herstel de fout hier onder."
 msgstr[1] "Herstel de fouten hier onder."
 
-#: templates/comments/preview.html:21
+#: citizenline/templates/comments/preview.html:21
+#: venv/lib/python3.8/site-packages/django/db/models/base.py:1162
+#: venv/lib/python3.8/site-packages/django/forms/models.py:756
 msgid "and"
 msgstr "en"
 
-#: templates/comments/preview.html:21
+#: citizenline/templates/comments/preview.html:21
 msgid "Post your comment"
 msgstr "Plaats je opmerking"
 
-#: templates/comments/preview.html:22
+#: citizenline/templates/comments/preview.html:22
 msgid "or make changes"
 msgstr "of maak wijzigingen"
 
-#: templates/home.html:23
+#: citizenline/templates/home.html:16
 msgid "Send an activation link"
 msgstr "Stuur een activatie link"
 
-#: templates/home.html:32
+#: citizenline/templates/home.html:25
 msgid "Register"
 msgstr "Registreer"
+
+#: star_ratings/admin.py:50
+msgid "Rating average"
+msgstr "Gemiddelde beoordeling"
+
+#: star_ratings/templates/star_ratings/widget.html:21
+msgid "point"
+msgstr "punt"
+
+#: star_ratings/templates/star_ratings/widget.html:21
+msgid "points"
+msgstr "punten"
+
+#: star_ratings/templates/star_ratings/widget.html:32
+msgid "star"
+msgstr "ster"
+
+#: star_ratings/templates/star_ratings/widget.html:32
+#: star_ratings/templates/star_ratings/widget.html:54
+msgid "stars"
+msgstr "sterren"
+
+#: star_ratings/templates/star_ratings/widget.html:39
+msgid "Submit"
+msgstr "Verstuur"
+
+#: star_ratings/templates/star_ratings/widget.html:43
+#: star_ratings/templates/star_ratings/widget.html:62
+#: star_ratings/templates/star_ratings/widget_base.html:43
+#: star_ratings/templates/star_ratings/widget_base.html:88
+msgid "Average: "
+msgstr "Gemiddeld: "
+
+#: star_ratings/templates/star_ratings/widget.html:44
+#: star_ratings/templates/star_ratings/widget_base.html:49
+msgid "You Rated: "
+msgstr "Uw beoordeling: "
+
+#: star_ratings/templates/star_ratings/widget.html:44
+#: star_ratings/templates/star_ratings/widget_base.html:49
+msgid "Not rated"
+msgstr "Geen beoordeling"
+
+#: star_ratings/templates/star_ratings/widget.html:65
+#: star_ratings/templates/star_ratings/widget_base.html:46
+#: star_ratings/templates/star_ratings/widget_base.html:91
+msgid "Rating Count: "
+msgstr "Aantal beoordelingen: "
+
+#: star_ratings/templates/star_ratings/widget_base.html:51
+msgid "Please log in to rate."
+msgstr "Log in om een beoordeling te geven."
